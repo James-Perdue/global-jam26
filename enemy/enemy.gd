@@ -33,7 +33,7 @@ func start_encounter() -> void:
 func _clear_masks() -> void:
 	for mask in masks:
 		mask.hit.disconnect(_on_mask_hit)
-		mask.hide()
+		mask.reset_mask()
 
 func _enable_masks() -> void:
 	var active_masks: int = 0
