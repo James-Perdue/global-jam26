@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://lxpql5k7mg28" path="res://encounters/encounter.tscn" id="2_ek3o3"]
 [ext_resource type="PackedScene" uid="uid://dtda1h5ag44c1" path="res://player/player.tscn" id="3_1y5p2"]
 [ext_resource type="PackedScene" uid="uid://bg5llagmpo288" path="res://ui/hud.tscn" id="4_i7xqd"]
+[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="5_ek3o3"]
 
-[node name="Node3D" type="Node3D" unique_id=1317390877]
+[node name="Node3D" type="Node3D" unique_id=1317390877 node_paths=PackedStringArray("objectives")]
 script = ExtResource("1_wcyx1")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=342892620]
@@ -35,3 +36,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14560461, 1.9737635, -0.41
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=101325080]
 transform = Transform3D(1, 0, 0, 0, 0.8128772, 0.58243513, 0, -0.58243513, 0.8128772, 0.5709572, 2.7587667, 4.9045553)
 light_energy = 3.693
+
+[node name="Objective1" parent="." unique_id=225475714 instance=ExtResource("5_ek3o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8935418, 0.24733365, -1.5245075)
+
+[node name="Objective2" parent="." unique_id=65128991 instance=ExtResource("5_ek3o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8935418, 0.24733365, -3.985818)
+tier = 1
+
+[node name="Objective3" parent="." unique_id=843392607 instance=ExtResource("5_ek3o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8935418, 0.24733365, 2.570397)
+tier = 2
+
+[node name="Objective4" parent="." unique_id=717103970 instance=ExtResource("5_ek3o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8935418, 0.24733365, 1.1258829)
+tier = 1

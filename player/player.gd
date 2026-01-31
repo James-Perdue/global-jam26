@@ -13,9 +13,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var in_encounter : bool = false
 var rotation_locked : bool = false
 var current_encounter : Encounter = null
+var interactable_in_zone: Node3D = null
 
 @onready var camera = $Camera3D
 @onready var damage_timer: Timer = Timer.new()
+@onready var interact_zone: Area3D = %InteractZone
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -25,6 +27,8 @@ func _ready() -> void:
 	#damage_timer.one_shot = true
 	damage_timer.wait_time = damage_cooldown
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
+	interact_zone.body_entered.connect(_on_interact_zone_body_entered)
+	interact_zone.body_exited.connect(_on_interact_zone_body_exited)
 	await get_tree().process_frame
 	SignalBus.player_health_changed.emit(health)
 	damage_timer.start()
@@ -40,6 +44,23 @@ func _on_encounter_ended() -> void:
 	current_encounter = null
 	damage_rate = default_damage_rate
 
+func _on_interact_zone_body_entered(body: Node3D) -> void:
+	if(in_encounter):
+		return
+	print("Body entered interact zone: ", body.name)
+	var object_owner = body.owner
+	if object_owner is Objective:
+		print("Objective in zone: ", body.name)
+		interactable_in_zone = object_owner
+		#body.complete()
+
+func _on_interact_zone_body_exited(body: Node3D) -> void:
+	if(in_encounter):
+		return
+	if body is Objective:
+		print("Objective exited zone: ", body.name)
+		interactable_in_zone = null
+	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not rotation_locked:
 		# Rotate character body left/right
@@ -55,6 +76,10 @@ func _input(event: InputEvent) -> void:
 		shoot()
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event.is_action_pressed("interact"):
+		if interactable_in_zone:
+			if interactable_in_zone.has_method("complete"):
+				interactable_in_zone.complete()
 
 func shoot() -> void:
 	if not in_encounter:
