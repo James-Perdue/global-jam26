@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://duqfgmk3q5eug"]
+
+[ext_resource type="Script" uid="uid://b5e3244vsgv42" path="res://enemy/enemy.gd" id="1_2mvqj"]
+[ext_resource type="PackedScene" uid="uid://6muuir2bfjfl" path="res://enemy/mask/mask.tscn" id="2_ofsxj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_scxef"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ofsxj"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=2005698740]
+script = ExtResource("1_2mvqj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=309718217]
+shape = SubResource("CapsuleShape3D_scxef")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=457986100]
+mesh = SubResource("CapsuleMesh_ofsxj")
+
+[node name="MaskSocket1" type="Node3D" parent="." unique_id=1798383893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2289911, 0.6562109, 0.5098043)
+
+[node name="Mask" parent="MaskSocket1" unique_id=1702853835 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="MaskSocket2" type="Node3D" parent="." unique_id=761905197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023441717, 0.6562109, 0.5098043)
+
+[node name="Mask" parent="MaskSocket2" unique_id=81876157 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="MaskSocket3" type="Node3D" parent="." unique_id=643697745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27540755, 0.6562109, 0.5098043)
+
+[node name="Mask" parent="MaskSocket3" unique_id=1031835980 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="MaskSocket4" type="Node3D" parent="." unique_id=951169212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2289911, 0.3439625, 0.5098043)
+
+[node name="Mask" parent="MaskSocket4" unique_id=2902129 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="MaskSocket5" type="Node3D" parent="." unique_id=1000147875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023441717, 0.3439625, 0.5098043)
+
+[node name="Mask" parent="MaskSocket5" unique_id=732072820 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="MaskSocket6" type="Node3D" parent="." unique_id=567108012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27540755, 0.3439625, 0.5098043)
+
+[node name="Mask" parent="MaskSocket6" unique_id=1183203491 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="MaskSocket7" type="Node3D" parent="." unique_id=382927241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2289911, 0.024394274, 0.5098043)
+
+[node name="Mask" parent="MaskSocket7" unique_id=1577904044 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="MaskSocket8" type="Node3D" parent="." unique_id=1196584781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023441717, 0.024394274, 0.5098043)
+
+[node name="Mask" parent="MaskSocket8" unique_id=1285523877 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="MaskSocket9" type="Node3D" parent="." unique_id=154577408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27540755, 0.024394274, 0.5098043)
+
+[node name="Mask" parent="MaskSocket9" unique_id=515549036 instance=ExtResource("2_ofsxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="EmotionMessage" type="Label3D" parent="." unique_id=1178853147]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2320577, 0)
+text = "HI THERE FRIEND"

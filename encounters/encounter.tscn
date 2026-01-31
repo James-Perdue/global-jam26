@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://lxpql5k7mg28"]
+
+[ext_resource type="Script" uid="uid://cx5tmfh1gmxwd" path="res://encounters/encounter.gd" id="1_7nhbq"]
+[ext_resource type="PackedScene" uid="uid://duqfgmk3q5eug" path="res://enemy/enemy.tscn" id="2_368r3"]
+[ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="3_icowq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7nhbq"]
+size = Vector3(2.013916, 3.0408936, 2.0566406)
+
+[node name="Encounter" type="Node3D" unique_id=1653614673]
+script = ExtResource("1_7nhbq")
+
+[node name="Trigger" type="Area3D" parent="." unique_id=361826163]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=1373126186]
+shape = SubResource("BoxShape3D_7nhbq")
+
+[node name="Enemy" parent="." unique_id=2005698740 instance=ExtResource("2_368r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044003844, 0, -1.6039169)
+
+[node name="PreEnemySprite" type="Sprite3D" parent="." unique_id=123805813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5599363)
+texture = ExtResource("3_icowq")
