@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dy364yt7x0ooc"]
+
+[ext_resource type="PackedScene" uid="uid://d328lefh0aogp" path="res://assets/level_models/Doorway.glb" id="1_htioa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8n351"]
+size = Vector3(0.2, 4, 0.90000004)
+
+[node name="WallDoorway" type="StaticBody3D" unique_id=1802230513]
+
+[node name="Doorway2" parent="." unique_id=521324292 instance=ExtResource("1_htioa")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=882737905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 2, 1.55)
+shape = SubResource("BoxShape3D_8n351")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1868084970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 2, -1.5500002)
+shape = SubResource("BoxShape3D_8n351")
