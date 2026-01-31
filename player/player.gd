@@ -5,8 +5,10 @@ class_name Player
 @export var mouse_sensitivity = 0.002
 @export var max_health: int = 100
 @export var damage_cooldown: float = 1.0
+@export var default_damage_rate: int = 1
 
 var health: int = max_health
+var damage_rate: int = default_damage_rate
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var in_encounter : bool = false
 var rotation_locked : bool = false
@@ -25,20 +27,18 @@ func _ready() -> void:
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
 	await get_tree().process_frame
 	SignalBus.player_health_changed.emit(health)
-
-func _on_damage_timer_timeout() -> void:
-	take_damage()
 	damage_timer.start()
+
 
 func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
 	current_encounter = encounter
-	damage_timer.start()
+	damage_rate = ceil(encounter.damage_rate)
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
 	current_encounter = null
-	damage_timer.stop()
+	damage_rate = default_damage_rate
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not rotation_locked:
@@ -112,9 +112,18 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _on_damage_timer_timeout() -> void:
+	if not is_inside_tree():
+		return
+	take_damage()
+	if health > 0:
+		damage_timer.start()
+
 func take_damage() -> void:
-	health -= ceil(current_encounter.damage_rate)
+	health -= damage_rate
 	print("Player damaged: ", health)
 	SignalBus.player_health_changed.emit(health)
 	if health <= 0:
+		print("Game over")
+		damage_timer.stop()
 		SignalBus.game_over.emit()
