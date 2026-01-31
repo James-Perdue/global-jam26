@@ -3,27 +3,43 @@ class_name Player
 
 @export var move_speed: float = 5.0
 @export var mouse_sensitivity = 0.002
+@export var max_health: int = 100
+@export var damage_cooldown: float = 1.0
 
+var health: int = max_health
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var in_encounter : bool = false
 var rotation_locked : bool = false
 var current_encounter : Encounter = null
 
 @onready var camera = $Camera3D
+@onready var damage_timer: Timer = Timer.new()
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	SignalBus.start_encounter.connect(_on_encounter_started)
 	SignalBus.end_encounter.connect(_on_encounter_ended)
+	add_child(damage_timer)
+	#damage_timer.one_shot = true
+	damage_timer.wait_time = damage_cooldown
+	damage_timer.timeout.connect(_on_damage_timer_timeout)
+	await get_tree().process_frame
+	SignalBus.player_health_changed.emit(health)
+
+func _on_damage_timer_timeout() -> void:
+	take_damage()
+	damage_timer.start()
 
 func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
 	current_encounter = encounter
+	damage_timer.start()
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
 	current_encounter = null
-	
+	damage_timer.stop()
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not rotation_locked:
 		# Rotate character body left/right
@@ -95,3 +111,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, move_speed)
 
 	move_and_slide()
+
+func take_damage() -> void:
+	health -= ceil(current_encounter.damage_rate)
+	print("Player damaged: ", health)
+	SignalBus.player_health_changed.emit(health)
+	if health <= 0:
+		SignalBus.game_over.emit()

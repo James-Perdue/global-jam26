@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bg5llagmpo288"]
 
+[ext_resource type="Script" uid="uid://bqub8lkxiqtak" path="res://ui/hud.gd" id="1_276te"]
 [ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="1_rbyyf"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1560016975]
+script = ExtResource("1_276te")
 
 [node name="HudBaseControl" type="Control" parent="." unique_id=342676209]
 layout_mode = 3
@@ -29,3 +31,15 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_rbyyf")
+
+[node name="HealthBar" type="ProgressBar" parent="HudBaseControl" unique_id=1287639065]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -66.0
+offset_right = 211.0
+offset_bottom = -39.0
+grow_vertical = 0
