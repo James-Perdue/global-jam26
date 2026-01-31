@@ -1,6 +1,6 @@
 extends Node
 
-var emotions: Array[EmotionMessage] = []
+var emotions: Dictionary = {} # Dictionary[string, Array[EmotionMessage]]
 
 func _ready() -> void:
 	_load_emotions()
@@ -38,7 +38,14 @@ func _load_emotions() -> void:
 				result_emotions.append(Enums.Emotion[e_str])
 		
 		emotion_msg.emotions = result_emotions
-		emotions.append(emotion_msg)
+		emotions[emotion_msg.audio_key] = emotion_msg
 
 func select_new_emotion_message() -> EmotionMessage:
-	return emotions.pick_random()
+	return emotions.values().pick_random()
+
+func select_specific_emotion_message(audio_key: String) -> EmotionMessage:
+	if audio_key in emotions:
+		return emotions[audio_key]
+	else:
+		push_error("EmotionDatabase: Audio key not found: " + audio_key)
+		return null
