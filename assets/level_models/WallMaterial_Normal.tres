@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d2f4m4m7ujdvb"]
+
+[ext_resource type="Texture2D" uid="uid://bwxu5tk8txama" path="res://assets/level_models/WallPlane_WallTexture.png" id="1_i84qb"]
+
+[resource]
+resource_name = "WallMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_i84qb")
+roughness = 0.5
+texture_filter = 2
