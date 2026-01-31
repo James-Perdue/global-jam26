@@ -2,33 +2,53 @@
 	"Messages": [
 		{
 			"audio_key": "happy_1",
-			"message": "I'm happy!",
+			"message": "We just got a new puppy!",
 			"emotions": ["HAPPY"]
 		},
 		{
 			"audio_key": "happy_2",
-			"message": "I'm really happy!",
+			"message": "I'm going to a festival soon isn't that cool!",
 			"emotions": ["HAPPY"]
 		},
 		{
 			"audio_key": "sad_1",
-			"message": "I'm sad!",
+			"message": "My parents are getting divorced",
 			"emotions": ["SAD"]
 		},
 		{
 			"audio_key": "sad_2",
-			"message": "I'm really sad!",
+			"message": "My dad just died.",
 			"emotions": ["SAD"]
 		},
 		{
 			"audio_key": "angry_1",
-			"message": "I'm angry!",
+			"message": "I just got fired from my job last week!",
 			"emotions": ["ANGRY"]
 		},
 		{
 			"audio_key": "angry_2",
-			"message": "I'm really angry!",
+			"message": "That guy just stole my car!",
 			"emotions": ["ANGRY"]
+		},
+		{
+			"audio_key": "fear_1",
+			"message": "Theres a strange guy who is stalking me lately...",
+			"emotions": ["FEAR"]
+		},
+		{
+			"audio_key": "fear_2",
+			"message": "Have you seen my vape?!",
+			"emotions": ["FEAR"]
+		},
+		{
+			"audio_key": "annoyed_1",
+			"message": "The drinks here suck!",
+			"emotions": ["ANNOYED"]
+		},
+		{
+			"audio_key": "annoyed_2",
+			"message": "Dude, they're out of fireball? F%&@!",
+			"emotions": ["ANNOYED"]
 		}
 	]
 }

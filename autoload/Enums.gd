@@ -1,7 +1,9 @@
 extends Node
 
 enum Emotion {
-    HAPPY,
-    SAD,
-    ANGRY,
+	HAPPY,
+	SAD,
+	ANGRY,
+	FEAR,
+	ANNOYED
 }

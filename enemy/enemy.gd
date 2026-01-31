@@ -60,6 +60,7 @@ func _on_mask_hit(mask: Mask) -> void:
 	# TODO: handle multiple emotions in one message
 	if mask.emotion != emotion_targets[targeting_index].emotions[0]:
 		print("Emotion Incorrect: ", mask.emotion, " Expected: ", emotion_targets[targeting_index])
+		SignalBus.wrong_mask.emit(mask)
 		return
 	print("Emotion Correct: ", mask.emotion)
 	targeting_index += 1
