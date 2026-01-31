@@ -7,4 +7,5 @@ signal wrong_mask(mask:Mask)
 
 signal reset_game
 signal game_over
+signal win
 signal player_health_changed(health:int)
