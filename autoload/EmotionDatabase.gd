@@ -45,3 +45,7 @@ func _load_emotions() -> void:
 
 func get_messages(emotion: Enums.Emotion) -> Array[EmotionMessage]:
 	return emotions.get(emotion, [])
+
+func select_emotions() -> Array[EmotionMessage]:
+	var possible_emotions: Array[EmotionMessage] = EmotionDatabase.get_messages(Enums.Emotion.values().pick_random())
+	return [possible_emotions.pick_random()]

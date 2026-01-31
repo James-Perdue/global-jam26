@@ -7,6 +7,8 @@ class_name Player
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var in_encounter : bool = false
 var rotation_locked : bool = false
+var current_encounter : Encounter = null
+
 @onready var camera = $Camera3D
 
 func _ready() -> void:
@@ -14,12 +16,14 @@ func _ready() -> void:
 	SignalBus.start_encounter.connect(_on_encounter_started)
 	SignalBus.end_encounter.connect(_on_encounter_ended)
 
-func _on_encounter_started() -> void:
+func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
+	current_encounter = encounter
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
-
+	current_encounter = null
+	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not rotation_locked:
 		# Rotate character body left/right
