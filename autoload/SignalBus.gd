@@ -6,3 +6,5 @@ signal end_encounter
 signal wrong_mask(mask:Mask)
 
 signal reset_game
+signal game_over
+signal player_health_changed(health:int)

@@ -11,7 +11,12 @@ func _ready() -> void:
 	hit.connect(_on_hit)
 	emotion_debug_label.text = Enums.Emotion.keys()[emotion]
 
+func reset_mask():
+	hide()
+	$Collider/CollisionShape3D.disabled = true
+
 func set_emotion(value: Enums.Emotion) -> void:
+	$Collider/CollisionShape3D.disabled = false
 	emotion = value
 	emotion_debug_label.text = Enums.Emotion.keys()[emotion]
 
