@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GlobalGameJam2026"
-run/main_scene="uid://xq20d4yqet4p"
+run/main_scene="uid://45f8k7oes3io"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Enums="*uid://bd8wedqo17v3h"
 SignalBus="*uid://bmnfxg587a7b5"
 EmotionDatabase="*uid://b1tcd7mv3cwau"
+GameManager="*uid://fkuqxbcpgop7"
 
 [display]
 
