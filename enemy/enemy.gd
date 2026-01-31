@@ -23,7 +23,7 @@ func start_encounter() -> void:
 	show()
 	# Only pick one emotion target for now
 	
-	emotion_targets = EmotionDatabase.select_emotions()
+	emotion_targets = [EmotionDatabase.select_new_emotion_message()]
 	emotion_message_label.text = emotion_targets[0].message
 	_enable_masks()
 
@@ -45,8 +45,9 @@ func _enable_masks() -> void:
 		print("Mask index: ", mask_index)
 		var mask: Mask = masks[mask_index]
 		var emotion: Enums.Emotion = Enums.Emotion.values().filter(func(e: Enums.Emotion): return not e in chosen_emotions).pick_random()
+		# TODO: handle multiple emotions in one message
 		if(active_masks == 0):
-			emotion = emotion_targets[0].emotion
+			emotion = emotion_targets[0].emotions[0]
 		chosen_emotions.append(emotion)
 		mask.set_emotion(emotion)
 		mask.hit.connect(_on_mask_hit.bind(mask))
@@ -56,7 +57,8 @@ func _enable_masks() -> void:
 		mask.show()
 
 func _on_mask_hit(mask: Mask) -> void:
-	if mask.emotion != emotion_targets[targeting_index].emotion:
+	# TODO: handle multiple emotions in one message
+	if mask.emotion != emotion_targets[targeting_index].emotions[0]:
 		print("Emotion Incorrect: ", mask.emotion, " Expected: ", emotion_targets[targeting_index])
 		return
 	print("Emotion Correct: ", mask.emotion)

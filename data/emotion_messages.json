@@ -1,38 +1,34 @@
 {
-	"HAPPY": [
+	"Messages": [
 		{
 			"audio_key": "happy_1",
 			"message": "I'm happy!",
-			"emotion": "HAPPY"
+			"emotions": ["HAPPY"]
 		},
 		{
 			"audio_key": "happy_2",
 			"message": "I'm really happy!",
-			"emotion": "HAPPY"
-		}
-	],
-	"SAD": [
+			"emotions": ["HAPPY"]
+		},
 		{
 			"audio_key": "sad_1",
 			"message": "I'm sad!",
-			"emotion": "SAD"
+			"emotions": ["SAD"]
 		},
 		{
 			"audio_key": "sad_2",
 			"message": "I'm really sad!",
-			"emotion": "SAD"
-		}
-	],
-	"ANGRY": [
+			"emotions": ["SAD"]
+		},
 		{
 			"audio_key": "angry_1",
 			"message": "I'm angry!",
-			"emotion": "ANGRY"
+			"emotions": ["ANGRY"]
 		},
 		{
 			"audio_key": "angry_2",
 			"message": "I'm really angry!",
-			"emotion": "ANGRY"
+			"emotions": ["ANGRY"]
 		}
 	]
 }
