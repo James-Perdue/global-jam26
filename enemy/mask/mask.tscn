@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://6muuir2bfjfl"]
+
+[ext_resource type="Script" uid="uid://b5hg7tkyjhvx" path="res://enemy/mask/mask.gd" id="1_anl1o"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w3pss"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_w3pss"]
+
+[node name="Mask" type="Node3D" unique_id=1702853835]
+script = ExtResource("1_anl1o")
+
+[node name="Collider" type="StaticBody3D" parent="." unique_id=1025832801]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collider" unique_id=793920818]
+shape = SubResource("SphereShape3D_w3pss")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collider" unique_id=1187605097]
+mesh = SubResource("SphereMesh_w3pss")
+
+[node name="EmotionDebugLabel" type="Label3D" parent="." unique_id=1519027903]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.53348684)
+text = "HAPPY"

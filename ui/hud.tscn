@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bg5llagmpo288"]
+
+[ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="1_rbyyf"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1560016975]
+
+[node name="HudBaseControl" type="Control" parent="." unique_id=342676209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Crosshair" type="TextureRect" parent="HudBaseControl" unique_id=1559269841]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -17.0
+offset_right = 113.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_rbyyf")
