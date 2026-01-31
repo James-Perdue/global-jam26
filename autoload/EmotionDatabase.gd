@@ -1,6 +1,6 @@
 extends Node
 
-var emotions: Dictionary = {} # Dictionary[Enums.Emotion, Array[EmotionMessage]]
+var emotions: Array[EmotionMessage] = []
 
 func _ready() -> void:
 	_load_emotions()
@@ -26,26 +26,19 @@ func _load_emotions() -> void:
 		push_error("EmotionDatabase: JSON data is not a dictionary")
 		return
 		
-	for emotion_key in data.keys():
-		if emotion_key in Enums.Emotion:
-			var enum_value = Enums.Emotion[emotion_key]
-			var messages_data = data[emotion_key]
-			var messages_list: Array[EmotionMessage] = []
-			
-			for msg_data in messages_data:
-				var emotion_msg = EmotionMessage.new()
-				emotion_msg.audio_key = msg_data.get("audio_key", "")
-				emotion_msg.message = msg_data.get("message", "")
-				emotion_msg.emotion = enum_value
-				messages_list.append(emotion_msg)
-				
-			emotions[enum_value] = messages_list
-		else:
-			push_warning("EmotionDatabase: Unknown emotion key in JSON: " + emotion_key)
+	for message_data in data["Messages"]:
+		var emotion_msg = EmotionMessage.new()
+		emotion_msg.audio_key = message_data.get("audio_key", "")
+		emotion_msg.message = message_data.get("message", "")
+		
+		var emotions_strings = message_data.get("emotions", [])
+		var result_emotions: Array[Enums.Emotion] = []
+		for e_str in emotions_strings:
+			if e_str in Enums.Emotion:
+				result_emotions.append(Enums.Emotion[e_str])
+		
+		emotion_msg.emotions = result_emotions
+		emotions.append(emotion_msg)
 
-func get_messages(emotion: Enums.Emotion) -> Array[EmotionMessage]:
-	return emotions.get(emotion, [])
-
-func select_emotions() -> Array[EmotionMessage]:
-	var possible_emotions: Array[EmotionMessage] = EmotionDatabase.get_messages(Enums.Emotion.values().pick_random())
-	return [possible_emotions.pick_random()]
+func select_new_emotion_message() -> EmotionMessage:
+	return emotions.pick_random()
