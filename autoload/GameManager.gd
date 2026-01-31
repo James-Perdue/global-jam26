@@ -4,6 +4,8 @@ var levels: Dictionary = {
 	"level_1": preload("res://levels/test_level_1.tscn"),
 	"test": preload("res://levels/playground.tscn")
 }
+
+
 func _ready() -> void:
 	SignalBus.game_over.connect(_on_game_over)
 	SignalBus.win.connect(_on_win)
