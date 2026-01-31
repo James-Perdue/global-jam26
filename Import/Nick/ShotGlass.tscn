@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://jjxhmje7yrj2"]
+
+[ext_resource type="PackedScene" uid="uid://c5lt1dwd0q7wi" path="res://assets/assets_dependents/ShotGlass.glb" id="1_3iw36"]
+
+[node name="ShotGlass" type="StaticBody3D" unique_id=1822240530]
+
+[node name="ShotGlass" parent="." unique_id=1727677786 instance=ExtResource("1_3iw36")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.17881072, 0, -0.1620748)

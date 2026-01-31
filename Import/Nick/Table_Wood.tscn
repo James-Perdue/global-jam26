@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d2khtfg1rhpgi"]
+
+[ext_resource type="PackedScene" uid="uid://bbkbleu5jfmj1" path="res://assets/assets_dependents/Table_Wood.glb" id="1_yl6bl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7tuma"]
+size = Vector3(8.405457, 4.2915955, 5.4344482)
+
+[node name="TableWood" type="StaticBody3D" unique_id=1815610510]
+
+[node name="Table_Wood" parent="." unique_id=787046913 instance=ExtResource("1_yl6bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0221863, 1.1920929e-07, 2.0388336)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2135131486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021392822, 2.0363617, -0.47357178)
+shape = SubResource("BoxShape3D_7tuma")

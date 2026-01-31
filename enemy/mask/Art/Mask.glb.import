@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dor2sylgfkhb8"
-path="res://.godot/imported/WallPlane.glb-4f54172a1f1be9ef44eb737000b83f08.scn"
+uid="uid://jr65we5gpqap"
+path="res://.godot/imported/Mask.glb-1bbbc423b479427457defe8e56db3d9d.scn"
 
 [deps]
 
-source_file="res://assets/level_models/WallPlane.glb"
-dest_files=["res://.godot/imported/WallPlane.glb-4f54172a1f1be9ef44eb737000b83f08.scn"]
+source_file="res://enemy/mask/Art/Mask.glb"
+dest_files=["res://.godot/imported/Mask.glb-1bbbc423b479427457defe8e56db3d9d.scn"]
 
 [params]
 
@@ -37,14 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"WallMaterial": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets/level_models/WallMaterial_Normal.tres",
-"use_external/path": "uid://d2f4m4m7ujdvb"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
