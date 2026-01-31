@@ -5,13 +5,16 @@ signal enemy_defeated
 @export var max_active_masks: int = 3
 
 var emotion_targets: Array[EmotionMessage] = []
-var targeting_index: int = 0
+var targeting_message_index: int = 0
+var targeting_emotion_index: int = 0
 
 @onready var masks: Array[Mask] = [$MaskSocket1/Mask, $MaskSocket2/Mask, $MaskSocket3/Mask,
  $MaskSocket4/Mask, $MaskSocket5/Mask, $MaskSocket6/Mask,
  $MaskSocket7/Mask, $MaskSocket8/Mask, $MaskSocket9/Mask]
 
 @onready var emotion_message_label: Label3D = %EmotionMessage
+@onready var person: MeshInstance3D = $PersonMesh
+
 func _ready() -> void:
 	emotion_message_label.text = ""
 	hide()
@@ -47,6 +50,7 @@ func _enable_masks() -> void:
 		var emotion: Enums.Emotion = Enums.Emotion.values().filter(func(e: Enums.Emotion): return not e in chosen_emotions).pick_random()
 		# TODO: handle multiple emotions in one message
 		if(active_masks == 0):
+			# TODO: more emotions
 			emotion = emotion_targets[0].emotions[0]
 		chosen_emotions.append(emotion)
 		mask.set_emotion(emotion)
@@ -58,16 +62,16 @@ func _enable_masks() -> void:
 
 func _on_mask_hit(mask: Mask) -> void:
 	# TODO: handle multiple emotions in one message
-	if mask.emotion != emotion_targets[targeting_index].emotions[0]:
-		print("Emotion Incorrect: ", mask.emotion, " Expected: ", emotion_targets[targeting_index])
+	if mask.emotion != emotion_targets[targeting_message_index].emotions[0]:
+		print("Emotion Incorrect: ", mask.emotion, " Expected: ", emotion_targets[targeting_message_index])
 		SignalBus.wrong_mask.emit(mask)
 		return
 	print("Emotion Correct: ", mask.emotion)
-	targeting_index += 1
-	if targeting_index >= emotion_targets.size():
+	targeting_message_index += 1
+	if targeting_message_index >= emotion_targets.size():
 		end_encounter()
 	else:
-		emotion_message_label.text = emotion_targets[targeting_index].message
+		emotion_message_label.text = emotion_targets[targeting_message_index].message
 		_clear_masks()
 		_enable_masks()
 
