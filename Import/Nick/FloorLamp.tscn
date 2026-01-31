@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b1ae55y3k2dmt"]
+
+[ext_resource type="PackedScene" uid="uid://c8xhkny2t2u1" path="res://assets/assets_dependents/FloorLamp.glb" id="1_nqc2v"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nqc2v"]
+height = 4.9523926
+radius = 1.5351563
+
+[node name="FloorLamp" type="StaticBody3D" unique_id=678078888]
+
+[node name="FloorLamp" parent="." unique_id=670046484 instance=ExtResource("1_nqc2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028428912, 0, -0.024167776)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1987863555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6417236, 0)
+shape = SubResource("CylinderShape3D_nqc2v")
