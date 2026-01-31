@@ -92,4 +92,4 @@ func end_encounter() -> void:
 	in_encounter = false
 	
 func get_label_location():
-	return emotion_message_label.position
+	return emotion_message_label.global_position

@@ -13,7 +13,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if enemy != null:
-		rich_text.position = player.camera.unproject_position(enemy.get_label_location())
+		rich_text.show()
+		rich_text.set_position(player.camera.unproject_position(enemy.get_label_location()) + Vector2(-500,-20))
+		rich_text.text = "[b]" + enemy.emotion_targets[0].message + "[/b]"
 		
 
 func _on_player_health_changed(health: int) -> void:
@@ -23,4 +25,5 @@ func _on_encounter_start(encounter:Encounter):
 	enemy = encounter.enemy
 
 func _on_encounter_end():
+	rich_text.hide()
 	enemy = null
