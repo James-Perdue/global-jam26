@@ -22,8 +22,8 @@ func _ready() -> void:
 func start_encounter() -> void:
 	show()
 	# Only pick one emotion target for now
-	var possible_emotions: Array[EmotionMessage] = EmotionDatabase.get_messages(Enums.Emotion.values().pick_random())
-	emotion_targets = [possible_emotions.pick_random()]
+	
+	emotion_targets = EmotionDatabase.select_emotions()
 	emotion_message_label.text = emotion_targets[0].message
 	_enable_masks()
 

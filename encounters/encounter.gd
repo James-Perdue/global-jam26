@@ -1,6 +1,7 @@
 extends Node3D
 class_name Encounter
 
+@export var damage_rate : float = 1.0
 @onready var enemy: Enemy = $Enemy
 @onready var trigger: Area3D = $Trigger
 @onready var pre_enemy_sprite: Sprite3D = $PreEnemySprite
@@ -23,6 +24,7 @@ func start_encounter() -> void:
 	pre_enemy_sprite.hide()
 	SignalBus.start_encounter.emit()
 	enemy.start_encounter()
+	
 func _on_enemy_defeated() -> void:
 	SignalBus.end_encounter.emit()
 	queue_free()
