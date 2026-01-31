@@ -1,7 +1,11 @@
 extends Node
 
 
-signal start_encounter
+signal start_encounter(encounter:Encounter)
 signal end_encounter
+signal wrong_mask(mask:Mask)
 
 signal reset_game
+signal game_over
+signal win
+signal player_health_changed(health:int)

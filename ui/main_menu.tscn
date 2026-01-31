@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://45f8k7oes3io"]
+
+[ext_resource type="Script" uid="uid://4mlgtq6ag2pp" path="res://ui/main_menu.gd" id="1_t7e0r"]
+
+[node name="MainMenu" type="Node3D" unique_id=1053416477]
+script = ExtResource("1_t7e0r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=51629273]
+
+[node name="MenuBaseControl" type="Control" parent="CanvasLayer" unique_id=544892913]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MenuBaseControl" unique_id=1132212036]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -11.5
+offset_right = 48.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Masquerade"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuBaseControl" unique_id=1154166995]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 23.0
+offset_right = 50.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/MenuBaseControl/VBoxContainer" unique_id=1767715709]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"

@@ -1,38 +1,74 @@
 {
-	"HAPPY": [
+	"Messages": [
 		{
 			"audio_key": "happy_1",
-			"message": "I'm happy!",
-			"emotion": "HAPPY"
+			"message": "We just got a new puppy!",
+			"emotions": ["HAPPY"]
 		},
 		{
 			"audio_key": "happy_2",
-			"message": "I'm really happy!",
-			"emotion": "HAPPY"
-		}
-	],
-	"SAD": [
+			"message": "I'm going to a festival soon isn't that cool!",
+			"emotions": ["HAPPY"]
+		},
+		{
+			"audio_key": "happy_3",
+			"message": "They're dropping the charges against me!",
+			"emotions": ["HAPPY"]
+		},
 		{
 			"audio_key": "sad_1",
-			"message": "I'm sad!",
-			"emotion": "SAD"
+			"message": "My parents are getting divorced",
+			"emotions": ["SAD"]
 		},
 		{
 			"audio_key": "sad_2",
-			"message": "I'm really sad!",
-			"emotion": "SAD"
-		}
-	],
-	"ANGRY": [
+			"message": "My dad just died.",
+			"emotions": ["SAD"]
+		},
 		{
 			"audio_key": "angry_1",
-			"message": "I'm angry!",
-			"emotion": "ANGRY"
+			"message": "I just got fired from my job last week!",
+			"emotions": ["ANGRY"]
 		},
 		{
 			"audio_key": "angry_2",
-			"message": "I'm really angry!",
-			"emotion": "ANGRY"
+			"message": "That guy just stole my car!",
+			"emotions": ["ANGRY"]
+		},
+		{
+			"audio_key": "fear_1",
+			"message": "Theres a strange guy who is stalking me lately...",
+			"emotions": ["FEAR"]
+		},
+		{
+			"audio_key": "fear_2",
+			"message": "Have you seen my vape?!",
+			"emotions": ["FEAR"]
+		},
+		{
+			"audio_key": "annoyed_1",
+			"message": "The drinks here suck!",
+			"emotions": ["ANNOYED"]
+		},
+		{
+			"audio_key": "annoyed_2",
+			"message": "Dude, they're out of fireball? F%&@!",
+			"emotions": ["ANNOYED"]
+		},
+		{
+			"audio_key": "annoyed_3",
+			"message": "The music sucks, we should put someone else on aux",
+			"emotions": ["ANNOYED"]
+		},
+		{
+			"audio_key": "ant_man",
+			"message": "Yeah my girlfriend broke up with me,and my mom died, and my dad got deported, but i got the van!",
+			"emotions": ["SAD","SAD","SAD","HAPPY"]
+		},
+		{
+			"audio_key": "weed_guy",
+			"message": "Melissa was really getting on my nerves, but I can smoke now without inturruptions",
+			"emotions": ["ANNOYED","HAPPY"]
 		}
 	]
 }

@@ -7,6 +7,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ofsxj"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_ofsxj"]
+
 [node name="Enemy" type="CharacterBody3D" unique_id=2005698740]
 script = ExtResource("1_2mvqj")
 
@@ -73,4 +75,10 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 [node name="EmotionMessage" type="Label3D" parent="." unique_id=1178853147]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2320577, 0)
+billboard = 1
+no_depth_test = true
+render_priority = 1
 text = "HI THERE FRIEND"
+
+[node name="PersonMesh" type="MeshInstance3D" parent="." unique_id=793638429]
+mesh = SubResource("BoxMesh_ofsxj")
