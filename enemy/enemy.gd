@@ -8,6 +8,7 @@ var emotion_targets: Array[EmotionMessage] = []
 var emotion_count: int = 0
 var targeting_message_index: int = 0
 var targeting_emotion_index: int = 0
+var in_encounter = false
 
 @onready var masks: Array[Mask] = [$MaskSocket1/Mask, $MaskSocket2/Mask, $MaskSocket3/Mask,
  $MaskSocket4/Mask, $MaskSocket5/Mask, $MaskSocket6/Mask,
@@ -21,6 +22,7 @@ func _ready() -> void:
 	hide()
 	for mask in masks:
 		mask.hide()
+		
 
 
 func start_encounter() -> void:
@@ -87,3 +89,7 @@ func end_encounter() -> void:
 	print("enemy defeated")
 	enemy_defeated.emit()
 	queue_free()
+	in_encounter = false
+	
+func get_label_location():
+	return emotion_message_label.global_position
