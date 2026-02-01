@@ -2,6 +2,7 @@ shader_type spatial;
 render_mode blend_mix;
 render_mode cull_disabled;
 uniform sampler2D silhouetteTexture;
+instance uniform float uvoffset_x;
 
 const float wiggleStrength = 0.15;
 const float wiggleSpeed = 5.0;
@@ -42,8 +43,8 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
-	ALBEDO = texture(silhouetteTexture, UV).rgb;
-	ALPHA = texture(silhouetteTexture, UV).a;
+	ALBEDO = texture(silhouetteTexture, (vec2(UV.x/4.0, UV.y) + vec2(uvoffset_x, 0))).rgb;
+	ALPHA = texture(silhouetteTexture, (vec2(UV.x/4.0, UV.y) + vec2(uvoffset_x, 0))).a;
 }
 
 //void light() {

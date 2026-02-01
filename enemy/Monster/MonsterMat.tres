@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dms2orv8k7fan"]
+
+[resource]
+shading_mode = 2
+albedo_color = Color(0.135097, 0.075936235, 0.24661902, 1)
+roughness = 0.45
+rim_enabled = true
+rim = 0.21
+rim_tint = 0.92
+proximity_fade_enabled = true
+distance_fade_mode = 2
+distance_fade_max_distance = 1.0
+stencil_flags = 2
+stencil_color = Color(0.85490197, 0, 0, 1)
