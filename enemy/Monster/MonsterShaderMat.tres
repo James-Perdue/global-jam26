@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dskfylrfkwc85"]
+
+[ext_resource type="Shader" uid="uid://cxoa670fxp22x" path="res://enemy/Monster/MonsterShader.tres" id="1_njd5s"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_njd5s")

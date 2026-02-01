@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dor2sylgfkhb8"
+uid="uid://bswx1e3bn8fa6"
 path="res://.godot/imported/WallPlane.glb-4f54172a1f1be9ef44eb737000b83f08.scn"
 
 [deps]
@@ -23,7 +23,7 @@ nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
-meshes/create_shadow_meshes=true
+meshes/create_shadow_meshes=false
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false

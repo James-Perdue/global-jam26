@@ -1,6 +1,10 @@
 extends Node
 
-var emotions: Dictionary = {} # Dictionary[string, Array[EmotionMessage]]
+var emotions: Dictionary = {} # Dictionary[string,EmotionMessage]
+
+var colors: Dictionary = {"HAPPY": "yellow", "SAD": "blue", "ANGRY": "red", "ANNOYED": "green", "FEAR": "purple"} #Dictionary[string emotion, string color]
+
+var used_emotion_keys: Array[String] = []
 
 func _ready() -> void:
 	_load_emotions()
@@ -40,11 +44,20 @@ func _load_emotions() -> void:
 		emotion_msg.emotions = result_emotions
 		emotions[emotion_msg.audio_key] = emotion_msg
 
-func select_new_emotion_message() -> EmotionMessage:
-	return emotions.values().pick_random()
+func select_new_emotion_message(num_emotions: int = -1) -> EmotionMessage:
+	var available_messages : Array = []
+	if(num_emotions == -1):
+		available_messages = emotions.values().filter(func(m: EmotionMessage): return not m.audio_key in used_emotion_keys)
+	else:
+		available_messages = emotions.values().filter(func(m: EmotionMessage): return m.emotions.size() == num_emotions and not m.audio_key in used_emotion_keys)
+
+	var new_message = available_messages.pick_random()
+	used_emotion_keys.append(new_message.audio_key)
+	return new_message
 
 func select_specific_emotion_message(audio_key: String) -> EmotionMessage:
 	if audio_key in emotions:
+		used_emotion_keys.append(audio_key)
 		return emotions[audio_key]
 	else:
 		push_error("EmotionDatabase: Audio key not found: " + audio_key)

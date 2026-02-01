@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dklxnvyoal5gb"]
+
+[ext_resource type="Texture2D" uid="uid://bj1i3778j8lr0" path="res://assets/level_models/WallTexture_Bathroom.png" id="1_sdq48"]
+
+[resource]
+resource_name = "WallMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_sdq48")
+roughness = 0.5
+texture_filter = 2

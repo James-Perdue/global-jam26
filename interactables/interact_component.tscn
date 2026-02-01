@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c5i6hcppggc82"]
+
+[ext_resource type="Script" uid="uid://cyn8sgxrdbi6i" path="res://interactables/interact_component.gd" id="1_nhncx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m7d4e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7d4e"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m7d4e"]
+material = SubResource("StandardMaterial3D_m7d4e")
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.5
+
+[node name="InteractComponent" type="StaticBody3D" unique_id=492599483]
+script = ExtResource("1_nhncx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1152483864]
+shape = SubResource("SphereShape3D_m7d4e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=505492712]
+mesh = SubResource("CylinderMesh_m7d4e")
+
+[node name="InteractLabel" type="Label3D" parent="." unique_id=2144635504]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7708871, 0)
+billboard = 1
+no_depth_test = true
+text = "Interact"

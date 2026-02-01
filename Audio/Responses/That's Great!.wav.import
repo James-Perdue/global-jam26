@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://40jsw7ehb636"
+path="res://.godot/imported/That's Great!.wav-4cea0368775070d98d99661fc156429f.sample"
+
+[deps]
+
+source_file="res://Audio/Responses/That's Great!.wav"
+dest_files=["res://.godot/imported/That's Great!.wav-4cea0368775070d98d99661fc156429f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

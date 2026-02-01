@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dv44i5kavqi6f"]
+
+[ext_resource type="PackedScene" uid="uid://jr65we5gpqap" path="res://enemy/mask/Art/Mask.glb" id="1_o05x4"]
+[ext_resource type="Texture2D" uid="uid://d4keb3050ycoi" path="res://enemy/mask/Art/mask_texture_atlas.tres" id="2_3bk5b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msnhc"]
+albedo_texture = ExtResource("2_3bk5b")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[node name="Mask" unique_id=1548447230 instance=ExtResource("1_o05x4")]
+
+[node name="Sphere" parent="." index="0" unique_id=2074553727]
+surface_material_override/0 = SubResource("StandardMaterial3D_msnhc")
