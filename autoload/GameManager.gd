@@ -21,9 +21,11 @@ func _on_game_over() -> void:
 
 func load_level(level_name: String) -> void:
 	var result = get_tree().change_scene_to_packed(levels[level_name])
+	reset_game()
 	if result != OK:
 		print("Failed to change scene to level: ", level_name)
 
 func reset_game() -> void:
+	EmotionDatabase.used_emotion_keys.clear()
 	#Reset globals here
 	pass
