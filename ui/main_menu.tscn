@@ -38,9 +38,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -50.0
-offset_top = 23.0
+offset_top = 27.0
 offset_right = 50.0
-offset_bottom = 63.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -48,3 +48,13 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Play"
+
+[node name="PlaygroundButton" type="Button" parent="CanvasLayer/MenuBaseControl/VBoxContainer" unique_id=1765820214]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Playground"
+
+[node name="StressTestButton" type="Button" parent="CanvasLayer/MenuBaseControl/VBoxContainer" unique_id=809415573]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stress Test"

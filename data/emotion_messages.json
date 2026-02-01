@@ -16,6 +16,11 @@
 			"emotions": ["HAPPY"]
 		},
 		{
+			"audio_key": "happy_4",
+			"message": "Party Rock is in the house tonight!",
+			"emotions": ["HAPPY"]
+		},
+		{
 			"audio_key": "sad_1",
 			"message": "My parents are getting divorced",
 			"emotions": ["SAD"]
@@ -23,6 +28,11 @@
 		{
 			"audio_key": "sad_2",
 			"message": "My dad just died.",
+			"emotions": ["SAD"]
+		},
+		{
+			"audio_key": "sad_3",
+			"message": "I wish i was home playing minecraft",
 			"emotions": ["SAD"]
 		},
 		{
@@ -36,6 +46,16 @@
 			"emotions": ["ANGRY"]
 		},
 		{
+			"audio_key": "angry_3",
+			"message": "Can you believe Chad is cheating on me AGAIN?",
+			"emotions": ["ANGRY"]
+		},
+		{
+			"audio_key": "angry_4",
+			"message": "Ugh, I hate this song!",
+			"emotions": ["ANGRY"]
+		},
+		{
 			"audio_key": "fear_1",
 			"message": "Theres a strange guy who is stalking me lately...",
 			"emotions": ["FEAR"]
@@ -43,6 +63,16 @@
 		{
 			"audio_key": "fear_2",
 			"message": "Have you seen my vape?!",
+			"emotions": ["FEAR"]
+		},
+		{
+			"audio_key": "fear_3",
+			"message": "I stepped on a nail... I might get tetanus",
+			"emotions": ["FEAR"]
+		},
+		{
+			"audio_key": "fear_4",
+			"message": "Who invited that sketchy guy?",
 			"emotions": ["FEAR"]
 		},
 		{
@@ -61,14 +91,24 @@
 			"emotions": ["ANNOYED"]
 		},
 		{
+			"audio_key": "annoyed_4",
+			"message": "I think i dropped my lighter around here.",
+			"emotions": ["ANNOYED"]
+		},
+		{
 			"audio_key": "ant_man",
-			"message": "Yeah my girlfriend broke up with me,and my mom died, and my dad got deported, but i got the van!",
+			"message": "Yeah my girlfriend broke up with me,|and my mom died,| and my dad got deported,| but i got the van!",
 			"emotions": ["SAD","SAD","SAD","HAPPY"]
 		},
 		{
 			"audio_key": "weed_guy",
-			"message": "Melissa was really getting on my nerves, but I can smoke now without inturruptions",
+			"message": "Melissa was really getting on my nerves,| but I can smoke now without inturruptions",
 			"emotions": ["ANNOYED","HAPPY"]
+		},
+		{
+			"audio_key": "hump_day",
+			"message": "Its hump day!| But i gotta work tomorrow",
+			"emotions": ["HAPPY","SAD"]
 		}
 	]
 }

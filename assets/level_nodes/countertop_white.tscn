@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bm1c1agjxiqo4"]
+
+[ext_resource type="PackedScene" uid="uid://dcgjuin606nha" path="res://assets/level_models/Countertop_WhiteMarble.glb" id="1_ecddt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ayxxa"]
+size = Vector3(2.0223312, 0.5317383, 0.9145508)
+
+[node name="CountertopWhite" type="StaticBody3D" unique_id=1620607076]
+
+[node name="Countertop_WhiteMarble" parent="." unique_id=1540174205 instance=ExtResource("1_ecddt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009109378, 0, 0.058549643)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1742377289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009075165, 0.23413086, 0.04272461)
+shape = SubResource("BoxShape3D_ayxxa")

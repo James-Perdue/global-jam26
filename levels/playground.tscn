@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://lxpql5k7mg28" path="res://encounters/encounter.tscn" id="2_ek3o3"]
 [ext_resource type="PackedScene" uid="uid://dtda1h5ag44c1" path="res://player/player.tscn" id="3_1y5p2"]
 [ext_resource type="PackedScene" uid="uid://bg5llagmpo288" path="res://ui/hud.tscn" id="4_i7xqd"]
-[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="5_ek3o3"]
+[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objectives/objective.tscn" id="5_ek3o3"]
+[ext_resource type="PackedScene" uid="uid://gkisya1730eg" path="res://interactables/heal_items/heal_item.tscn" id="6_1y5p2"]
+[ext_resource type="PackedScene" uid="uid://c3vh87qjxe5jm" path="res://interactables/shotgun_item.tscn" id="7_i7xqd"]
+[ext_resource type="AudioStream" uid="uid://knvyci215wvn" path="res://Audio/ReversedAudio/happy_3.wav" id="8_ax0xp"]
 
-[node name="Node3D" type="Node3D" unique_id=1317390877 node_paths=PackedStringArray("objectives")]
+[node name="Node3D" type="Node3D" unique_id=1317390877]
 script = ExtResource("1_wcyx1")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=342892620]
@@ -17,25 +20,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029907227, -0.50266695, -0
 size = Vector3(21.568604, 1, 17.706055)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=197402919]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9322228, 1.3808594, -7.8624763)
+transform = Transform3D(0.9999989, 0.001466076, 0, -0.001466076, 0.9999989, 0, 0, 0, 1, -1.9322228, 1.3808594, -7.8624763)
 size = Vector3(1, 3.7617188, 5.1557617)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=111571581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8489196, 1.3808594, -7.8624763)
 size = Vector3(1, 3.7617188, 5.1557617)
 
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=111620539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.341821, -0.72224057, -2.1311092)
+size = Vector3(1, 3.7617188, 2.1721191)
+
 [node name="Encounter" parent="CSGCombiner3D" unique_id=1653614673 instance=ExtResource("2_ek3o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055560827, 0.9973335, -5.9527197)
 damage_rate = 5.0
+emotion_count = 4
+
+[node name="Encounter2" parent="CSGCombiner3D" unique_id=614241900 instance=ExtResource("2_ek3o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0590153, 0.9973335, -5.9527197)
+damage_rate = 5.0
+emotion_count = 2
+
+[node name="Encounter3" parent="CSGCombiner3D" unique_id=274076822 instance=ExtResource("2_ek3o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.020088, 0.9973335, -5.9527197)
+damage_rate = 5.0
+fixed_key = "annoyed_1"
+
+[node name="Encounter4" parent="CSGCombiner3D" unique_id=1409321989 instance=ExtResource("2_ek3o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.077745, 0.9973335, -5.9527197)
+damage_rate = 5.0
+fixed_key = "happy_3"
 
 [node name="Player" parent="." unique_id=1257764422 instance=ExtResource("3_1y5p2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14560461, 1.9737635, -0.41064358)
+recoil_amount = 0.17453292519943295
 
 [node name="Hud" parent="." unique_id=1560016975 instance=ExtResource("4_i7xqd")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=101325080]
 transform = Transform3D(1, 0, 0, 0, 0.8128772, 0.58243513, 0, -0.58243513, 0.8128772, 0.5709572, 2.7587667, 4.9045553)
-light_energy = 3.693
 
 [node name="Objective1" parent="." unique_id=225475714 instance=ExtResource("5_ek3o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8935418, 0.24733365, -1.5245075)
@@ -51,3 +74,19 @@ tier = 2
 [node name="Objective4" parent="." unique_id=717103970 instance=ExtResource("5_ek3o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8935418, 0.24733365, 1.1258829)
 tier = 1
+
+[node name="HealItem" parent="." unique_id=1765869013 instance=ExtResource("6_1y5p2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3656034, 1.364546, -1.8640461)
+
+[node name="ShotgunItem" parent="." unique_id=1810663129 instance=ExtResource("7_i7xqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0402093, 1.4086189, -2.8328743)
+
+[node name="Tier2" type="Node3D" parent="." unique_id=1720174218]
+unique_name_in_owner = true
+
+[node name="Tier3" type="Node3D" parent="." unique_id=1421466000]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=594338586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.717877, 0.9973335, 1.2548194)
+stream = ExtResource("8_ax0xp")

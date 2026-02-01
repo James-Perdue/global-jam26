@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cx5tmfh1gmxwd" path="res://encounters/encounter.gd" id="1_7nhbq"]
 [ext_resource type="PackedScene" uid="uid://duqfgmk3q5eug" path="res://enemy/enemy.tscn" id="2_368r3"]
-[ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="3_icowq"]
+[ext_resource type="Texture2D" uid="uid://b4r3a73fpsscy" path="res://assets/CrowdSillhouettes/CrowdSillhouette1.png" id="3_icowq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7nhbq"]
 size = Vector3(2.013916, 3.0408936, 2.0566406)
 
 [node name="Encounter" type="Node3D" unique_id=1653614673]
 script = ExtResource("1_7nhbq")
+damage_rate = 2.0
 
 [node name="Trigger" type="Area3D" parent="." unique_id=361826163]
 
@@ -16,8 +17,9 @@ script = ExtResource("1_7nhbq")
 shape = SubResource("BoxShape3D_7nhbq")
 
 [node name="Enemy" parent="." unique_id=2005698740 instance=ExtResource("2_368r3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044003844, 0, -2.4006982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044003844, -0.11112982, -2.1226804)
 
 [node name="PreEnemySprite" type="Sprite3D" parent="." unique_id=123805813]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3567176)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.11173141, -2.1260395)
+modulate = Color(0.69799274, 0.69799274, 0.69799274, 1)
 texture = ExtResource("3_icowq")

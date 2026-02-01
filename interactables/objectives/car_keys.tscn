@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dnie0x0jgu8bp"]
+
+[ext_resource type="Script" uid="uid://mxt5kes1olcg" path="res://interactables/objectives/objective.gd" id="1_8ak2r"]
+[ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_o6wli"]
+[ext_resource type="PackedScene" uid="uid://b1y2bjnx8qv4o" path="res://assets/level_models/Carkeys.glb" id="3_o6wli"]
+
+[node name="CarKeys" type="Node3D" unique_id=225475714 groups=["ObjectiveGroup"]]
+script = ExtResource("1_8ak2r")
+heal_amount = 20
+objective_description = "Where's my car keys?"
+
+[node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_o6wli")]
+
+[node name="MeshInstance3D" parent="InteractComponent" index="1" unique_id=505492712]
+visible = false
+
+[node name="Carkeys" parent="." unique_id=1835502699 instance=ExtResource("3_o6wli")]
+
+[editable path="InteractComponent"]
