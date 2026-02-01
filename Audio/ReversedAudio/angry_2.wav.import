@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c7needfk6ckew"
-path="res://.godot/imported/weed_guy.wav-44be0e3ecc1971149cc208712c12b2e8.sample"
+uid="uid://bp6jc2kexy74g"
+path="res://.godot/imported/angry_2.wav-c1e5f3292282042400d174d0e5d8628e.sample"
 
 [deps]
 
-source_file="res://Audio/ReversedAudio/weed_guy.wav"
-dest_files=["res://.godot/imported/weed_guy.wav-44be0e3ecc1971149cc208712c12b2e8.sample"]
+source_file="res://Audio/ReversedAudio/angry_2.wav"
+dest_files=["res://.godot/imported/angry_2.wav-c1e5f3292282042400d174d0e5d8628e.sample"]
 
 [params]
 
