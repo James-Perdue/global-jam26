@@ -2,7 +2,9 @@ shader_type spatial;
 render_mode blend_mix;
 render_mode cull_disabled;
 uniform sampler2D silhouetteTexture;
-instance uniform float uvoffset_x;
+//instance uniform float uvoffset_x;
+
+const float uvoffset_x = 0.25;
 
 const float wiggleStrength = 0.15;
 const float wiggleSpeed = 5.0;
