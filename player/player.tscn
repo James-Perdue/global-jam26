@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bdfl1q6gf30ig" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://c5tn5rf6tk730" path="res://player/Revolver/Revolver.glb" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://csyer07ftxyax" path="res://player/Shotgun/Shotgun.glb" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://rrw0sf0ssewh" path="res://ParticleEffects/Gunshot/GunshotEffect.tscn" id="4_yw30f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -34,6 +35,10 @@ transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.092784
 [node name="Shotgun" parent="Camera3D" unique_id=1705330155 instance=ExtResource("3_g1dw6")]
 unique_name_in_owner = true
 transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0.22889313, -0.07684076, -0.48503482)
+
+[node name="GunshotEffect" parent="Camera3D" unique_id=1660818070 instance=ExtResource("4_yw30f")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.2413787, -0.061173677, -0.6897052)
 
 [node name="CannedAudio" type="AudioStreamPlayer3D" parent="." unique_id=800257367]
 unique_name_in_owner = true

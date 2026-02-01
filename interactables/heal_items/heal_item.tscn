@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://gkisya1730eg"]
+
+[ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="1_2wbwf"]
+[ext_resource type="Script" uid="uid://dv7ee6a2h5gse" path="res://interactables/heal_items/heal_item.gd" id="1_8k5o3"]
+
+[node name="HealItem" type="Node3D" unique_id=1765869013]
+script = ExtResource("1_8k5o3")
+
+[node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("1_2wbwf")]

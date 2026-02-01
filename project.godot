@@ -22,15 +22,22 @@ Enums="*uid://bd8wedqo17v3h"
 SignalBus="*uid://bmnfxg587a7b5"
 EmotionDatabase="*uid://b1tcd7mv3cwau"
 GameManager="*uid://fkuqxbcpgop7"
+MusicManager="*uid://ccxkgfotynmul"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [global_group]
 
 ObjectiveGroup=""
+
+[gui]
+
+theme/custom="uid://6p0fj7t3um70"
+theme/custom_font="uid://di4oiajk32gyj"
 
 [input]
 

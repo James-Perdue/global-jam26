@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://lxpql5k7mg28" path="res://encounters/encounter.tscn" id="2_ek3o3"]
 [ext_resource type="PackedScene" uid="uid://dtda1h5ag44c1" path="res://player/player.tscn" id="3_1y5p2"]
 [ext_resource type="PackedScene" uid="uid://bg5llagmpo288" path="res://ui/hud.tscn" id="4_i7xqd"]
-[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="5_ek3o3"]
-[ext_resource type="PackedScene" path="res://interactables/heal_item.tscn" id="6_1y5p2"]
+[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objectives/objective.tscn" id="5_ek3o3"]
+[ext_resource type="PackedScene" uid="uid://gkisya1730eg" path="res://interactables/heal_items/heal_item.tscn" id="6_1y5p2"]
 [ext_resource type="PackedScene" uid="uid://c3vh87qjxe5jm" path="res://interactables/shotgun_item.tscn" id="7_i7xqd"]
 [ext_resource type="AudioStream" uid="uid://knvyci215wvn" path="res://Audio/ReversedAudio/happy_3.wav" id="8_ax0xp"]
 

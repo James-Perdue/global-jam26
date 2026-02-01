@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bpe0pji1edm80" path="res://assets/level_models/Phone.glb" id="11_px3ys"]
 [ext_resource type="PackedScene" uid="uid://ntg2vr5wg2t7" path="res://assets/level_nodes/bar_white.tscn" id="13_ly652"]
 [ext_resource type="PackedScene" uid="uid://bm1c1agjxiqo4" path="res://assets/level_nodes/countertop_white.tscn" id="13_rirmo"]
-[ext_resource type="PackedScene" uid="uid://b0ug7rmbcarwm" path="res://assets/level_nodes/couch_red.tscn" id="14_rirmo"]
-[ext_resource type="PackedScene" uid="uid://d2qwfwigokcf0" path="res://assets/level_models/BeerBottle.glb" id="15_80v5j"]
+[ext_resource type="PackedScene" uid="uid://dyn6w8uu5iwmt" path="res://assets/level_models/BeerBottle.glb" id="15_80v5j"]
+[ext_resource type="PackedScene" uid="uid://dl62hq65vx8qf" path="res://assets/level_models/BeerCan.glb" id="16_xvqt0"]
 
 [node name="Node3D" type="Node3D" unique_id=1317390877]
 script = ExtResource("1_6witb")
@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14560461, 1.9737635, -0.41
 [node name="Hud" parent="." unique_id=1560016975 instance=ExtResource("4_0rqh8")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=101325080]
-transform = Transform3D(1, 0, 0, 0, 0.8128772, 0.58243513, 0, -0.58243513, 0.8128772, 0.5709572, 2.7587667, 4.9045553)
+transform = Transform3D(1, 0, 0, 0, 0.8128772, 0.58243513, 0, -0.58243513, 0.8128772, 0.01810193, 6.2788258, 6.3450785)
 light_energy = 3.693
 
 [node name="Objective1" parent="." unique_id=225475714 instance=ExtResource("5_gdq3w")]
@@ -86,8 +86,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0329447, -0.0026657581, 1.
 [node name="BarWhite" parent="." unique_id=898099283 instance=ExtResource("13_ly652")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.281527, -0.002666235, 2.0563245)
 
-[node name="CouchRed" parent="." unique_id=272237701 instance=ExtResource("14_rirmo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7682242, 0.011716366, -1.6513071)
-
 [node name="BeerBottle" parent="." unique_id=1975348445 instance=ExtResource("15_80v5j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0556183, 1.3141078, 1.5879111)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1918116, 1.271544, 1.6143742)
+
+[node name="BeerCan" parent="." unique_id=867732288 instance=ExtResource("16_xvqt0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.376375, 1.199427, 1.4217687)
+
+[node name="BeerCan2" parent="." unique_id=1571832826 instance=ExtResource("16_xvqt0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9712852, 0.498012, 1.7928721)
