@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://bpli2bmok02x"]
 
-[ext_resource type="Shader" uid="uid://br8pgjmml27vl" path="res://SparkShader.tres" id="1_u8r77"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mpdgx"]
-render_priority = 0
-shader = ExtResource("1_u8r77")
+[ext_resource type="Material" uid="uid://dq3hm4osrxa7a" path="res://ParticleEffects/Sparks/SparkParticleSimple.tres" id="1_u8r77"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_mc4mh"]
-material = SubResource("ShaderMaterial_mpdgx")
+material = ExtResource("1_u8r77")
 size = Vector2(0.1, 0.1)
 
 [sub_resource type="Curve" id="Curve_gak56"]
@@ -16,7 +12,7 @@ point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_u8r77"]
 offsets = PackedFloat32Array(0, 0.12605043, 1)
-colors = PackedColorArray(0.23137255, 0.25490198, 0.25882354, 0.57254905, 1, 1, 1, 1, 0.019607844, 0.019607844, 0.019607844, 0.14117648)
+colors = PackedColorArray(0.23137255, 0.25490198, 0.25882354, 0.57254905, 1, 1, 1, 1, 0.49354547, 0.49354553, 0.49354535, 0.14117648)
 
 [node name="Node3D" type="Node3D" unique_id=115632460]
 
@@ -39,3 +35,5 @@ angle_max = 360.0
 scale_amount_curve = SubResource("Curve_gak56")
 color = Color(0.881994, 0, 0.11288362, 1)
 color_ramp = SubResource("Gradient_u8r77")
+anim_speed_min = 1.0
+anim_speed_max = 2.0
