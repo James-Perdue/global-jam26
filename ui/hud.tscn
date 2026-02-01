@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="1_rbyyf"]
 [ext_resource type="Script" uid="uid://dtxlju7he8e3q" path="res://ui/Text Effects/EmotionColor.gd" id="3_546lt"]
 [ext_resource type="Script" uid="uid://cawny8ajvn3rf" path="res://ui/Text Effects/WritingEffect.gd" id="4_7ihmi"]
+[ext_resource type="Script" uid="uid://bglfhcoxx86m1" path="res://ui/Text Effects/MonsterEffect.gd" id="5_en2x2"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_7ihmi"]
 script = ExtResource("3_546lt")
@@ -12,6 +13,10 @@ metadata/_custom_type_script = "uid://dtxlju7he8e3q"
 [sub_resource type="RichTextEffect" id="RichTextEffect_en2x2"]
 script = ExtResource("4_7ihmi")
 metadata/_custom_type_script = "uid://cawny8ajvn3rf"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_1v5rv"]
+script = ExtResource("5_en2x2")
+metadata/_custom_type_script = "uid://bglfhcoxx86m1"
 
 [node name="Hud" type="CanvasLayer" unique_id=1560016975]
 script = ExtResource("1_276te")
@@ -72,4 +77,4 @@ fit_content = true
 tab_size = 9
 horizontal_alignment = 1
 vertical_alignment = 1
-custom_effects = [SubResource("RichTextEffect_7ihmi"), SubResource("RichTextEffect_en2x2")]
+custom_effects = [SubResource("RichTextEffect_7ihmi"), SubResource("RichTextEffect_en2x2"), SubResource("RichTextEffect_1v5rv")]

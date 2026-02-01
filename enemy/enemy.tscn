@@ -57,6 +57,7 @@ script = ExtResource("1_2mvqj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=309718217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18661314, 0)
 shape = SubResource("CapsuleShape3D_scxef")
+disabled = true
 
 [node name="EnemyMesh" parent="." unique_id=1169895927 instance=ExtResource("2_ppra6")]
 unique_name_in_owner = true
@@ -69,7 +70,7 @@ bone_idx = 117
 
 [node name="Mask1" parent="EnemyMesh/rig/Skeleton3D/MaskSocket1" unique_id=1702853835 instance=ExtResource("2_ofsxj")]
 unique_name_in_owner = true
-transform = Transform3D(0.42148617, 0.5894889, 0.19326714, -0.29424918, -0.01572908, 0.6896883, 0.54613805, -0.46341705, 0.22243609, 0.3053214, 0.35337073, 0.26110804)
+transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
 
 [node name="MaskSocket2" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 107288838) index="2" unique_id=1825298830]
 transform = Transform3D(-0.36560875, 0.5800028, -0.7279607, -0.60598564, 0.44531134, 0.6591501, 0.70647824, 0.6821248, 0.18866368, 0.45811725, 2.8324122, -0.017699912)
@@ -78,7 +79,7 @@ bone_idx = 109
 
 [node name="Mask2" parent="EnemyMesh/rig/Skeleton3D/MaskSocket2" unique_id=1500641921 instance=ExtResource("2_ofsxj")]
 unique_name_in_owner = true
-transform = Transform3D(0.42148617, 0.5894889, 0.19326714, -0.29424918, -0.01572908, 0.6896883, 0.54613805, -0.46341705, 0.22243609, 0.3053214, 0.35337073, 0.26110804)
+transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
 
 [node name="MaskSocket3" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 107288838) index="3" unique_id=788118794]
 transform = Transform3D(0.3073303, -0.72284997, 0.6188989, 0.76151603, -0.20319298, -0.61547196, 0.5706498, 0.6604548, 0.48801443, 1.3851383e-09, 1.9278834, 0.035886668)
@@ -87,7 +88,7 @@ bone_idx = 26
 
 [node name="Mask3" parent="EnemyMesh/rig/Skeleton3D/MaskSocket3" unique_id=1870763949 instance=ExtResource("2_ofsxj")]
 unique_name_in_owner = true
-transform = Transform3D(0.42148617, 0.5894889, 0.19326714, -0.29424918, -0.01572908, 0.6896883, 0.54613805, -0.46341705, 0.22243609, 0.3053214, 0.35337073, 0.26110804)
+transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
 
 [node name="MaskSocket4" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 107288838) index="4" unique_id=1310851106]
 transform = Transform3D(0.044016566, -0.6386755, 0.76821613, 0.9938178, -0.05045961, -0.0988937, 0.10192487, 0.7678199, 0.6325061, 1.3851335e-09, 2.2496564, 0.025502104)
@@ -96,67 +97,11 @@ bone_idx = 33
 
 [node name="Mask4" parent="EnemyMesh/rig/Skeleton3D/MaskSocket4" unique_id=1746759714 instance=ExtResource("2_ofsxj")]
 unique_name_in_owner = true
-transform = Transform3D(0.42148617, 0.5894889, 0.19326714, -0.29424918, -0.01572908, 0.6896883, 0.54613805, -0.46341705, 0.22243609, 0.3053214, 0.35337073, 0.26110804)
-
-[node name="MaskSocket2" type="Node3D" parent="." unique_id=761905197]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023441717, 0.6562109, 0.5098043)
-visible = false
-
-[node name="Mask" parent="MaskSocket2" unique_id=295150212 instance=ExtResource("2_ofsxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-
-[node name="MaskSocket3" type="Node3D" parent="." unique_id=643697745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27540755, 0.6562109, 0.5098043)
-visible = false
-
-[node name="Mask" parent="MaskSocket3" unique_id=638400878 instance=ExtResource("2_ofsxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-
-[node name="MaskSocket4" type="Node3D" parent="." unique_id=951169212]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2289911, 0.3439625, 0.5098043)
-visible = false
-
-[node name="Mask" parent="MaskSocket4" unique_id=1598036917 instance=ExtResource("2_ofsxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-
-[node name="MaskSocket5" type="Node3D" parent="." unique_id=1000147875]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023441717, 0.3439625, 0.5098043)
-visible = false
-
-[node name="Mask" parent="MaskSocket5" unique_id=1881544737 instance=ExtResource("2_ofsxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-
-[node name="MaskSocket6" type="Node3D" parent="." unique_id=567108012]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27540755, 0.3439625, 0.5098043)
-visible = false
-
-[node name="Mask" parent="MaskSocket6" unique_id=307884043 instance=ExtResource("2_ofsxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-
-[node name="MaskSocket7" type="Node3D" parent="." unique_id=382927241]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2289911, 0.024394274, 0.5098043)
-visible = false
-
-[node name="Mask" parent="MaskSocket7" unique_id=750913568 instance=ExtResource("2_ofsxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-
-[node name="MaskSocket8" type="Node3D" parent="." unique_id=1196584781]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023441717, 0.024394274, 0.5098043)
-visible = false
-
-[node name="Mask" parent="MaskSocket8" unique_id=224174317 instance=ExtResource("2_ofsxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-
-[node name="MaskSocket9" type="Node3D" parent="." unique_id=154577408]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27540755, 0.024394274, 0.5098043)
-visible = false
-
-[node name="Mask" parent="MaskSocket9" unique_id=1953879215 instance=ExtResource("2_ofsxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
 
 [node name="EmotionMessage" type="Label3D" parent="." unique_id=1178853147]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.337877, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60851, 0)
 visible = false
 no_depth_test = true
 render_priority = 1
