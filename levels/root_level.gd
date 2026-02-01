@@ -50,6 +50,8 @@ func advance_objective_tier() -> void:
 	_process_objective_tier()
 
 func _process_objective_tier() -> void:
+	if(len(objective_tiers.keys()) <= 0):
+		return
 	current_objectives = objective_tiers[current_objective_tier]
 	# for objective in current_objectives:
 	# 	objective.enable_objective()
