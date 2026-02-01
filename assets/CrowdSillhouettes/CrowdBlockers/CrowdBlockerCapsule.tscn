@@ -27,3 +27,4 @@ mesh = SubResource("QuadMesh_ubgu0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1735828188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79019165, 0)
 shape = SubResource("CylinderShape3D_6r025")
+debug_color = Color(7.1305175, 18.892157, 0, 1)
