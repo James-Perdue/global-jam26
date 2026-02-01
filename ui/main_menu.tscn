@@ -53,8 +53,3 @@ text = "Play"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Playground"
-
-[node name="StressTestButton" type="Button" parent="CanvasLayer/MenuBaseControl/VBoxContainer" unique_id=809415573]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Stress Test"
