@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cc3ovmnyblxvg" path="res://ParticleEffects/Smoke/SmokeParticle.png" id="1_1l0je"]
 
 [resource]
+render_priority = 1
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
