@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dadu6ytnmi0e0"]
+
+[ext_resource type="Texture2D" uid="uid://bpwcr6ksgo4le" path="res://assets/level_models/FloorPlane_CarpetTexture.png" id="1_t55vp"]
+
+[resource]
+resource_name = "CarpetMaterial"
+albedo_texture = ExtResource("1_t55vp")
+roughness = 0.5
+texture_filter = 2

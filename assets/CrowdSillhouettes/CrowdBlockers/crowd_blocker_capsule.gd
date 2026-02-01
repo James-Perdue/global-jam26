@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func initializeSillhouette(sill: MeshInstance3D, collider: CollisionShape3D) -> void:
 	#UV
-	sill.set_instance_shader_parameter("uvoffset_x", float(randi_range(0, 4)) * (1/4.0));
+	#sill.set_instance_shader_parameter("uvoffset_x", float(randi_range(0, 4)) * (1/4.0));
 	
 	# position
 	sill.position.x = randf_range((collider.position.x - collider.shape.radius)
