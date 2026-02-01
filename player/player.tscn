@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdfl1q6gf30ig" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://c5tn5rf6tk730" path="res://player/Revolver/Revolver.glb" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://csyer07ftxyax" path="res://player/Shotgun/Shotgun.glb" id="3_g1dw6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -29,3 +30,7 @@ shape = SubResource("CapsuleShape3D_oul6g")
 [node name="Revolver" parent="Camera3D" unique_id=1435748090 instance=ExtResource("2_rkbax")]
 unique_name_in_owner = true
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0.24242622, -0.30604607, -0.15090406)
+
+[node name="Shotgun" parent="Camera3D" unique_id=1705330155 instance=ExtResource("3_g1dw6")]
+unique_name_in_owner = true
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0.22889313, -0.07684076, -0.48503482)

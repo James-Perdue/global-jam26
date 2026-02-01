@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c3vh87qjxe5jm"]
+
+[ext_resource type="Script" uid="uid://bhy53penddmvu" path="res://interactables/shotgun_item.gd" id="1_i5www"]
+[ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_u73o6"]
+
+[node name="ShotgunItem" type="Node3D" unique_id=1765869013]
+script = ExtResource("1_i5www")
+
+[node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_u73o6")]
+
+[node name="MeshInstance3D" parent="InteractComponent" index="1" unique_id=505492712]
+visible = false
+
+[editable path="InteractComponent"]

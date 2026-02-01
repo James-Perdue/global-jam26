@@ -13,10 +13,14 @@ var end_writing_effect = "[/we]"
 
 var monster_effect = "[me]"
 var end_monster_effect = "[/me]"
+
+var current_objectives : Array[Objective] = []
+
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var rich_text: RichTextLabel = %DialogueBox
 @onready var hud_fps_label: Label = %FPSLabel
 @onready var loading_screen: Control = %LoadingScreen
+@onready var objectives_label: RichTextLabel = %ObjectiveLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -72,3 +76,29 @@ func _on_correct_mask():
 		emotion+=1
 		
 	rich_text.text += end_monster_effect 
+
+func update_objectives() -> void:
+	var tween = create_tween()
+	tween.tween_property(objectives_label, "modulate:a", 0.0, 0.2).set_trans(Tween.TRANS_SINE)
+	await tween.finished
+	
+	var objective_text = ""
+	for objective in current_objectives:
+		var formatted_text = "* "
+		if objective.is_completed:
+			formatted_text += "[s]"
+		formatted_text += objective.objective_description
+		if objective.is_completed:
+			formatted_text += "[/s]"
+		formatted_text += "\n"
+		objective_text += formatted_text
+	objectives_label.text = objective_text
+	
+	var tween_back = create_tween()
+	tween_back.tween_property(objectives_label, "modulate:a", 1.0, 0.4).set_trans(Tween.TRANS_SINE)
+
+func set_objectives(objectives: Array) -> void:
+	current_objectives.clear()
+	for objective in objectives:
+		current_objectives.append(objective as Objective)
+	update_objectives()

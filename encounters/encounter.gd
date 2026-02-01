@@ -55,6 +55,8 @@ func choose_encounter() -> void:
 	if(fixed_key != ""):
 		emotion_targets = [EmotionDatabase.select_specific_emotion_message(fixed_key)]
 	else:
+		await get_tree().create_timer(0.1).timeout
+		# Do this so all hardcoded encounters get priority
 		for i in message_count:
 			emotion_targets.append(EmotionDatabase.select_new_emotion_message(emotion_count))
 
