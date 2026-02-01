@@ -13,10 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://b7bjpckv7eeb7" path="res://assets/level_nodes/wall_bathroom.tscn" id="9_grhbk"]
 [ext_resource type="PackedScene" uid="uid://c1hkrnn27o38j" path="res://assets/level_nodes/wall_slamming_door.tscn" id="12_5vfu0"]
 [ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="13_kgy88"]
+[ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="14_aupmd"]
 
 [sub_resource type="Environment" id="Environment_84ig8"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_7lf0s"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_t58ta"]
+material = ExtResource("14_aupmd")
+size = Vector2(1.5, 1.5)
+subdivide_width = 8
+subdivide_depth = 8
 
 [node name="TestLevel1" type="Node3D" unique_id=810766990]
 script = ExtResource("1_nnacv")
@@ -2091,5 +2098,9 @@ tier = 1
 [node name="Objective5" parent="Objectives" unique_id=1998271064 instance=ExtResource("13_kgy88")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.490847, 0.24975586, -90.58883)
 tier = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=870877869]
+transform = Transform3D(-0.76300055, 0.07586775, 0.6453672, -0.016537774, 2.074094, -0.07588956, -0.64618576, -0.14266506, -0.7600923, -3.0117908, 1.314926, 2.6220264)
+mesh = SubResource("QuadMesh_t58ta")
 
 [editable path="Encounters/Encounter2"]
