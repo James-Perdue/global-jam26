@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://x030o8c3bv4b"]
+
+[ext_resource type="PackedScene" uid="uid://2f8878bmdqy8" path="res://assets/assets_dependents/TableLamp.glb" id="1_u4e1a"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u4e1a"]
+height = 1.7803345
+radius = 1.1420898
+
+[node name="TableLamp" type="StaticBody3D" unique_id=53949905]
+
+[node name="TableLamp" parent="." unique_id=1024133611 instance=ExtResource("1_u4e1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102306366, 0, -0.1651144)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615924939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96621704, 0)
+shape = SubResource("CylinderShape3D_u4e1a")

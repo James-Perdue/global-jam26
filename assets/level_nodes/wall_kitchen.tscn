@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://vlwbt4hunxuf"]
+
+[ext_resource type="PackedScene" uid="uid://dor2sylgfkhb8" path="res://assets/level_models/WallPlane.glb" id="1_2af2c"]
+[ext_resource type="Material" uid="uid://bx78wg7y3esyu" path="res://assets/level_models/WallMaterial_Kitchen.tres" id="2_dqt7i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hqkpl"]
+size = Vector3(0.2, 4, 4)
+
+[node name="WallNormal" type="StaticBody3D" unique_id=1101017953]
+
+[node name="WallPlane" parent="." unique_id=1375899626 instance=ExtResource("1_2af2c")]
+
+[node name="WallPlane" parent="WallPlane" index="0" unique_id=1582521941]
+surface_material_override/0 = ExtResource("2_dqt7i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1846020360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999994, 2, 0)
+shape = SubResource("BoxShape3D_hqkpl")
+
+[editable path="WallPlane"]
