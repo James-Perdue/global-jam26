@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bh62i3sjeb0at" path="res://assets/level_nodes/lamp_floor.tscn" id="6_0rqh8"]
 [ext_resource type="PackedScene" uid="uid://xhkpkxy6o1xo" path="res://assets/level_nodes/prop_table.tscn" id="6_m0860"]
 [ext_resource type="PackedScene" uid="uid://c5gow6w7vuu13" path="res://assets/level_models/Lamp_Table.glb" id="8_gdq3w"]
+[ext_resource type="PackedScene" uid="uid://xu27a4d8qveu" path="res://assets/level_models/Shotglass.glb" id="9_gdq3w"]
+[ext_resource type="PackedScene" uid="uid://b1y2bjnx8qv4o" path="res://assets/level_models/Carkeys.glb" id="10_foy8p"]
+[ext_resource type="PackedScene" uid="uid://bpe0pji1edm80" path="res://assets/level_models/Phone.glb" id="11_px3ys"]
 
 [node name="Node3D" type="Node3D" unique_id=1317390877]
 script = ExtResource("1_6witb")
@@ -56,10 +59,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8935418, 0.24733365, 1.125
 tier = 1
 
 [node name="PropTable" parent="." unique_id=1220026495 instance=ExtResource("6_m0860")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8978639, -0.0026664734, 1.982166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.902216, 0.0039930344, 1.9877017)
 
 [node name="Lamp_Table" parent="." unique_id=2028630043 instance=ExtResource("8_gdq3w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4200294, 0.83559036, 2.1431332)
 
 [node name="LampFloor" parent="." unique_id=1066000718 instance=ExtResource("6_0rqh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.185652, 0.0033083856, 2.0200245)
+
+[node name="Shotglass" parent="." unique_id=409713038 instance=ExtResource("9_gdq3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4367661, 0.8838917, 2.0242608)
+
+[node name="Carkeys" parent="." unique_id=515532502 instance=ExtResource("10_foy8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2884483, 0.8355904, 1.6748476)
+
+[node name="Phone" parent="." unique_id=424677951 instance=ExtResource("11_px3ys")]
+transform = Transform3D(0.8061349, 0, 0.59173185, 0, 1, 0, -0.59173185, 0, 0.8061349, 1.8013506, 0.8424127, 1.6513612)
