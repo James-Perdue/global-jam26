@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bx63dgyu5esu6"
-path="res://.godot/imported/Fine_1.wav-3d2ccbaf1385359b5ab39904d5f2a4e1.sample"
+uid="uid://bukvycll0q20w"
+path="res://.godot/imported/FuckIt_3.wav-3dd37cbc57253b03e6b9761835334a5c.sample"
 
 [deps]
 
-source_file="res://Audio/Responses/Fine_1.wav"
-dest_files=["res://.godot/imported/Fine_1.wav-3d2ccbaf1385359b5ab39904d5f2a4e1.sample"]
+source_file="res://Audio/Responses/FuckIt_3.wav"
+dest_files=["res://.godot/imported/FuckIt_3.wav-3dd37cbc57253b03e6b9761835334a5c.sample"]
 
 [params]
 
