@@ -22,8 +22,9 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 
 func start_encounter() -> void:
 	pre_enemy_sprite.hide()
-	SignalBus.start_encounter.emit(self)
 	enemy.start_encounter()
+	SignalBus.start_encounter.emit(self)
+	
 	
 func _on_enemy_defeated() -> void:
 	SignalBus.end_encounter.emit()
