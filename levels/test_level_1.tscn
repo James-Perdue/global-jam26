@@ -2032,22 +2032,22 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -34,
 [node name="Encounter" parent="Encounters" unique_id=1653614673 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 7, 1, -3)
 
-[node name="Encounter2" parent="Encounters" unique_id=428858938 instance=ExtResource("7_vodbx")]
+[node name="Encounter2" parent="Encounters" unique_id=1370236251 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 1, -6)
 
 [node name="Trigger" parent="Encounters/Encounter2" index="0" unique_id=361826163]
 transform = Transform3D(1.9000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Encounter3" parent="Encounters" unique_id=2030480746 instance=ExtResource("7_vodbx")]
+[node name="Encounter3" parent="Encounters" unique_id=1671111583 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 13, 1, -18)
 
-[node name="Encounter4" parent="Encounters" unique_id=1409132824 instance=ExtResource("7_vodbx")]
+[node name="Encounter4" parent="Encounters" unique_id=193174787 instance=ExtResource("7_vodbx")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 2, 1, -14)
 
-[node name="Encounter5" parent="Encounters" unique_id=662663173 instance=ExtResource("7_vodbx")]
+[node name="Encounter5" parent="Encounters" unique_id=355094813 instance=ExtResource("7_vodbx")]
 transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, 13, 1, -6)
 
-[node name="Encounter" parent="." unique_id=212260574 instance=ExtResource("7_vodbx")]
+[node name="Encounter" parent="." unique_id=1753919034 instance=ExtResource("7_vodbx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1, -11)
 
 [node name="WallNormal" parent="." unique_id=48824918 instance=ExtResource("9_grhbk")]
