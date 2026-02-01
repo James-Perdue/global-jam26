@@ -10,11 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://lxpql5k7mg28" path="res://encounters/encounter.tscn" id="7_vodbx"]
 [ext_resource type="PackedScene" uid="uid://vlwbt4hunxuf" path="res://assets/level_nodes/wall_kitchen.tscn" id="8_kql2n"]
 [ext_resource type="PackedScene" uid="uid://f2pauekgmolu" path="res://assets/level_nodes/wall_closed_door.tscn" id="9_02ec3"]
+[ext_resource type="PackedScene" path="res://assets/level_nodes/bar_white.tscn" id="9_6q8gj"]
 [ext_resource type="PackedScene" uid="uid://b7bjpckv7eeb7" path="res://assets/level_nodes/wall_bathroom.tscn" id="9_grhbk"]
+[ext_resource type="PackedScene" uid="uid://cmdhq5lhus1ry" path="res://interactables/heal_items/shot_glass.tscn" id="11_rr58p"]
 [ext_resource type="PackedScene" uid="uid://c1hkrnn27o38j" path="res://assets/level_nodes/wall_slamming_door.tscn" id="12_5vfu0"]
-[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="13_kgy88"]
+[ext_resource type="PackedScene" path="res://assets/level_nodes/countertop_white.tscn" id="12_yoilj"]
+[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objectives/objective.tscn" id="13_kgy88"]
 [ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="14_aupmd"]
 [ext_resource type="PackedScene" uid="uid://bjfllev2cbdtw" path="res://levels/loader_scene.tscn" id="15_t58ta"]
+[ext_resource type="PackedScene" uid="uid://mu1gwxjotwcp" path="res://assets/level_nodes/couch_red.tscn" id="16_1j1kj"]
+[ext_resource type="PackedScene" uid="uid://bh62i3sjeb0at" path="res://assets/level_nodes/lamp_floor.tscn" id="17_pmbwx"]
+[ext_resource type="PackedScene" uid="uid://xhkpkxy6o1xo" path="res://assets/level_nodes/prop_table.tscn" id="18_lgfx6"]
+[ext_resource type="PackedScene" uid="uid://dnie0x0jgu8bp" path="res://interactables/objectives/car_keys.tscn" id="19_d31dk"]
+[ext_resource type="PackedScene" uid="uid://cucman7n6yw2" path="res://interactables/objectives/exit_objective.tscn" id="19_tworg"]
+[ext_resource type="PackedScene" uid="uid://ws2m8gkqi4mi" path="res://interactables/objectives/phone.tscn" id="21_5iaa6"]
+[ext_resource type="PackedScene" uid="uid://b8mpr56s46dn2" path="res://assets/level_nodes/lamp_table.tscn" id="22_5au7l"]
 
 [sub_resource type="Environment" id="Environment_84ig8"]
 
@@ -467,36 +477,58 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -6)
 [node name="WallNormal219" parent="Tier1" unique_id=1710167492 instance=ExtResource("9_02ec3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26, 0, -4)
 
+[node name="BarWhite" parent="Tier1" unique_id=898099283 instance=ExtResource("9_6q8gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.02521, -0.24928594, -19.083656)
+
+[node name="BarWhite2" parent="Tier1" unique_id=58613723 instance=ExtResource("9_6q8gj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.908005, -0.24928594, -19.083656)
+
+[node name="CountertopWhite" parent="Tier1" unique_id=1620607076 instance=ExtResource("12_yoilj")]
+transform = Transform3D(1, 0, 0, 0, 2.418328, 0, 0, 0, 1, -14.121505, -0.05038464, -15.631988)
+
+[node name="ShotHeal" parent="Tier1/CountertopWhite" unique_id=1765869013 instance=ExtResource("11_rr58p")]
+transform = Transform3D(1, 0, 0, 0, 0.41350883, 0, 0, 0, 1, -0.3733034, 0.44090453, 0.16965294)
+
+[node name="CountertopWhite2" parent="Tier1" unique_id=1700363408 instance=ExtResource("12_yoilj")]
+transform = Transform3D(1, 0, 0, 0, 2.418328, 0, 0, 0, 1, -1.91274, -0.07107818, -15.631988)
+
+[node name="Shot2" parent="Tier1/CountertopWhite2" unique_id=799202086 instance=ExtResource("11_rr58p")]
+transform = Transform3D(1, 0, 0, 0, 0.41350883, 0, 0, 0, 1, 0.20974445, 0.44090453, 0.16965294)
+
 [node name="Encounters" type="Node3D" parent="." unique_id=1510019465]
 
 [node name="Encounter" parent="Encounters" unique_id=1653614673 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 7, 1, -3)
+emotion_count = 1
 
-[node name="Encounter2" parent="Encounters" unique_id=428858938 instance=ExtResource("7_vodbx")]
+[node name="Encounter2" parent="Encounters" unique_id=1370236251 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 1, -6)
+emotion_count = 1
 
 [node name="Trigger" parent="Encounters/Encounter2" index="0" unique_id=361826163]
 transform = Transform3D(1.9000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Encounter3" parent="Encounters" unique_id=2030480746 instance=ExtResource("7_vodbx")]
+[node name="Encounter3" parent="Encounters" unique_id=1671111583 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 13, 1, -18)
 
 [node name="Encounter4" parent="Encounters" unique_id=1409132824 instance=ExtResource("7_vodbx")]
-transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 2, 1, -14)
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 2.2492971, 1.0000002, -14.226041)
 
-[node name="Encounter5" parent="Encounters" unique_id=662663173 instance=ExtResource("7_vodbx")]
+[node name="Encounter5" parent="Encounters" unique_id=355094813 instance=ExtResource("7_vodbx")]
 transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, 13, 1, -6)
+emotion_count = 1
 
-[node name="Encounter" parent="." unique_id=212260574 instance=ExtResource("7_vodbx")]
+[node name="Encounter" parent="." unique_id=1753919034 instance=ExtResource("7_vodbx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1, -11)
+emotion_count = 1
 
-[node name="Objectives" type="Node3D" parent="." unique_id=1208245457]
+[node name="Encounter3" parent="." unique_id=1848855415 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.827739, 1, -13.789608)
+emotion_count = 1
 
-[node name="Objective" parent="Objectives" unique_id=1340026033 instance=ExtResource("13_kgy88")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.15762, 0.24975586, -10.451388)
-
-[node name="Objective2" parent="Objectives" unique_id=1371716076 instance=ExtResource("13_kgy88")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.573848, 0.24975586, -16.25217)
+[node name="Encounter2" parent="." unique_id=186340416 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.79991513, 0, 0.60011315, 0, 1, 0, -0.60011315, 0, -0.79991513, -23.951157, 1, -9.278885)
+emotion_count = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=870877869]
 transform = Transform3D(-0.76300055, 0.07586775, 0.6453672, -0.016537774, 2.074094, -0.07588956, -0.64618576, -0.14266506, -0.7600923, -3.0117908, 1.314926, 2.6220264)
@@ -1416,6 +1448,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -22)
 [node name="Ceiling48" parent="Tier2" unique_id=676153265 instance=ExtResource("7_plkrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -22)
 
+[node name="Encounters" type="Node3D" parent="Tier2" unique_id=1911863121]
+
+[node name="Encounter3" parent="Tier2/Encounters" unique_id=303250469 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.89373976, 0, 0.44858605, 0, 1, 0, -0.44858605, 0, 0.89373976, -5.0946527, 1, -19.576542)
+emotion_count = 2
+
+[node name="Encounter4" parent="Tier2/Encounters" unique_id=125130321 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.20198396, 0, 0.9793888, 0, 1, 0, -0.9793888, 0, -0.20198396, -8.861909, 1, -28.434309)
+emotion_count = 2
+
 [node name="Tier3" type="Node3D" parent="." unique_id=2142852990]
 unique_name_in_owner = true
 
@@ -2109,8 +2151,25 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 
 [node name="WallSlammedDoor4" parent="Tier3" unique_id=1602985759 instance=ExtResource("12_5vfu0")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -58)
 
-[node name="Objective5" parent="Tier3" unique_id=1183637299 instance=ExtResource("13_kgy88")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.490847, 0.24975586, -90.58883)
-tier = 2
+[node name="ExitObjective" parent="Tier3" unique_id=1514642364 instance=ExtResource("19_tworg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.977083, 1.308926, -91.88557)
+
+[node name="CouchRed" parent="." unique_id=272237701 instance=ExtResource("16_1j1kj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.34711623, 0.01413846, 3.3419771)
+
+[node name="LampFloor" parent="." unique_id=1066000718 instance=ExtResource("17_pmbwx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4114597, 0.005731195, 2.978875)
+
+[node name="PropTable" parent="." unique_id=1220026495 instance=ExtResource("18_lgfx6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.130121, -0.00024425983, -9.010119)
+
+[node name="CarKeys" parent="." unique_id=502339369 instance=ExtResource("19_d31dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.84938, 0.85014236, -9.469553)
+
+[node name="Phone" parent="." unique_id=2113702742 instance=ExtResource("21_5iaa6")]
+transform = Transform3D(0.75584203, 0, 0.654754, 0, 1, 0, -0.654754, 0, 0.75584203, 7.6353054, 0.94246817, -18.994457)
+
+[node name="LampTable" parent="." unique_id=107104151 instance=ExtResource("22_5au7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.418688, 0.93205595, -19.807503)
 
 [editable path="Encounters/Encounter2"]

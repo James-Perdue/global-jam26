@@ -14,3 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329403, 0.0037339032, -0.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1102998890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020094156, 1.0109863, 0)
 shape = SubResource("CylinderShape3D_ejac6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=225337312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8165509, 0)
+omni_range = 1.8562303

@@ -14,3 +14,7 @@ shape = SubResource("CylinderShape3D_1o52b")
 
 [node name="Lamp_Table" parent="." unique_id=2028630043 instance=ExtResource("1_vtrwf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004731059, 0, -0.021956325)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1226895629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6288166, 0)
+omni_range = 2.0

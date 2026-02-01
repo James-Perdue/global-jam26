@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://lxpql5k7mg28" path="res://encounters/encounter.tscn" id="10_ssqhj"]
 [ext_resource type="PackedScene" uid="uid://b7bjpckv7eeb7" path="res://assets/level_nodes/wall_bathroom.tscn" id="11_42vgc"]
 [ext_resource type="PackedScene" uid="uid://c1hkrnn27o38j" path="res://assets/level_nodes/wall_slamming_door.tscn" id="12_thj1e"]
-[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="13_gj64b"]
+[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objectives/objective.tscn" id="13_gj64b"]
 [ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="14_0fxj2"]
 [ext_resource type="PackedScene" uid="uid://bjfllev2cbdtw" path="res://levels/loader_scene.tscn" id="14_5nwde"]
 
