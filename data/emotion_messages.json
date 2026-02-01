@@ -107,7 +107,7 @@
 		},
 		{
 			"audio_key": "hump_day",
-			"message": "Its hump day! But i gotta work tomorrow",
+			"message": "Its hump day!| But i gotta work tomorrow",
 			"emotions": ["HAPPY","SAD"]
 		}
 	]

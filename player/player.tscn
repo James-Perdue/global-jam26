@@ -37,3 +37,4 @@ transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.092784
 
 [node name="CannedAudio" type="AudioStreamPlayer3D" parent="." unique_id=800257367]
 unique_name_in_owner = true
+volume_db = -25.0

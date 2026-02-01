@@ -56,6 +56,7 @@ func _ready() -> void:
 	SignalBus.end_encounter.connect(_on_encounter_ended)
 	SignalBus.player_healed.connect(_on_player_healed)
 	SignalBus.wrong_mask.connect(_on_wrong_mask)
+	SignalBus.correct_mask.connect(_on_correct_mask)
 	SignalBus.shotgun_picked_up.connect(_on_shotgun_picked_up)
 	camera_starting_position = camera.position
 	add_child(damage_timer)
@@ -268,6 +269,11 @@ func _on_wrong_mask(_mask: Mask) -> void:
 	if(line_audio_player.stream != null):
 		line_audio_player.play()
 	take_damage(wrong_mask_damage)
+
+func _on_correct_mask(_mask: Mask) -> void:
+	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
+	if(line_audio_player.stream != null):
+		line_audio_player.play()
 
 func choose_canned(emotion: String)->String:
 	var choice = responses[emotion]

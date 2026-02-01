@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtda1h5ag44c1" path="res://player/player.tscn" id="3_1y5p2"]
 [ext_resource type="PackedScene" uid="uid://bg5llagmpo288" path="res://ui/hud.tscn" id="4_i7xqd"]
 [ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="5_ek3o3"]
-[ext_resource type="PackedScene" uid="uid://gkisya1730eg" path="res://interactables/heal_item.tscn" id="6_1y5p2"]
+[ext_resource type="PackedScene" path="res://interactables/heal_item.tscn" id="6_1y5p2"]
 [ext_resource type="PackedScene" uid="uid://c3vh87qjxe5jm" path="res://interactables/shotgun_item.tscn" id="7_i7xqd"]
 [ext_resource type="AudioStream" uid="uid://knvyci215wvn" path="res://Audio/ReversedAudio/happy_3.wav" id="8_ax0xp"]
 
@@ -53,6 +53,7 @@ fixed_key = "happy_3"
 
 [node name="Player" parent="." unique_id=1257764422 instance=ExtResource("3_1y5p2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14560461, 1.9737635, -0.41064358)
+recoil_amount = 0.17453292519943295
 
 [node name="Hud" parent="." unique_id=1560016975 instance=ExtResource("4_i7xqd")]
 
