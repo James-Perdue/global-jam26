@@ -53,7 +53,7 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	current_encounter = encounter
 	damage_rate = ceil(encounter.damage_rate)
 	#arbitrary delay so gun not out before enemy spawns
-	await get_tree().create_timer(2).timeout 
+	await get_tree().create_timer(1.5).timeout 
 	revolver.show()
 	revolver.get_node("AnimationPlayer").play("Ready")
 	
@@ -195,7 +195,7 @@ func _on_damage_timer_timeout() -> void:
 
 func take_damage(damage: int) -> void:
 	health -= damage
-	print("Player damaged: ", health)
+	#print("Player damaged: ", health)
 	SignalBus.player_health_changed.emit(health)
 	if health <= 0:
 		print("Game over")
