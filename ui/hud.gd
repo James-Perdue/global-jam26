@@ -60,7 +60,7 @@ func _on_encounter_end():
 	rich_text.hide()
 	enemy = null
 	
-func _on_correct_mask():
+func _on_correct_mask(_mask: Mask):
 	var emotion = 0
 	rich_text.text = monster_effect
 	while emotion < len(enemy.emotion_targets[0].emotions):

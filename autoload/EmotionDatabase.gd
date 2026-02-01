@@ -6,7 +6,7 @@ var colors: Dictionary = {"HAPPY": "yellow", "SAD": "blue", "ANGRY": "red", "ANN
 
 var used_emotion_keys: Array[String] = []
 
-var audio_lookup: Dictionary[String, AudioStream] = {
+var monster_audio_lookup: Dictionary[String, AudioStream] = {
 	#"happy_1": preload("res://Audio/ReversedAudio/happy_1.wav"),
 	# "happy_2": preload("res://Audio/ReversedAudio/happy_2.wav"),
 	 "happy_3": preload("res://Audio/ReversedAudio/happy_3.wav"),
@@ -15,6 +15,19 @@ var audio_lookup: Dictionary[String, AudioStream] = {
 	# "angry_1": preload("res://Audio/ReversedAudio/angry_1.wav"),
 	# "angry_2": preload("res://Audio/ReversedAudio/angry_2.wav"),
 	# "fear_1": preload("res://Audio/ReversedAudio/fear_1.wav"),
+}
+
+var player_audio_lookup: Dictionary[String,AudioStream] = {
+	"great": preload("res://Audio/Responses/That's Great!.wav"),
+	"nice": preload("res://Audio/Responses/Nice_2.wav"),
+	"bummer": preload("res://Audio/Responses/Bummer_2.wav"),
+	"that_sucks": preload("res://Audio/Responses/That_Sucks_2.wav"),
+	"be_okay": preload("res://Audio/Responses/GonnaBeOK_1.wav"),
+	"fine": preload("res://Audio/Responses/Fine_1.wav"),
+	"woah": preload("res://Audio/Responses/Woah_1.wav"),
+	"damn": preload("res://Audio/Responses/Damn_1.wav"),
+	"crazy": preload("res://Audio/Responses/Crazy_2.wav"),
+	"really": preload("res://Audio/Responses/Really_2.wav"),
 }
 
 func _ready() -> void:
@@ -77,7 +90,13 @@ func select_specific_emotion_message(audio_key: String) -> EmotionMessage:
 
 
 func get_audio_file_for_message(message: EmotionMessage) -> AudioStream:
-	if not message.audio_key in audio_lookup:
+	if not message.audio_key in monster_audio_lookup:
 		print("Warning: Audio file not found: " + message.audio_key)
 		return null
-	return audio_lookup[message.audio_key]
+	return monster_audio_lookup[message.audio_key]
+	
+func get_canned_audio_file(key: String) -> AudioStream:
+	if not key in player_audio_lookup:
+		print("Warning: Audio file not found: " + key)
+		return null
+	return player_audio_lookup[key]

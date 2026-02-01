@@ -29,11 +29,26 @@ var is_loading: bool = true
 var clamp_angle: float = deg_to_rad(30.0)
 var has_shotgun: bool = false
 
+var happy_response: Array[String]= ["great", "nice"]
+var sad_response: Array[String]= ["bummer", "that_sucks"]
+var angry_response: Array[String]= ["woah", "damn"]
+var fear_response: Array[String]= ["be_okay", "fine"]
+var annoyed_response: Array[String]= ["crazy", "really"]
+
+var responses: Dictionary[String,Array] = {
+	"HAPPY": happy_response,
+	"SAD": sad_response,
+	"ANGRY": angry_response,
+	"FEAR": fear_response,
+	"ANNOYED": annoyed_response
+}
+
 @onready var camera = $Camera3D
 @onready var damage_timer: Timer = Timer.new()
 @onready var interact_zone: Area3D = %InteractZone
 @onready var revolver: Node3D = %Revolver
 @onready var shotgun: Node3D = %Shotgun
+@onready var line_audio_player: AudioStreamPlayer3D = %CannedAudio
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -41,6 +56,7 @@ func _ready() -> void:
 	SignalBus.end_encounter.connect(_on_encounter_ended)
 	SignalBus.player_healed.connect(_on_player_healed)
 	SignalBus.wrong_mask.connect(_on_wrong_mask)
+	SignalBus.correct_mask.connect(_on_correct_mask)
 	SignalBus.shotgun_picked_up.connect(_on_shotgun_picked_up)
 	camera_starting_position = camera.position
 	add_child(damage_timer)
@@ -249,4 +265,16 @@ func take_damage(damage: int) -> void:
 		SignalBus.game_over.emit()
 
 func _on_wrong_mask(_mask: Mask) -> void:
+	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
+	if(line_audio_player.stream != null):
+		line_audio_player.play()
 	take_damage(wrong_mask_damage)
+
+func _on_correct_mask(_mask: Mask) -> void:
+	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
+	if(line_audio_player.stream != null):
+		line_audio_player.play()
+
+func choose_canned(emotion: String)->String:
+	var choice = responses[emotion]
+	return choice[randi()%choice.size()]
