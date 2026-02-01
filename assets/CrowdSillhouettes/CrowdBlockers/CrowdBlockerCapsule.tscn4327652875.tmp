@@ -4,9 +4,7 @@
 [ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="2_sp0qy"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ubgu0"]
-lightmap_size_hint = Vector2i(7, 12)
 material = ExtResource("2_sp0qy")
-uv2_padding = 0.0
 size = Vector2(1, 2)
 subdivide_width = 2
 subdivide_depth = 2
