@@ -53,6 +53,7 @@ var responses: Dictionary[String,Array] = {
 @onready var shotgun: Node3D = %Shotgun
 @onready var line_audio_player: AudioStreamPlayer3D = %CannedAudio
 @onready var drunk_timer: Timer = Timer.new()
+@onready var gunshot_effect: Node3D = %GunshotEffect
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -72,6 +73,8 @@ func _ready() -> void:
 	interact_zone.body_exited.connect(_on_interact_zone_body_exited)
 	revolver.hide()
 	shotgun.hide()
+	gunshot_effect.get_node("CPUParticles3D").emitting = false
+	gunshot_effect.get_node("CPUParticles3D").one_shot = true
 	await get_tree().process_frame
 	SignalBus.player_health_changed.emit(health)
 	damage_timer.start()
@@ -122,6 +125,7 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	weapon.get_node("AnimationPlayer").play("Ready")
 	await weapon.get_node("AnimationPlayer").animation_finished
 	rotation_locked = false
+	SignalBus.toggled_crosshair.emit(true)
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
@@ -133,6 +137,7 @@ func _on_encounter_ended() -> void:
 		weapon = shotgun
 	if(weapon.get_node("AnimationPlayer").current_animation != ""):
 		await weapon.get_node("AnimationPlayer").animation_finished
+	SignalBus.toggled_crosshair.emit(false)
 	weapon.get_node("AnimationPlayer").play("PutAway")
 	await weapon.get_node("AnimationPlayer").animation_finished
 	if(!in_encounter):
@@ -190,6 +195,9 @@ func shoot() -> void:
 		weapon = shotgun
 	if(weapon.get_node("AnimationPlayer").current_animation != ""):
 		return
+	gunshot_effect.show()
+	gunshot_effect.get_node("CPUParticles3D").emitting = true
+	
 	weapon.get_node("AnimationPlayer").play("Fire")
 	
 	# Recoil effect

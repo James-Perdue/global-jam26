@@ -16,12 +16,12 @@ var end_monster_effect = "[/me]"
 
 var current_objectives : Array[Objective] = []
 
-@onready var health_bar: ProgressBar = %HealthBar
+@onready var health_bar: TextureProgressBar = %HealthBar
 @onready var rich_text: RichTextLabel = %DialogueBox
 @onready var hud_fps_label: Label = %FPSLabel
 @onready var loading_screen: Control = %LoadingScreen
 @onready var objectives_label: RichTextLabel = %ObjectiveLabel
-
+@onready var crosshair: TextureRect = %Crosshair
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.player_health_changed.connect(_on_player_health_changed)
@@ -29,7 +29,9 @@ func _ready() -> void:
 	SignalBus.end_encounter.connect(_on_encounter_end)
 	SignalBus.correct_mask.connect(_on_correct_mask)
 	SignalBus.done_loading.connect(_on_done_loading)
+	SignalBus.toggled_crosshair.connect(_on_toggled_crosshair)
 	loading_screen.show()
+	crosshair.modulate.a = 0.0
 func _process(_delta: float) -> void:
 	if enemy != null:
 		rich_text.show()
@@ -76,6 +78,11 @@ func _on_correct_mask(_mask: Mask):
 		emotion+=1
 		
 	rich_text.text += end_monster_effect 
+
+func _on_toggled_crosshair(show: bool) -> void:
+	var target_alpha = 1.0 if show else 0.0
+	var tween = create_tween()
+	tween.tween_property(crosshair, "modulate:a", target_alpha, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 func update_objectives() -> void:
 	var tween = create_tween()
