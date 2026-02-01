@@ -51,7 +51,7 @@ func _on_correct_mask():
 	var emotion = 0
 	rich_text.text = monster_effect
 	while emotion < len(enemy.emotion_targets[0].emotions):
-		
+		print("in dis bitch")
 		if emotion <  enemy.targeting_emotion_index:
 			rich_text.text += start_effect
 			rich_text.text +=color_type + EmotionDatabase.colors[Enums.Emotion.keys()[enemy.emotion_targets[0].emotions[emotion]]]
@@ -59,5 +59,7 @@ func _on_correct_mask():
 		rich_text.text += enemy.message_parts[emotion] 
 		if emotion< enemy.targeting_emotion_index:
 			rich_text.text += end_effect
+		print("enemy emotion: " +str(enemy.targeting_emotion_index) + " inside emotion: " + str(emotion))
 		emotion+=1
+		
 	rich_text.text += end_monster_effect 
