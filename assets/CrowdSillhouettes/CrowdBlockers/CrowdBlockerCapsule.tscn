@@ -19,7 +19,7 @@ radius = 1.0327148
 script = ExtResource("1_ur0yu")
 
 [node name="SillhouetteInstance" type="MeshInstance3D" parent="." unique_id=990569892]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7912052, 0.03648585)
+transform = Transform3D(1.2951086, 0, 0, 0, 1.3303818, 0, 0, 0, 1, 0, 0.7912052, 0.03648585)
 mesh = SubResource("QuadMesh_ubgu0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1620121125]

@@ -702,9 +702,6 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -12,
 [node name="WallNormal177" parent="Tier1" unique_id=620885489 instance=ExtResource("3_7lf0s")]
 transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -10, 0, -44)
 
-[node name="WallNormal231" parent="Tier1" unique_id=2099116239 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(3.059797e-07, 0, -1, 0, 1, 0, 1, 0, 3.059797e-07, -10, 0, -48)
-
 [node name="Ceiling125" parent="Tier1" unique_id=1278593127 instance=ExtResource("7_plkrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -42)
 
@@ -717,47 +714,326 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -46)
 [node name="WallSlammedDoor" parent="Tier1" unique_id=1249227121 instance=ExtResource("12_5vfu0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -46)
 
-[node name="Encounters" type="Node3D" parent="." unique_id=1510019465]
+[node name="CrowdBlockerCapsule" parent="Tier1" unique_id=1635286611 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0335553, 0.20855016, 0.9527862)
 
-[node name="Encounter" parent="Encounters" unique_id=1653614673 instance=ExtResource("7_vodbx")]
-transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 7, 1, -3)
-emotion_count = 1
+[node name="CrowdBlockerCapsule2" parent="Tier1" unique_id=1353567484 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2126036, 0.20855016, 2.8490963)
 
-[node name="Encounter2" parent="Encounters" unique_id=1370236251 instance=ExtResource("7_vodbx")]
-transform = Transform3D(-0.581044, 0, 0.81387216, 0, 1, 0, -0.81387216, 0, -0.581044, -13.175432, 0.99999976, -6.403471)
-emotion_count = 1
+[node name="CrowdBlockerCapsule3" parent="Tier1" unique_id=1157051246 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9296923, 0.20855016, 1.117506)
 
-[node name="Trigger" parent="Encounters/Encounter2" index="0" unique_id=361826163]
-transform = Transform3D(1.9000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="CrowdBlockerCapsule4" parent="Tier1" unique_id=1219281998 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7460394, 0.20855016, -1.4011703)
 
-[node name="Encounter3" parent="Encounters" unique_id=1671111583 instance=ExtResource("7_vodbx")]
-transform = Transform3D(-0.9325761, 0, -0.36097363, 0, 1, 0, 0.36097363, 0, -0.9325761, 10.058728, 1, -17.693012)
+[node name="CrowdBlockerCapsule5" parent="Tier1" unique_id=844029735 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7198038, 0.20855016, -3.6574838)
 
-[node name="Encounter4" parent="Encounters" unique_id=1409132824 instance=ExtResource("7_vodbx")]
-transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 2.2492971, 1.0000002, -14.226041)
+[node name="CrowdBlockerCapsule6" parent="Tier1" unique_id=1155133788 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1486578, 0.20855016, -6.8320646)
 
-[node name="Encounter5" parent="Encounters" unique_id=355094813 instance=ExtResource("7_vodbx")]
-transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, 13, 1, -6)
-emotion_count = 1
+[node name="CrowdBlockerCapsule7" parent="Tier1" unique_id=1836052427 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.022543, 0.20855016, -6.937009)
 
-[node name="Encounter" parent="." unique_id=1753919034 instance=ExtResource("7_vodbx")]
-transform = Transform3D(0.76574147, 0, -0.6431485, 0, 1, 0, 0.6431485, 0, 0.76574147, -22.165249, 1, -10.647613)
-emotion_count = 1
+[node name="CrowdBlockerCapsule8" parent="Tier1" unique_id=964355520 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.619926, 0.20855016, -6.648411)
 
-[node name="Encounter3" parent="." unique_id=1848855415 instance=ExtResource("7_vodbx")]
-transform = Transform3D(0.99648553, 0, -0.08376487, 0, 1, 0, 0.08376487, 0, 0.99648553, -11.126609, 1, -13.01044)
-emotion_count = 1
+[node name="CrowdBlockerCapsule9" parent="Tier1" unique_id=1013477628 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.252621, 0.20855016, -4.549514)
 
-[node name="Encounter2" parent="." unique_id=186340416 instance=ExtResource("7_vodbx")]
-transform = Transform3D(-0.99650896, 0, 0.08348659, 0, 1, 0, -0.08348659, 0, -0.99650896, -25.183086, 1, -9.943299)
-emotion_count = 1
+[node name="CrowdBlockerCapsule10" parent="Tier1" unique_id=1508641885 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.840933, 0.20855016, -1.2699876)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=870877869]
-transform = Transform3D(-0.76300055, 0.07586775, 0.6453672, -0.016537774, 2.074094, -0.07588956, -0.64618576, -0.14266506, -0.7600923, -3.0117908, 1.314926, 2.6220264)
-mesh = SubResource("QuadMesh_t58ta")
+[node name="CrowdBlockerCapsule11" parent="Tier1" unique_id=1709670297 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963396, 0.20855016, -7.0157156)
 
-[node name="LoaderScene" parent="." unique_id=1634035277 instance=ExtResource("15_t58ta")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3625895, 1.2130743, 4.678238)
+[node name="CrowdBlockerCapsule12" parent="Tier1" unique_id=213388976 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.58195, 0.20855016, -6.963243)
+
+[node name="CrowdBlockerCapsule13" parent="Tier1" unique_id=687423045 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.220692, 0.20855016, -6.937007)
+
+[node name="CrowdBlockerCapsule14" parent="Tier1" unique_id=237990544 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.534578, 0.20855016, -13.790268)
+
+[node name="CrowdBlockerCapsule15" parent="Tier1" unique_id=877786301 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.533447, 0.20855016, -14.718313)
+
+[node name="CrowdBlockerCapsule16" parent="Tier1" unique_id=1114289641 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.745913, 0.20855016, -6.4729843)
+
+[node name="CrowdBlockerCapsule17" parent="Tier1" unique_id=1748530785 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.926647, 0.20855016, -7.2939467)
+
+[node name="CrowdBlockerCapsule18" parent="Tier1" unique_id=980452057 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.03373, 0.20855016, -6.901312)
+
+[node name="CrowdBlockerCapsule19" parent="Tier1" unique_id=1275077601 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.076218, 0.20855016, -15.182335)
+
+[node name="CrowdBlockerCapsule20" parent="Tier1" unique_id=1422581008 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1674118, 0.20855016, -17.32398)
+
+[node name="CrowdBlockerCapsule21" parent="Tier1" unique_id=1305300967 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.555519, 0.20855016, -14.004432)
+
+[node name="CrowdBlockerCapsule22" parent="Tier1" unique_id=420238576 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55665, 0.20855016, -13.647491)
+
+[node name="CrowdBlockerCapsule23" parent="Tier1" unique_id=373517885 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.593476, 0.20855016, -13.219162)
+
+[node name="CrowdBlockerCapsule24" parent="Tier1" unique_id=185451203 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.776066, 0.20855016, -21.205685)
+
+[node name="CrowdBlockerCapsule25" parent="Tier1" unique_id=139235072 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.738979, 0.20855016, -26.076899)
+
+[node name="CrowdBlockerCapsule26" parent="Tier1" unique_id=998132439 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.584858, 0.20855016, -24.150377)
+
+[node name="CrowdBlockerCapsule27" parent="Tier1" unique_id=1821821354 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.584858, 0.20855016, -24.150377)
+
+[node name="CrowdBlockerCapsule28" parent="Tier1" unique_id=1074791517 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4948902, 0.20855016, -21.673746)
+
+[node name="CrowdBlockerCapsule29" parent="Tier1" unique_id=37190739 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4948902, 0.20855016, -23.673746)
+
+[node name="CrowdBlockerCapsule30" parent="Tier1" unique_id=1136358697 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2017002, 0.20855016, -28.684553)
+
+[node name="CrowdBlockerCapsule31" parent="Tier1" unique_id=1265111140 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2017002, 0.20855016, -30.684553)
+
+[node name="CrowdBlockerCapsule49" parent="Tier1" unique_id=1654455428 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.424019, 0.20855016, -33.71646)
+
+[node name="CrowdBlockerCapsule50" parent="Tier1" unique_id=552448903 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.424019, 0.20855016, -33.71646)
+
+[node name="CrowdBlockerCapsule51" parent="Tier1" unique_id=657831423 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.424019, 0.20855016, -32.71646)
+
+[node name="CrowdBlockerCapsule52" parent="Tier1" unique_id=433030785 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5262895, 0.20855016, -35.454613)
+
+[node name="CrowdBlockerCapsule32" parent="Tier1" unique_id=1704072500 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4878178, 0.20855016, -30.327612)
+
+[node name="CrowdBlockerCapsule33" parent="Tier1" unique_id=1813297237 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.053835, 0.20855016, -32.469257)
+
+[node name="CrowdBlockerCapsule34" parent="Tier1" unique_id=1054157763 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.51899, 0.20855016, -27.472084)
+
+[node name="CrowdBlockerCapsule35" parent="Tier1" unique_id=1040154980 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.698591, 0.20855016, -26.258484)
+
+[node name="CrowdBlockerCapsule36" parent="Tier1" unique_id=1570182900 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1269207, 0.20855016, -26.900978)
+
+[node name="CrowdBlockerCapsule37" parent="Tier1" unique_id=1275726073 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91106, 0.20855016, -38.78711)
+
+[node name="CrowdBlockerCapsule38" parent="Tier1" unique_id=1392176752 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.945623, 0.20855016, -38.680027)
+
+[node name="CrowdBlockerCapsule45" parent="Tier1" unique_id=1366206100 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4742985, 0.20855016, -65.49723)
+
+[node name="CrowdBlockerCapsule46" parent="Tier1" unique_id=2004771981 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4742985, 0.20855016, -65.49723)
+
+[node name="CrowdBlockerCapsule47" parent="Tier1" unique_id=1567295502 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8596058, 0.20855016, -58.884327)
+
+[node name="CrowdBlockerCapsule48" parent="Tier1" unique_id=1235323115 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7825413, 0.20855016, -50.407627)
+
+[node name="CrowdBlockerCapsule39" parent="Tier1" unique_id=1927960385 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3796082, 0.20855016, -38.680027)
+
+[node name="CrowdBlockerCapsule40" parent="Tier1" unique_id=1365798964 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4498653, 0.20855016, -38.822803)
+
+[node name="CrowdBlockerCapsule41" parent="Tier1" unique_id=1463140452 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3082199, 0.20855016, -36.89532)
+
+[node name="CrowdBlockerCapsule42" parent="Tier1" unique_id=1727501422 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9858398, 0.20855016, -37.109486)
+
+[node name="CrowdBlockerCapsule43" parent="Tier1" unique_id=272366139 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.68549, 0.20855016, -34.478184)
+
+[node name="CrowdBlockerCapsule44" parent="Tier1" unique_id=1157462366 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.131525, 0.20855016, -36.226395)
+
+[node name="WallNormal231" parent="Tier1" unique_id=2099116239 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(3.059797e-07, 0, -1, 0, 1, 0, 1, 0, 3.059797e-07, -10, 0, -48)
+
+[node name="FloorPlane194" parent="Tier1" unique_id=1758882269 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -50)
+
+[node name="FloorPlane195" parent="Tier1" unique_id=1949819406 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -54)
+
+[node name="FloorPlane196" parent="Tier1" unique_id=2011476226 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -58)
+
+[node name="FloorPlane197" parent="Tier1" unique_id=1180542779 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -66)
+
+[node name="FloorPlane198" parent="Tier1" unique_id=543282408 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -66)
+
+[node name="FloorPlane199" parent="Tier1" unique_id=1912734862 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -66)
+
+[node name="FloorPlane200" parent="Tier1" unique_id=939747781 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -70)
+
+[node name="FloorPlane201" parent="Tier1" unique_id=842419924 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -70)
+
+[node name="FloorPlane202" parent="Tier1" unique_id=1406600264 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -70)
+
+[node name="FloorPlane127" parent="Tier1" unique_id=464829112 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -50)
+
+[node name="FloorPlane128" parent="Tier1" unique_id=661043045 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -54)
+
+[node name="FloorPlane129" parent="Tier1" unique_id=1283086941 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -58)
+
+[node name="FloorPlane130" parent="Tier1" unique_id=1908333907 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -62)
+
+[node name="FloorPlane131" parent="Tier1" unique_id=578998104 instance=ExtResource("1_hri27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -62)
+
+[node name="WallNormal171" parent="Tier1" unique_id=743339802 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -8, 0, -50)
+
+[node name="WallNormal174" parent="Tier1" unique_id=1059724516 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -12, 0, -54)
+
+[node name="WallNormal232" parent="Tier1" unique_id=59742769 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -10, 0, -52)
+
+[node name="WallNormal233" parent="Tier1" unique_id=1177477822 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(3.059797e-07, 0, -1, 0, 1, 0, 1, 0, 3.059797e-07, -10, 0, -56)
+
+[node name="WallNormal234" parent="Tier1" unique_id=183080672 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.06666651, 0, -50)
+
+[node name="WallNormal235" parent="Tier1" unique_id=1491618062 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1.3113417e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113417e-07, -1.9333333, 0, -52)
+
+[node name="WallNormal236" parent="Tier1" unique_id=1766725683 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -1.9333338, 0, -48)
+
+[node name="WallNormal237" parent="Tier1" unique_id=1751856493 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.06666651, 0, -58)
+
+[node name="WallNormal238" parent="Tier1" unique_id=1664087448 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -1.9333338, 0, -56)
+
+[node name="WallNormal239" parent="Tier1" unique_id=602725335 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -1.9333336, 0, -72)
+
+[node name="WallNormal241" parent="Tier1" unique_id=1071642246 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -5.9333334, 0, -72)
+
+[node name="WallNormal242" parent="Tier1" unique_id=807935819 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.933333, 0, -72)
+
+[node name="WallNormal240" parent="Tier1" unique_id=191428607 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 0.066666365, 0, -70)
+
+[node name="WallNormal243" parent="Tier1" unique_id=121902065 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 0.066666365, 0, -66)
+
+[node name="WallNormal244" parent="Tier1" unique_id=1066177141 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1, 0, 3.496911e-07, 0, 1, 0, -3.496911e-07, 0, 1, -11.933333, 0, -66)
+
+[node name="WallNormal246" parent="Tier1" unique_id=1247627551 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-3.934025e-07, 0, 1, 0, 1, 0, -1, 0, -3.934025e-07, -9.933333, 0, -64)
+
+[node name="WallNormal245" parent="Tier1" unique_id=2055430540 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1, 0, 3.496911e-07, 0, 1, 0, -3.496911e-07, 0, 1, -11.933333, 0, -70)
+
+[node name="WallNormal172" parent="Tier1" unique_id=1607417350 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -4, 0, -54)
+
+[node name="WallNormal175" parent="Tier1" unique_id=1465067036 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -8, 0, -58)
+
+[node name="WallNormal176" parent="Tier1" unique_id=1318135081 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -8, 0, -62)
+
+[node name="WallNormal178" parent="Tier1" unique_id=2014667142 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -2, 0, -64)
+
+[node name="WallNormal179" parent="Tier1" unique_id=63026258 instance=ExtResource("3_7lf0s")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -2, 0, -60)
+
+[node name="Ceiling194" parent="Tier1" unique_id=1834425637 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -50)
+
+[node name="Ceiling195" parent="Tier1" unique_id=92353603 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -54)
+
+[node name="Ceiling196" parent="Tier1" unique_id=1898591531 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -58)
+
+[node name="Ceiling197" parent="Tier1" unique_id=228215234 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -66)
+
+[node name="Ceiling198" parent="Tier1" unique_id=612934259 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -70)
+
+[node name="Ceiling199" parent="Tier1" unique_id=512431927 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -70)
+
+[node name="Ceiling200" parent="Tier1" unique_id=1967262960 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -66)
+
+[node name="Ceiling201" parent="Tier1" unique_id=1832988031 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -66)
+
+[node name="Ceiling202" parent="Tier1" unique_id=1395884709 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -70)
+
+[node name="Ceiling127" parent="Tier1" unique_id=304698175 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -50)
+
+[node name="Ceiling128" parent="Tier1" unique_id=512156431 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -54)
+
+[node name="Ceiling129" parent="Tier1" unique_id=2092856546 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -58)
+
+[node name="Ceiling130" parent="Tier1" unique_id=649212243 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -62)
+
+[node name="Ceiling131" parent="Tier1" unique_id=1125849701 instance=ExtResource("7_plkrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -62)
+
+[node name="WallSlammedDoor2" parent="Tier1" unique_id=1047896871 instance=ExtResource("12_5vfu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -54)
+
+[node name="WallSlammedDoor5" parent="Tier1" unique_id=1072116433 instance=ExtResource("12_5vfu0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6, 0, -64)
+
+[node name="WallSlammedDoor3" parent="Tier1" unique_id=2095946525 instance=ExtResource("12_5vfu0")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -50)
+
+[node name="WallSlammedDoor4" parent="Tier1" unique_id=1602985759 instance=ExtResource("12_5vfu0")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -58)
 
 [node name="Tier2" type="Node3D" parent="." unique_id=727602597]
 unique_name_in_owner = true
@@ -1080,17 +1356,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -34)
 [node name="WallNormal16" parent="Tier2" unique_id=1071858579 instance=ExtResource("8_kql2n")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -16, 0, -22)
 
-[node name="WallNormal94" parent="Tier2" unique_id=1829164537 instance=ExtResource("8_kql2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -22)
-
 [node name="WallNormal95" parent="Tier2" unique_id=1841217505 instance=ExtResource("8_kql2n")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, -20)
 
+[node name="WallNormal106" parent="Tier2" unique_id=888510586 instance=ExtResource("8_kql2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -22)
+
+[node name="WallNormal112" parent="Tier2" unique_id=1280639382 instance=ExtResource("8_kql2n")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26, 0, -24)
+
 [node name="WallNormal96" parent="Tier2" unique_id=731551741 instance=ExtResource("8_kql2n")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18, 0, -20)
-
-[node name="WallNormal97" parent="Tier2" unique_id=1182301030 instance=ExtResource("8_kql2n")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26, 0, -24)
 
 [node name="WallNormal98" parent="Tier2" unique_id=1477267620 instance=ExtResource("8_kql2n")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -16, 0, -26)
@@ -1498,50 +1774,209 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -22)
 
 [node name="Encounters" type="Node3D" parent="Tier2" unique_id=1911863121]
 
+[node name="CrowdBlockerCapsule26" parent="Tier2" unique_id=1660351821 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5523396, 0.20855016, -27.039812)
+
+[node name="CrowdBlockerCapsule27" parent="Tier2" unique_id=1734299820 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7613811, 0.20855016, -27.039812)
+
+[node name="CrowdBlockerCapsule28" parent="Tier2" unique_id=1628925739 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5172825, 0.20855016, -27.26638)
+
+[node name="CrowdBlockerCapsule64" parent="Tier2" unique_id=462824 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.57817, 0.20855016, -31.734032)
+
+[node name="CrowdBlockerCapsule65" parent="Tier2" unique_id=1468365924 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.57817, 0.20855016, -27.509186)
+
+[node name="CrowdBlockerCapsule66" parent="Tier2" unique_id=1959925743 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.452278, 0.20855016, -33.764633)
+
+[node name="CrowdBlockerCapsule67" parent="Tier2" unique_id=1704197936 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.394733, 0.20855016, -34.541615)
+
+[node name="CrowdBlockerCapsule68" parent="Tier2" unique_id=26643713 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.705894, 0.20855016, -32.35635)
+
+[node name="CrowdBlockerCapsule69" parent="Tier2" unique_id=404840479 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.997261, 0.20855016, -30.511015)
+
+[node name="CrowdBlockerCapsule70" parent="Tier2" unique_id=464649092 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.970318, 0.20855016, -25.55775)
+
+[node name="CrowdBlockerCapsule71" parent="Tier2" unique_id=1310913652 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.970318, 0.20855016, -27.55775)
+
+[node name="CrowdBlockerCapsule72" parent="Tier2" unique_id=618824850 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.970318, 0.20855016, -27.55775)
+
+[node name="CrowdBlockerCapsule73" parent="Tier2" unique_id=1631849113 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.535091, 0.20855016, -34.69628)
+
+[node name="CrowdBlockerCapsule74" parent="Tier2" unique_id=1163901442 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.535091, 0.20855016, -34.69628)
+
+[node name="CrowdBlockerCapsule75" parent="Tier2" unique_id=1341878068 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.554882, 0.20855016, -32.511017)
+
+[node name="CrowdBlockerCapsule76" parent="Tier2" unique_id=732971339 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9146, 0.20855016, -30.90849)
+
+[node name="CrowdBlockerCapsule77" parent="Tier2" unique_id=158504579 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.486528, 0.20855016, -41.300636)
+
+[node name="CrowdBlockerCapsule78" parent="Tier2" unique_id=1845253097 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.486528, 0.20855016, -43.300636)
+
+[node name="CrowdBlockerCapsule79" parent="Tier2" unique_id=364441071 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.991932, 0.20855016, -41.55242)
+
+[node name="CrowdBlockerCapsule80" parent="Tier2" unique_id=1148605380 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.991932, 0.20855016, -43.55242)
+
+[node name="CrowdBlockerCapsule81" parent="Tier2" unique_id=357098065 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.991932, 0.20855016, -44.55242)
+
+[node name="CrowdBlockerCapsule82" parent="Tier2" unique_id=1699385414 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.991932, 0.20855016, -46.55242)
+
+[node name="CrowdBlockerCapsule83" parent="Tier2" unique_id=627452345 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.91825, 0.20855016, -34.557747)
+
+[node name="CrowdBlockerCapsule84" parent="Tier2" unique_id=514888900 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.43264, 0.20855016, -32.809536)
+
+[node name="CrowdBlockerCapsule85" parent="Tier2" unique_id=713737662 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.036995, 0.20855016, -34.94624)
+
+[node name="CrowdBlockerCapsule86" parent="Tier2" unique_id=388242003 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.036995, 0.20855016, -32.94624)
+
+[node name="CrowdBlockerCapsule87" parent="Tier2" unique_id=342992261 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.79419, 0.20855016, -29.64406)
+
+[node name="CrowdBlockerCapsule88" parent="Tier2" unique_id=117490227 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.957832, 0.20855016, -21.097246)
+
+[node name="CrowdBlockerCapsule89" parent="Tier2" unique_id=795570189 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.957832, 0.20855016, -23.097246)
+
+[node name="CrowdBlockerCapsule90" parent="Tier2" unique_id=2009995731 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.772568, 0.20855016, -20.911982)
+
+[node name="CrowdBlockerCapsule91" parent="Tier2" unique_id=782955149 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.984776, 0.20855016, -22.903)
+
+[node name="CrowdBlockerCapsule92" parent="Tier2" unique_id=1978744505 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.984776, 0.20855016, -20.903)
+
+[node name="CrowdBlockerCapsule29" parent="Tier2" unique_id=1010850994 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.615065, 0.20855016, -25.05734)
+
+[node name="CrowdBlockerCapsule30" parent="Tier2" unique_id=1070314447 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.859163, 0.20855016, -24.944056)
+
+[node name="CrowdBlockerCapsule31" parent="Tier2" unique_id=1118874321 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.412104, 0.20855016, -23.811214)
+
+[node name="CrowdBlockerCapsule32" parent="Tier2" unique_id=1918232577 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.412104, 0.20855016, -21.811214)
+
+[node name="CrowdBlockerCapsule33" parent="Tier2" unique_id=211397190 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5645, 0.20855016, -22.604202)
+
+[node name="CrowdBlockerCapsule34" parent="Tier2" unique_id=272545057 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5645, 0.20855016, -34.604202)
+
+[node name="CrowdBlockerCapsule35" parent="Tier2" unique_id=454044146 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.808596, 0.20855016, -33.811214)
+
+[node name="CrowdBlockerCapsule36" parent="Tier2" unique_id=1996393450 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.18553, 0.20855016, -31.71546)
+
+[node name="CrowdBlockerCapsule37" parent="Tier2" unique_id=408323531 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.111357, 0.20855016, -32.168594)
+
+[node name="CrowdBlockerCapsule38" parent="Tier2" unique_id=254043250 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.736444, 0.20855016, -28.260298)
+
+[node name="CrowdBlockerCapsule39" parent="Tier2" unique_id=1957168589 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.862724, 0.20855016, -33.21534)
+
+[node name="CrowdBlockerCapsule40" parent="Tier2" unique_id=1509161724 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.193054, 0.20855016, -34.999153)
+
+[node name="CrowdBlockerCapsule41" parent="Tier2" unique_id=2033849981 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.078901, 0.20855016, -43.19149)
+
+[node name="CrowdBlockerCapsule42" parent="Tier2" unique_id=1461368234 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.211035, 0.20855016, -45.173508)
+
+[node name="CrowdBlockerCapsule43" parent="Tier2" unique_id=1874209524 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.211035, 0.20855016, -51.173508)
+
+[node name="CrowdBlockerCapsule44" parent="Tier2" unique_id=529703867 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.211035, 0.20855016, -51.173508)
+
+[node name="CrowdBlockerCapsule45" parent="Tier2" unique_id=1607720603 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.211035, 0.20855016, -41.173508)
+
+[node name="CrowdBlockerCapsule46" parent="Tier2" unique_id=701013820 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.030817, 0.20855016, -41.23958)
+
+[node name="CrowdBlockerCapsule47" parent="Tier2" unique_id=871742610 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6825, 0.20855016, -43.221596)
+
+[node name="CrowdBlockerCapsule48" parent="Tier2" unique_id=38689556 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.565222, 0.20855016, -47.449898)
+
+[node name="CrowdBlockerCapsule49" parent="Tier2" unique_id=1364193243 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.084768, 0.20855016, -45.996418)
+
+[node name="CrowdBlockerCapsule50" parent="Tier2" unique_id=547871281 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.868586, 0.20855016, -45.269676)
+
+[node name="CrowdBlockerCapsule51" parent="Tier2" unique_id=1212426328 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.679377, 0.20855016, -43.75013)
+
+[node name="CrowdBlockerCapsule52" parent="Tier2" unique_id=2110824058 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.547239, 0.20855016, -47.978436)
+
+[node name="CrowdBlockerCapsule53" parent="Tier2" unique_id=1805476882 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9764786, 0.20855016, -47.119564)
+
+[node name="CrowdBlockerCapsule54" parent="Tier2" unique_id=217430707 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9764786, 0.20855016, -46.119564)
+
+[node name="CrowdBlockerCapsule55" parent="Tier2" unique_id=522479541 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3908653, 0.20855016, -44.666084)
+
+[node name="CrowdBlockerCapsule56" parent="Tier2" unique_id=1952357584 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.676245, 0.20855016, -41.428787)
+
+[node name="CrowdBlockerCapsule57" parent="Tier2" unique_id=49921831 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.676245, 0.20855016, -43.428787)
+
+[node name="CrowdBlockerCapsule58" parent="Tier2" unique_id=217041654 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9674816, 0.20855016, -33.122295)
+
+[node name="CrowdBlockerCapsule59" parent="Tier2" unique_id=659545681 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9674816, 0.20855016, -33.122295)
+
+[node name="CrowdBlockerCapsule60" parent="Tier2" unique_id=1638214315 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.625422, 0.20855016, -28.431522)
+
+[node name="CrowdBlockerCapsule61" parent="Tier2" unique_id=1056263996 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.625422, 0.20855016, -27.431522)
+
+[node name="CrowdBlockerCapsule62" parent="Tier2" unique_id=1229936326 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.085772, 0.20855016, -27.764591)
+
+[node name="CrowdBlockerCapsule63" parent="Tier2" unique_id=683793820 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.085772, 0.20855016, -29.764591)
+
 [node name="Tier3" type="Node3D" parent="." unique_id=2142852990]
 unique_name_in_owner = true
-
-[node name="FloorPlane194" parent="Tier3" unique_id=1758882269 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -50)
-
-[node name="FloorPlane195" parent="Tier3" unique_id=1949819406 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -54)
-
-[node name="FloorPlane196" parent="Tier3" unique_id=2011476226 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -58)
-
-[node name="FloorPlane197" parent="Tier3" unique_id=1180542779 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -66)
-
-[node name="FloorPlane198" parent="Tier3" unique_id=543282408 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -66)
-
-[node name="FloorPlane199" parent="Tier3" unique_id=1912734862 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -66)
-
-[node name="FloorPlane200" parent="Tier3" unique_id=939747781 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -70)
-
-[node name="FloorPlane201" parent="Tier3" unique_id=842419924 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -70)
-
-[node name="FloorPlane202" parent="Tier3" unique_id=1406600264 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -70)
-
-[node name="FloorPlane127" parent="Tier3" unique_id=464829112 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -50)
-
-[node name="FloorPlane128" parent="Tier3" unique_id=661043045 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -54)
-
-[node name="FloorPlane129" parent="Tier3" unique_id=1283086941 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -58)
-
-[node name="FloorPlane130" parent="Tier3" unique_id=1908333907 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -62)
-
-[node name="FloorPlane131" parent="Tier3" unique_id=578998104 instance=ExtResource("1_hri27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -62)
 
 [node name="FloorPlane132" parent="Tier3" unique_id=1169117795 instance=ExtResource("1_hri27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -62)
@@ -1726,72 +2161,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -86)
 [node name="FloorPlane189" parent="Tier3" unique_id=1096702277 instance=ExtResource("1_hri27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -86)
 
-[node name="WallNormal171" parent="Tier3" unique_id=743339802 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -8, 0, -50)
-
-[node name="WallNormal174" parent="Tier3" unique_id=1059724516 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -12, 0, -54)
-
-[node name="WallNormal232" parent="Tier3" unique_id=59742769 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -10, 0, -52)
-
-[node name="WallNormal233" parent="Tier3" unique_id=1177477822 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(3.059797e-07, 0, -1, 0, 1, 0, 1, 0, 3.059797e-07, -10, 0, -56)
-
-[node name="WallNormal234" parent="Tier3" unique_id=183080672 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.06666651, 0, -50)
-
-[node name="WallNormal235" parent="Tier3" unique_id=1491618062 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1.3113417e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113417e-07, -1.9333333, 0, -52)
-
-[node name="WallNormal236" parent="Tier3" unique_id=1766725683 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -1.9333338, 0, -48)
-
-[node name="WallNormal237" parent="Tier3" unique_id=1751856493 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.06666651, 0, -58)
-
-[node name="WallNormal238" parent="Tier3" unique_id=1664087448 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -1.9333338, 0, -56)
-
-[node name="WallNormal239" parent="Tier3" unique_id=602725335 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -1.9333336, 0, -72)
-
-[node name="WallNormal241" parent="Tier3" unique_id=1071642246 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -5.9333334, 0, -72)
-
-[node name="WallNormal242" parent="Tier3" unique_id=807935819 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.933333, 0, -72)
-
-[node name="WallNormal240" parent="Tier3" unique_id=191428607 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 0.066666365, 0, -70)
-
-[node name="WallNormal243" parent="Tier3" unique_id=121902065 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 0.066666365, 0, -66)
-
-[node name="WallNormal244" parent="Tier3" unique_id=1066177141 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1, 0, 3.496911e-07, 0, 1, 0, -3.496911e-07, 0, 1, -11.933333, 0, -66)
-
-[node name="WallNormal246" parent="Tier3" unique_id=1247627551 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-3.934025e-07, 0, 1, 0, 1, 0, -1, 0, -3.934025e-07, -9.933333, 0, -64)
-
-[node name="WallNormal245" parent="Tier3" unique_id=2055430540 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1, 0, 3.496911e-07, 0, 1, 0, -3.496911e-07, 0, 1, -11.933333, 0, -70)
-
-[node name="WallNormal172" parent="Tier3" unique_id=1607417350 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -4, 0, -54)
-
-[node name="WallNormal175" parent="Tier3" unique_id=1465067036 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -8, 0, -58)
-
-[node name="WallNormal176" parent="Tier3" unique_id=1318135081 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -8, 0, -62)
-
-[node name="WallNormal178" parent="Tier3" unique_id=2014667142 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -2, 0, -64)
-
-[node name="WallNormal179" parent="Tier3" unique_id=63026258 instance=ExtResource("3_7lf0s")]
-transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -2, 0, -60)
-
 [node name="WallNormal180" parent="Tier3" unique_id=1340971212 instance=ExtResource("3_7lf0s")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 2, 0, -64)
 
@@ -1914,48 +2283,6 @@ transform = Transform3D(3.5527137e-15, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 3.5
 
 [node name="WallDoorway29" parent="Tier3" unique_id=2092089485 instance=ExtResource("6_s743b")]
 transform = Transform3D(3.5527137e-15, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 3.5527137e-15, 22, 0, -92)
-
-[node name="Ceiling194" parent="Tier3" unique_id=1834425637 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -50)
-
-[node name="Ceiling195" parent="Tier3" unique_id=92353603 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -54)
-
-[node name="Ceiling196" parent="Tier3" unique_id=1898591531 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -58)
-
-[node name="Ceiling197" parent="Tier3" unique_id=228215234 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -66)
-
-[node name="Ceiling198" parent="Tier3" unique_id=612934259 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -70)
-
-[node name="Ceiling199" parent="Tier3" unique_id=512431927 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -70)
-
-[node name="Ceiling200" parent="Tier3" unique_id=1967262960 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -66)
-
-[node name="Ceiling201" parent="Tier3" unique_id=1832988031 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -66)
-
-[node name="Ceiling202" parent="Tier3" unique_id=1395884709 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -70)
-
-[node name="Ceiling127" parent="Tier3" unique_id=304698175 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -50)
-
-[node name="Ceiling128" parent="Tier3" unique_id=512156431 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -54)
-
-[node name="Ceiling129" parent="Tier3" unique_id=2092856546 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -58)
-
-[node name="Ceiling130" parent="Tier3" unique_id=649212243 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -62)
-
-[node name="Ceiling131" parent="Tier3" unique_id=1125849701 instance=ExtResource("7_plkrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -62)
 
 [node name="Ceiling132" parent="Tier3" unique_id=79885210 instance=ExtResource("7_plkrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -62)
@@ -2140,20 +2467,458 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -86)
 [node name="Ceiling189" parent="Tier3" unique_id=17714109 instance=ExtResource("7_plkrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -86)
 
-[node name="WallSlammedDoor2" parent="Tier3" unique_id=1047896871 instance=ExtResource("12_5vfu0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -54)
-
-[node name="WallSlammedDoor5" parent="Tier3" unique_id=1072116433 instance=ExtResource("12_5vfu0")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6, 0, -64)
-
-[node name="WallSlammedDoor3" parent="Tier3" unique_id=2095946525 instance=ExtResource("12_5vfu0")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -50)
-
-[node name="WallSlammedDoor4" parent="Tier3" unique_id=1602985759 instance=ExtResource("12_5vfu0")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -58)
-
 [node name="ExitObjective" parent="Tier3" unique_id=1514642364 instance=ExtResource("19_tworg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.977083, 1.308926, -91.88557)
+
+[node name="CrowdBlockerCapsule49" parent="Tier3" unique_id=794278195 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.39308, 0.20855016, -64.43271)
+
+[node name="CrowdBlockerCapsule50" parent="Tier3" unique_id=1016162429 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.85903, 0.20855016, -63.353855)
+
+[node name="CrowdBlockerCapsule51" parent="Tier3" unique_id=704621475 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.85903, 0.20855016, -65.35385)
+
+[node name="CrowdBlockerCapsule52" parent="Tier3" unique_id=1848788197 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.547871, 0.20855016, -58.312443)
+
+[node name="CrowdBlockerCapsule53" parent="Tier3" unique_id=1769630103 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.547871, 0.20855016, -58.312443)
+
+[node name="CrowdBlockerCapsule54" parent="Tier3" unique_id=275095575 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.547871, 0.20855016, -57.312443)
+
+[node name="CrowdBlockerCapsule55" parent="Tier3" unique_id=1709861783 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.22773, 0.20855016, -63.236935)
+
+[node name="CrowdBlockerCapsule56" parent="Tier3" unique_id=708595307 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.024504, 0.20855016, -57.943737)
+
+[node name="CrowdBlockerCapsule57" parent="Tier3" unique_id=1292944489 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.024504, 0.20855016, -58.943737)
+
+[node name="CrowdBlockerCapsule58" parent="Tier3" unique_id=1642584060 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.024504, 0.20855016, -57.943737)
+
+[node name="CrowdBlockerCapsule59" parent="Tier3" unique_id=580106230 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.024504, 0.20855016, -63.943737)
+
+[node name="CrowdBlockerCapsule60" parent="Tier3" unique_id=1106283969 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.547869, 0.20855016, -65.44915)
+
+[node name="CrowdBlockerCapsule61" parent="Tier3" unique_id=1304999006 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.443596, 0.20855016, -65.44915)
+
+[node name="CrowdBlockerCapsule62" parent="Tier3" unique_id=1094343518 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.706192, 0.20855016, -63.555252)
+
+[node name="CrowdBlockerCapsule63" parent="Tier3" unique_id=1705801103 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.706192, 0.20855016, -62.555252)
+
+[node name="CrowdBlockerCapsule64" parent="Tier3" unique_id=1412277009 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.697208, 0.20855016, -60.952724)
+
+[node name="CrowdBlockerCapsule65" parent="Tier3" unique_id=1045371295 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.49398, 0.20855016, -60.41855)
+
+[node name="CrowdBlockerCapsule66" parent="Tier3" unique_id=1643290094 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.006538, 0.20855016, -57.116367)
+
+[node name="CrowdBlockerCapsule67" parent="Tier3" unique_id=1912436343 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.20444, 0.20855016, -56.873558)
+
+[node name="CrowdBlockerCapsule68" parent="Tier3" unique_id=1986876609 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.001217, 0.20855016, -58.18472)
+
+[node name="CrowdBlockerCapsule69" parent="Tier3" unique_id=1714707627 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.312378, 0.20855016, -57.164932)
+
+[node name="CrowdBlockerCapsule70" parent="Tier3" unique_id=2133004731 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.312378, 0.20855016, -60.164932)
+
+[node name="CrowdBlockerCapsule71" parent="Tier3" unique_id=906596376 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.312378, 0.20855016, -62.164932)
+
+[node name="CrowdBlockerCapsule72" parent="Tier3" unique_id=584251038 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.312378, 0.20855016, -63.164932)
+
+[node name="CrowdBlockerCapsule73" parent="Tier3" unique_id=445072931 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.312378, 0.20855016, -64.16493)
+
+[node name="CrowdBlockerCapsule74" parent="Tier3" unique_id=1679656194 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.612724, 0.20855016, -65.42753)
+
+[node name="CrowdBlockerCapsule75" parent="Tier3" unique_id=317998816 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.049778, 0.20855016, -66.94192)
+
+[node name="CrowdBlockerCapsule76" parent="Tier3" unique_id=121986225 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.049778, 0.20855016, -68.94192)
+
+[node name="CrowdBlockerCapsule77" parent="Tier3" unique_id=980653078 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.049778, 0.20855016, -67.94192)
+
+[node name="CrowdBlockerCapsule78" parent="Tier3" unique_id=1274155535 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.049778, 0.20855016, -63.941917)
+
+[node name="CrowdBlockerCapsule79" parent="Tier3" unique_id=128140066 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.049778, 0.20855016, -64.94192)
+
+[node name="CrowdBlockerCapsule80" parent="Tier3" unique_id=1438876485 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.049778, 0.20855016, -65.94192)
+
+[node name="CrowdBlockerCapsule81" parent="Tier3" unique_id=1409598557 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.515606, 0.20855016, -67.23329)
+
+[node name="CrowdBlockerCapsule82" parent="Tier3" unique_id=1448975283 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.515606, 0.20855016, -66.23329)
+
+[node name="CrowdBlockerCapsule83" parent="Tier3" unique_id=733683945 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.515606, 0.20855016, -66.23329)
+
+[node name="CrowdBlockerCapsule84" parent="Tier3" unique_id=1184941290 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.085701, 0.20855016, -68.46712)
+
+[node name="CrowdBlockerCapsule85" parent="Tier3" unique_id=1824885998 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.085701, 0.20855016, -69.46712)
+
+[node name="CrowdBlockerCapsule86" parent="Tier3" unique_id=1791311375 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.085701, 0.20855016, -70.46712)
+
+[node name="CrowdBlockerCapsule87" parent="Tier3" unique_id=948204461 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.085701, 0.20855016, -69.46712)
+
+[node name="CrowdBlockerCapsule88" parent="Tier3" unique_id=1730517421 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.085701, 0.20855016, -69.46712)
+
+[node name="CrowdBlockerCapsule89" parent="Tier3" unique_id=1550019135 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.085701, 0.20855016, -70.46712)
+
+[node name="CrowdBlockerCapsule90" parent="Tier3" unique_id=1965315035 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.085701, 0.20855016, -71.46712)
+
+[node name="CrowdBlockerCapsule91" parent="Tier3" unique_id=1202524707 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.085701, 0.20855016, -73.46712)
+
+[node name="CrowdBlockerCapsule92" parent="Tier3" unique_id=464181689 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.191805, 0.20855016, -72.350204)
+
+[node name="CrowdBlockerCapsule93" parent="Tier3" unique_id=1370900368 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.191805, 0.20855016, -71.350204)
+
+[node name="CrowdBlockerCapsule94" parent="Tier3" unique_id=565828448 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.191805, 0.20855016, -72.350204)
+
+[node name="CrowdBlockerCapsule95" parent="Tier3" unique_id=64460362 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.191805, 0.20855016, -72.350204)
+
+[node name="CrowdBlockerCapsule96" parent="Tier3" unique_id=1976590569 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.191805, 0.20855016, -71.350204)
+
+[node name="CrowdBlockerCapsule97" parent="Tier3" unique_id=82253445 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.191805, 0.20855016, -72.350204)
+
+[node name="CrowdBlockerCapsule98" parent="Tier3" unique_id=1365926090 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.191805, 0.20855016, -73.350204)
+
+[node name="CrowdBlockerCapsule99" parent="Tier3" unique_id=1639431361 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.191805, 0.20855016, -74.350204)
+
+[node name="CrowdBlockerCapsule100" parent="Tier3" unique_id=1505419019 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.668438, 0.20855016, -74.1074)
+
+[node name="CrowdBlockerCapsule101" parent="Tier3" unique_id=92111375 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.443592, 0.20855016, -75.6128)
+
+[node name="CrowdBlockerCapsule102" parent="Tier3" unique_id=1245165975 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.968788, 0.20855016, -76.341225)
+
+[node name="CrowdBlockerCapsule103" parent="Tier3" unique_id=176277740 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.240366, 0.20855016, -76.04986)
+
+[node name="CrowdBlockerCapsule104" parent="Tier3" unique_id=33123526 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.634346, 0.20855016, -71.43652)
+
+[node name="CrowdBlockerCapsule105" parent="Tier3" unique_id=1459579853 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.896942, 0.20855016, -67.9401)
+
+[node name="CrowdBlockerCapsule106" parent="Tier3" unique_id=1470157951 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.067741, 0.20855016, -74.30165)
+
+[node name="CrowdBlockerCapsule107" parent="Tier3" unique_id=1141438354 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.990406, 0.20855016, -72.456314)
+
+[node name="CrowdBlockerCapsule108" parent="Tier3" unique_id=771680627 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.990406, 0.20855016, -74.456314)
+
+[node name="CrowdBlockerCapsule109" parent="Tier3" unique_id=1452508609 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.787178, 0.20855016, -74.69913)
+
+[node name="CrowdBlockerCapsule110" parent="Tier3" unique_id=2007466187 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.787178, 0.20855016, -75.69913)
+
+[node name="CrowdBlockerCapsule111" parent="Tier3" unique_id=1165274395 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.787178, 0.20855016, -76.69913)
+
+[node name="CrowdBlockerCapsule112" parent="Tier3" unique_id=1314314811 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.941841, 0.20855016, -77.91316)
+
+[node name="CrowdBlockerCapsule113" parent="Tier3" unique_id=1210839438 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.787178, 0.20855016, -78.69014)
+
+[node name="CrowdBlockerCapsule114" parent="Tier3" unique_id=1961911674 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.990402, 0.20855016, -79.85562)
+
+[node name="CrowdBlockerCapsule115" parent="Tier3" unique_id=1262064222 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.047947, 0.20855016, -78.83583)
+
+[node name="CrowdBlockerCapsule116" parent="Tier3" unique_id=562092436 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.047947, 0.20855016, -76.89337)
+
+[node name="CrowdBlockerCapsule117" parent="Tier3" unique_id=868487510 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.047947, 0.20855016, -80.89337)
+
+[node name="CrowdBlockerCapsule118" parent="Tier3" unique_id=1442458127 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.047947, 0.20855016, -81.89337)
+
+[node name="CrowdBlockerCapsule119" parent="Tier3" unique_id=1608450894 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.047947, 0.20855016, -86.89337)
+
+[node name="CrowdBlockerCapsule120" parent="Tier3" unique_id=1098149678 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.047947, 0.20855016, -86.89337)
+
+[node name="CrowdBlockerCapsule121" parent="Tier3" unique_id=919709045 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.047947, 0.20855016, -84.89337)
+
+[node name="CrowdBlockerCapsule122" parent="Tier3" unique_id=888633706 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.796158, 0.20855016, -83.21352)
+
+[node name="CrowdBlockerCapsule123" parent="Tier3" unique_id=975123088 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.796158, 0.20855016, -72.21352)
+
+[node name="CrowdBlockerCapsule124" parent="Tier3" unique_id=391578853 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.796158, 0.20855016, -81.21352)
+
+[node name="CrowdBlockerCapsule125" parent="Tier3" unique_id=550251253 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.796158, 0.20855016, -81.21352)
+
+[node name="CrowdBlockerCapsule126" parent="Tier3" unique_id=467718627 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.796158, 0.20855016, -82.21352)
+
+[node name="CrowdBlockerCapsule127" parent="Tier3" unique_id=1682062642 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.796158, 0.20855016, -81.21352)
+
+[node name="CrowdBlockerCapsule128" parent="Tier3" unique_id=1532374848 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.19363, 0.20855016, -82.37899)
+
+[node name="CrowdBlockerCapsule129" parent="Tier3" unique_id=1223385322 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.008366, 0.20855016, -81.84482)
+
+[node name="CrowdBlockerCapsule130" parent="Tier3" unique_id=25236952 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.774538, 0.20855016, -81.06783)
+
+[node name="CrowdBlockerCapsule131" parent="Tier3" unique_id=1740984245 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.979595, 0.20855016, -83.35022)
+
+[node name="CrowdBlockerCapsule132" parent="Tier3" unique_id=1261863945 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.979595, 0.20855016, -82.35022)
+
+[node name="CrowdBlockerCapsule133" parent="Tier3" unique_id=1091472360 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.979595, 0.20855016, -87.35022)
+
+[node name="CrowdBlockerCapsule134" parent="Tier3" unique_id=628088595 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.979595, 0.20855016, -85.35022)
+
+[node name="CrowdBlockerCapsule135" parent="Tier3" unique_id=1950750310 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.979595, 0.20855016, -86.35022)
+
+[node name="CrowdBlockerCapsule136" parent="Tier3" unique_id=1825735100 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.794331, 0.20855016, -76.99112)
+
+[node name="CrowdBlockerCapsule142" parent="Tier3" unique_id=1656325046 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.835741, 0.20855016, -81.798706)
+
+[node name="CrowdBlockerCapsule143" parent="Tier3" unique_id=1535215735 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.835741, 0.20855016, -81.798706)
+
+[node name="CrowdBlockerCapsule144" parent="Tier3" unique_id=1532195895 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.506624, 0.20855016, -82.62425)
+
+[node name="CrowdBlockerCapsule145" parent="Tier3" unique_id=1971018116 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.125284, 0.20855016, -63.199665)
+
+[node name="CrowdBlockerCapsule146" parent="Tier3" unique_id=1833309842 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.172018, 0.20855016, -66.453285)
+
+[node name="CrowdBlockerCapsule147" parent="Tier3" unique_id=231916408 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.172018, 0.20855016, -73.453285)
+
+[node name="CrowdBlockerCapsule148" parent="Tier3" unique_id=820170565 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.878817, 0.20855016, -80.20332)
+
+[node name="CrowdBlockerCapsule149" parent="Tier3" unique_id=805111372 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.878817, 0.20855016, -79.20332)
+
+[node name="CrowdBlockerCapsule150" parent="Tier3" unique_id=519171676 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.878817, 0.20855016, -77.20332)
+
+[node name="CrowdBlockerCapsule151" parent="Tier3" unique_id=825562512 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.109146, 0.20855016, -70.5504)
+
+[node name="CrowdBlockerCapsule152" parent="Tier3" unique_id=916960569 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.569483, 0.20855016, -59.91544)
+
+[node name="CrowdBlockerCapsule153" parent="Tier3" unique_id=234818430 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8184843, 0.20855016, -63.284878)
+
+[node name="CrowdBlockerCapsule154" parent="Tier3" unique_id=1350655177 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8184843, 0.20855016, -63.284878)
+
+[node name="CrowdBlockerCapsule155" parent="Tier3" unique_id=1983437494 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7524137, 0.20855016, -60.95454)
+
+[node name="CrowdBlockerCapsule156" parent="Tier3" unique_id=1847425227 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16354072, 0.20855016, -60.888474)
+
+[node name="CrowdBlockerCapsule137" parent="Tier3" unique_id=561755432 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.794331, 0.20855016, -81.6973)
+
+[node name="CrowdBlockerCapsule138" parent="Tier3" unique_id=178016258 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.79433, 0.20855016, -87.6973)
+
+[node name="CrowdBlockerCapsule139" parent="Tier3" unique_id=1202528996 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.79433, 0.20855016, -86.6973)
+
+[node name="CrowdBlockerCapsule140" parent="Tier3" unique_id=678561405 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.79433, 0.20855016, -85.6973)
+
+[node name="CrowdBlockerCapsule141" parent="Tier3" unique_id=1195144017 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.717, 0.20855016, -83.60916)
+
+[node name="Encounters" type="Node3D" parent="." unique_id=1510019465]
+
+[node name="Encounter" parent="Encounters" unique_id=1653614673 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 7, 1, -3)
+emotion_count = 1
+
+[node name="Encounter2" parent="Encounters" unique_id=1370236251 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.581044, 0, 0.81387216, 0, 1, 0, -0.81387216, 0, -0.581044, -13.175432, 0.99999976, -6.403471)
+emotion_count = 1
+
+[node name="Encounter3" parent="Encounters" unique_id=1671111583 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.9325761, 0, -0.36097363, 0, 1, 0, 0.36097363, 0, -0.9325761, 10.058728, 1, -17.693012)
+
+[node name="Encounter4" parent="Encounters" unique_id=1409132824 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 2.2492971, 1.0000002, -14.226041)
+
+[node name="Encounter5" parent="Encounters" unique_id=355094813 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, 13, 1, -6)
+emotion_count = 1
+
+[node name="Encounter6" parent="Encounters" unique_id=1753919034 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.76574147, 0, -0.6431485, 0, 1, 0, 0.6431485, 0, 0.76574147, -22.165249, 1, -10.647613)
+emotion_count = 1
+
+[node name="Encounter7" parent="Encounters" unique_id=1848855415 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.99648553, 0, -0.08376487, 0, 1, 0, 0.08376487, 0, 0.99648553, -11.126609, 1, -13.01044)
+emotion_count = 1
+
+[node name="Encounter8" parent="Encounters" unique_id=186340416 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.99650896, 0, 0.08348659, 0, 1, 0, -0.08348659, 0, -0.99650896, -25.183086, 1, -9.943299)
+emotion_count = 1
+
+[node name="Encounter9" parent="Encounters" unique_id=640910961 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.990459, 0, -0.13780752, 0, 1, 0, 0.13780752, 0, -0.990459, -17.133585, 1, -30.577778)
+emotion_count = 2
+
+[node name="Encounter10" parent="Encounters" unique_id=254025138 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.7125283, 0, 0.70164347, 0, 1, 0, -0.70164347, 0, -0.7125283, -26.710505, 1, -44.186996)
+emotion_count = 2
+max_active_masks = 4
+
+[node name="Encounter11" parent="Encounters" unique_id=1381878932 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.75144845, 0, -0.65979177, 0, 1, 0, 0.65979177, 0, -0.75144845, -38.479565, 1, -37.760525)
+emotion_count = 2
+max_active_masks = 4
+
+[node name="Encounter12" parent="Encounters" unique_id=150816385 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.76583123, 0, 0.64304155, 0, 1, 0, -0.64304155, 0, -0.76583123, -36.26623, 1, -23.711592)
+emotion_count = 2
+
+[node name="Encounter13" parent="Encounters" unique_id=119004108 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.7832054, 0, -0.621763, 0, 1, 0, 0.621763, 0, -0.7832054, -29.110113, 1, -30.591242)
+emotion_count = 2
+max_active_masks = 4
+
+[node name="Encounter14" parent="Encounters" unique_id=1451673292 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.93677616, 0, 0.34992933, 0, 1, 0, -0.34992933, 0, 0.93677616, 7.58896, 1, -25.48157)
+emotion_count = 2
+
+[node name="Encounter15" parent="Encounters" unique_id=1504481181 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.99650896, 0, 0.08348659, 0, 1, 0, -0.08348659, 0, -0.99650896, 19.863838, 1, -26.406796)
+emotion_count = 3
+max_active_masks = 5
+
+[node name="Encounter16" parent="Encounters" unique_id=256234721 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.35820505, 0, -0.9336429, 0, 1, 0, 0.9336429, 0, -0.35820505, 27.908878, 0.9999995, -34.999146)
+emotion_count = 2
+max_active_masks = 4
+
+[node name="Encounter17" parent="Encounters" unique_id=1636041831 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.94095755, 0, -0.33852446, 0, 1, 0, 0.33852446, 0, -0.94095755, 22.03597, 1, -49.94753)
+emotion_count = 2
+max_active_masks = 4
+
+[node name="Encounter18" parent="Encounters" unique_id=1101720177 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.65720415, 0, -0.75371253, 0, 1, 0, 0.75371253, 0, 0.65720415, 11.291467, 1, -44.89094)
+emotion_count = 3
+max_active_masks = 4
+
+[node name="Encounter19" parent="Encounters" unique_id=720662732 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.7097429, 0, -0.70446074, 0, 1, 0, 0.70446074, 0, -0.7097429, 4.3851876, 1, -35.777195)
+emotion_count = 3
+max_active_masks = 4
+
+[node name="Encounter20" parent="Encounters" unique_id=1652103732 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.67892885, 0, -0.7342042, 0, 1, 0, 0.7342042, 0, 0.67892885, 18.256807, 1, -61.462555)
+emotion_count = 3
+max_active_masks = 4
+
+[node name="Encounter21" parent="Encounters" unique_id=1333700512 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.7528056, 0, 0.658243, 0, 1, 0, -0.658243, 0, -0.7528056, 27.207605, 1, -66.500275)
+emotion_count = 3
+max_active_masks = 5
+
+[node name="Encounter22" parent="Encounters" unique_id=1012961422 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.9773828, 0, -0.21147832, 0, 1, 0, 0.21147832, 0, 0.9773828, 13.061903, 1, -68.937965)
+emotion_count = 3
+max_active_masks = 5
+
+[node name="Encounter23" parent="Encounters" unique_id=1269517564 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.79152226, 0, -0.6111403, 0, 1, 0, 0.6111403, 0, 0.79152226, 27.923906, 1, -73.90326)
+emotion_count = 3
+max_active_masks = 5
+
+[node name="Encounter24" parent="Encounters" unique_id=100167896 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.22860563, 0, 0.9735191, 0, 1, 0, -0.9735191, 0, -0.22860563, 35.320225, 1, -80.31773)
+emotion_count = 3
+max_active_masks = 5
+
+[node name="Encounter25" parent="Encounters" unique_id=198114423 instance=ExtResource("7_vodbx")]
+transform = Transform3D(-0.5019183, 0, 0.86491513, 0, 1, 0, -0.86491513, 0, -0.5019183, 18.662153, 1, -79.08517)
+emotion_count = 3
+max_active_masks = 5
+
+[node name="Encounter26" parent="Encounters" unique_id=2117657978 instance=ExtResource("7_vodbx")]
+transform = Transform3D(0.75994116, 0, 0.649992, 0, 1, 0, -0.649992, 0, 0.75994116, 11.623689, 1, -83.57857)
+emotion_count = 3
+max_active_masks = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=870877869]
+transform = Transform3D(-0.76300055, 0.07586775, 0.6453672, -0.016537774, 2.074094, -0.07588956, -0.64618576, -0.14266506, -0.7600923, -3.0117908, 1.314926, 2.6220264)
+mesh = SubResource("QuadMesh_t58ta")
+
+[node name="LoaderScene" parent="." unique_id=1634035277 instance=ExtResource("15_t58ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3625895, 1.2130743, 4.678238)
 
 [node name="CouchRed" parent="." unique_id=272237701 instance=ExtResource("16_1j1kj")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.34711623, 0.01413846, 3.3419771)
@@ -2177,119 +2942,104 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.418688, 0.9320483, -19.8075
 light_color = Color(1, 1, 0.7764706, 1)
 light_energy = 3.433
 
-[node name="CrowdBlockerCapsule" parent="." unique_id=1635286611 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0335553, 0.20855016, 0.9527862)
+[node name="Tier2Blocker" type="Node3D" parent="." unique_id=529689508]
+unique_name_in_owner = true
 
-[node name="CrowdBlockerCapsule2" parent="." unique_id=1353567484 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2126036, 0.20855016, 2.8490963)
+[node name="CrowdBlockerCapsule53" parent="Tier2Blocker" unique_id=2049282272 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.949482, 0.20855016, -15.682743)
 
-[node name="CrowdBlockerCapsule3" parent="." unique_id=1157051246 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9296923, 0.20855016, 1.117506)
+[node name="CrowdBlockerCapsule54" parent="Tier2Blocker" unique_id=1503513271 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.885298, 0.20855016, -15.463815)
 
-[node name="CrowdBlockerCapsule4" parent="." unique_id=1219281998 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7460394, 0.20855016, -1.4011703)
+[node name="CrowdBlockerCapsule55" parent="Tier2Blocker" unique_id=163236803 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9486637, 0.20855016, -16.714836)
 
-[node name="CrowdBlockerCapsule5" parent="." unique_id=844029735 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7198038, 0.20855016, -3.6574838)
+[node name="CrowdBlockerCapsule56" parent="Tier2Blocker" unique_id=234550499 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.230961, 0.20855016, -17.18397)
 
-[node name="CrowdBlockerCapsule6" parent="." unique_id=1155133788 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1486578, 0.20855016, -6.8320646)
+[node name="CrowdBlockerCapsule57" parent="Tier2Blocker" unique_id=675042999 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.854021, 0.20855016, -17.74693)
 
-[node name="CrowdBlockerCapsule7" parent="." unique_id=1836052427 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.022543, 0.20855016, -6.937009)
+[node name="Tier3Blocker" type="Node3D" parent="." unique_id=1802428209]
 
-[node name="CrowdBlockerCapsule8" parent="." unique_id=964355520 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.619926, 0.20855016, -6.648411)
+[node name="CrowdBlockerCapsule58" parent="Tier3Blocker" unique_id=852199017 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1379795, 0.20855016, -40.586494)
 
-[node name="CrowdBlockerCapsule9" parent="." unique_id=1013477628 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.252621, 0.20855016, -4.549514)
+[node name="CrowdBlockerCapsule59" parent="Tier3Blocker" unique_id=409343227 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1676216, 0.20855016, -40.586494)
 
-[node name="CrowdBlockerCapsule10" parent="." unique_id=1508641885 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.840933, 0.20855016, -1.2699876)
+[node name="CrowdBlockerCapsule60" parent="Tier3Blocker" unique_id=1332576123 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.854866, 0.20855016, -41.931343)
 
-[node name="CrowdBlockerCapsule11" parent="." unique_id=1709670297 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.963396, 0.20855016, -7.0157156)
+[node name="CrowdBlockerCapsule61" parent="Tier3Blocker" unique_id=771260447 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.854866, 0.20855016, -41.931343)
 
-[node name="CrowdBlockerCapsule12" parent="." unique_id=213388976 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.58195, 0.20855016, -6.963243)
+[node name="CrowdBlockerCapsule62" parent="Tier3Blocker" unique_id=825995307 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.947874, 0.20855016, -43.588947)
 
-[node name="CrowdBlockerCapsule13" parent="." unique_id=687423045 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.220692, 0.20855016, -6.937007)
+[node name="CrowdBlockerCapsule63" parent="Tier3Blocker" unique_id=1300260435 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3552723, 0.20855016, -44.777416)
 
-[node name="CrowdBlockerCapsule14" parent="." unique_id=237990544 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.534578, 0.20855016, -13.790268)
+[node name="CrowdBlockerCapsule64" parent="Tier3Blocker" unique_id=1656897520 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1034336, 0.20855016, -45.684406)
 
-[node name="CrowdBlockerCapsule15" parent="." unique_id=877786301 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.533447, 0.20855016, -14.718313)
+[node name="CrowdBlockerCapsule65" parent="Tier3Blocker" unique_id=1881825144 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2301693, 0.20855016, -48.968338)
 
-[node name="CrowdBlockerCapsule16" parent="." unique_id=1114289641 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.745913, 0.20855016, -6.4729843)
+[node name="CrowdBlockerCapsule66" parent="Tier3Blocker" unique_id=691577901 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2598114, 0.20855016, -52.94033)
 
-[node name="CrowdBlockerCapsule17" parent="." unique_id=1748530785 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.926647, 0.20855016, -7.2939467)
+[node name="CrowdBlockerCapsule67" parent="Tier3Blocker" unique_id=394085046 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.854864, 0.20855016, -56.411915)
 
-[node name="CrowdBlockerCapsule18" parent="." unique_id=980452057 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.03373, 0.20855016, -6.901312)
+[node name="CrowdBlockerCapsule68" parent="Tier3Blocker" unique_id=814623189 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2301693, 0.20855016, -51.220177)
 
-[node name="CrowdBlockerCapsule19" parent="." unique_id=1275077601 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.076218, 0.20855016, -15.182335)
+[node name="CrowdBlockerCapsule69" parent="Tier3Blocker" unique_id=1217625426 instance=ExtResource("14_ly28y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.354456, 0.20855016, -46.841602)
 
-[node name="CrowdBlockerCapsule20" parent="." unique_id=1422581008 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1674118, 0.20855016, -17.32398)
+[node name="CenterRoomLights" type="Node3D" parent="." unique_id=1087502897]
 
-[node name="CrowdBlockerCapsule21" parent="." unique_id=1305300967 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.555519, 0.20855016, -14.004432)
+[node name="SpotLight3D" type="SpotLight3D" parent="CenterRoomLights" unique_id=2027935131]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8.481485, 3.3529181, -23.22886)
+light_color = Color(1.9754877, 0.41313866, 1.9754877, 1)
+light_energy = 2.502
+light_bake_mode = 1
 
-[node name="CrowdBlockerCapsule22" parent="." unique_id=420238576 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55665, 0.20855016, -13.647491)
+[node name="SpotLight3D2" type="SpotLight3D" parent="CenterRoomLights" unique_id=122788606]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.2269745, 3.3529181, -23.523111)
+light_color = Color(1.9754877, 0.41313866, 1.9754877, 1)
+light_energy = 2.502
+light_bake_mode = 1
 
-[node name="CrowdBlockerCapsule23" parent="." unique_id=373517885 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.593476, 0.20855016, -13.219162)
+[node name="SpotLight3D3" type="SpotLight3D" parent="CenterRoomLights" unique_id=1132674080]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8.2269745, 3.3529181, -28.523111)
+light_color = Color(1.9754877, 0.41313866, 1.9754877, 1)
+light_energy = 2.502
+light_bake_mode = 1
 
-[node name="CrowdBlockerCapsule24" parent="." unique_id=185451203 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.776066, 0.20855016, -21.205685)
+[node name="SpotLight3D4" type="SpotLight3D" parent="CenterRoomLights" unique_id=1105464741]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.1406078, 3.3529181, -29.531979)
+light_color = Color(1.9754877, 0.41313866, 1.9754877, 1)
+light_energy = 2.502
+light_bake_mode = 1
 
-[node name="CrowdBlockerCapsule25" parent="." unique_id=139235072 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.738979, 0.20855016, -26.076899)
+[node name="SpotLight3D5" type="SpotLight3D" parent="CenterRoomLights" unique_id=383078695]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -9.277882, 3.3529181, -33.903732)
+light_color = Color(1.9754877, 0.41313866, 1.9754877, 1)
+light_energy = 2.502
+light_bake_mode = 1
 
-[node name="CrowdBlockerCapsule26" parent="." unique_id=1660351821 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5523396, 0.20855016, -27.039812)
+[node name="SpotLight3D6" type="SpotLight3D" parent="CenterRoomLights" unique_id=1259067354]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.8463573, 3.3529181, -37.224586)
+light_color = Color(1.9754877, 0.41313866, 1.9754877, 1)
+light_energy = 2.502
+light_bake_mode = 1
 
-[node name="CrowdBlockerCapsule27" parent="." unique_id=1734299820 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7613811, 0.20855016, -27.039812)
+[node name="SpotLight3D7" type="SpotLight3D" parent="CenterRoomLights" unique_id=427870078]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.6693478, 3.3529181, -33.777622)
+light_color = Color(1.9754877, 0.41313866, 1.9754877, 1)
+light_energy = 2.502
+light_bake_mode = 1
 
-[node name="CrowdBlockerCapsule28" parent="." unique_id=1628925739 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5172825, 0.20855016, -27.26638)
-
-[node name="CrowdBlockerCapsule29" parent="." unique_id=1010850994 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.615065, 0.20855016, -25.05734)
-
-[node name="CrowdBlockerCapsule30" parent="." unique_id=1070314447 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.859163, 0.20855016, -24.944056)
-
-[node name="CrowdBlockerCapsule31" parent="." unique_id=1118874321 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.412104, 0.20855016, -23.811214)
-
-[node name="CrowdBlockerCapsule32" parent="." unique_id=1918232577 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.412104, 0.20855016, -21.811214)
-
-[node name="CrowdBlockerCapsule33" parent="." unique_id=211397190 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5645, 0.20855016, -22.604202)
-
-[node name="CrowdBlockerCapsule34" parent="." unique_id=272545057 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5645, 0.20855016, -34.604202)
-
-[node name="CrowdBlockerCapsule35" parent="." unique_id=454044146 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.808596, 0.20855016, -33.811214)
-
-[node name="CrowdBlockerCapsule36" parent="." unique_id=1996393450 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.18553, 0.20855016, -31.71546)
-
-[node name="CrowdBlockerCapsule37" parent="." unique_id=408323531 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.111357, 0.20855016, -32.168594)
-
-[node name="CrowdBlockerCapsule38" parent="." unique_id=254043250 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.736444, 0.20855016, -28.260298)
-
-[editable path="Encounters/Encounter2"]
 [editable path="LampTable"]
