@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bqub8lkxiqtak" path="res://ui/hud.gd" id="1_276te"]
 [ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="1_rbyyf"]
 [ext_resource type="Script" uid="uid://dtxlju7he8e3q" path="res://ui/Text Effects/EmotionColor.gd" id="3_546lt"]
-[ext_resource type="Script" uid="uid://cawny8ajvn3rf" path="res://ui/Text Effects/WritingEffect.gd" id="4_7ihmi"]
-[ext_resource type="Script" uid="uid://bglfhcoxx86m1" path="res://ui/Text Effects/MonsterEffect.gd" id="5_en2x2"]
+[ext_resource type="Script" path="res://ui/Text Effects/WritingEffect.gd" id="4_7ihmi"]
+[ext_resource type="Script" path="res://ui/Text Effects/MonsterEffect.gd" id="5_en2x2"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_7ihmi"]
 script = ExtResource("3_546lt")
@@ -78,3 +78,12 @@ tab_size = 9
 horizontal_alignment = 1
 vertical_alignment = 1
 custom_effects = [SubResource("RichTextEffect_7ihmi"), SubResource("RichTextEffect_en2x2"), SubResource("RichTextEffect_1v5rv")]
+
+[node name="FPSLabel" type="Label" parent="HudBaseControl" unique_id=1501802051]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 14.0
+offset_right = 196.0
+offset_bottom = 52.0
+text = "FPS: ##"

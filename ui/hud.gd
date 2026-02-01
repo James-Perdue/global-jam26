@@ -15,6 +15,7 @@ var monster_effect = "[me]"
 var end_monster_effect = "[/me]"
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var rich_text: RichTextLabel = %DialogueBox
+@onready var hud_fps_label: Label = %FPSLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.player_health_changed.connect(_on_player_health_changed)
@@ -27,7 +28,7 @@ func _process(delta: float) -> void:
 		rich_text.show()
 		rich_text.set_position(player.camera.unproject_position(enemy.get_label_location()) + Vector2(-500,-75))
 		
-		
+	hud_fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
 
 func _on_player_health_changed(health: int) -> void:
 	health_bar.value = health
