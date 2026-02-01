@@ -46,7 +46,7 @@ transitions = ["Start", "Spawn", SubResource("AnimationNodeStateMachineTransitio
 graph_offset = Vector2(125, -25)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_xoplw"]
-graph_offset = Vector2(-219.97156, 51.127052)
+graph_offset = Vector2(-301.53265, 32.896347)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_o3pv7")
 nodes/StateMachine/position = Vector2(-48, 144)
 node_connections = [&"output", 0, &"StateMachine"]
@@ -63,7 +63,7 @@ disabled = true
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.52551943, 0)
 
-[node name="MaskSocket1" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 107288838) index="1" unique_id=1398618424]
+[node name="MaskSocket1" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1505803219) index="1" unique_id=1398618424]
 transform = Transform3D(-0.7074415, -0.65776634, 0.25859186, 0.490718, -0.19381224, 0.84948945, -0.50864744, 0.7278598, 0.4598887, 1.3851352e-09, 2.9762833, 0.006909771)
 bone_name = "MaskBone.UpperSpine.R"
 bone_idx = 117
@@ -72,7 +72,7 @@ bone_idx = 117
 unique_name_in_owner = true
 transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
 
-[node name="MaskSocket2" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 107288838) index="2" unique_id=1825298830]
+[node name="MaskSocket2" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1505803219) index="2" unique_id=1825298830]
 transform = Transform3D(-0.36560875, 0.5800028, -0.7279607, -0.60598564, 0.44531134, 0.6591501, 0.70647824, 0.6821248, 0.18866368, 0.45811725, 2.8324122, -0.017699912)
 bone_name = "MaskBone.Shoulder.L"
 bone_idx = 109
@@ -81,7 +81,7 @@ bone_idx = 109
 unique_name_in_owner = true
 transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
 
-[node name="MaskSocket3" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 107288838) index="3" unique_id=788118794]
+[node name="MaskSocket3" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1505803219) index="3" unique_id=788118794]
 transform = Transform3D(0.3073303, -0.72284997, 0.6188989, 0.76151603, -0.20319298, -0.61547196, 0.5706498, 0.6604548, 0.48801443, 1.3851383e-09, 1.9278834, 0.035886668)
 bone_name = "MaskBone.LowLowSpine.R"
 bone_idx = 26
@@ -90,7 +90,7 @@ bone_idx = 26
 unique_name_in_owner = true
 transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
 
-[node name="MaskSocket4" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 107288838) index="4" unique_id=1310851106]
+[node name="MaskSocket4" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1505803219) index="4" unique_id=1310851106]
 transform = Transform3D(0.044016566, -0.6386755, 0.76821613, 0.9938178, -0.05045961, -0.0988937, 0.10192487, 0.7678199, 0.6325061, 1.3851335e-09, 2.2496564, 0.025502104)
 bone_name = "MaskBone.LowSpine.R"
 bone_idx = 33

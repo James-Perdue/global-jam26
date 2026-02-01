@@ -14,7 +14,7 @@ class_name Encounter
 @export var enemy_count: int = 1
 ## Hardcoded emotion key to use for the encounter, if null, use semi-random lookup
 @export var fixed_key: String = ""
-
+var emotion_targets: Array[EmotionMessage] = []
 @onready var enemy: Enemy = $Enemy
 @onready var trigger: Area3D = $Trigger
 @onready var pre_enemy_sprite: Sprite3D = $PreEnemySprite
@@ -23,6 +23,7 @@ func _ready() -> void:
 	pre_enemy_sprite.show()
 	trigger.body_entered.connect(_on_trigger_body_entered)
 	enemy.enemy_defeated.connect(_on_enemy_defeated)
+	choose_encounter()
 
 func _on_trigger_body_entered(body: Node3D) -> void:
 	if(body is Player):
@@ -50,14 +51,16 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 			start_encounter()
 		)
 
-func start_encounter() -> void:
-	pre_enemy_sprite.hide()
-	var emotion_targets: Array[EmotionMessage] = []
+func choose_encounter() -> void:
 	if(fixed_key != ""):
 		emotion_targets = [EmotionDatabase.select_specific_emotion_message(fixed_key)]
 	else:
 		for i in message_count:
 			emotion_targets.append(EmotionDatabase.select_new_emotion_message(emotion_count))
+
+func start_encounter() -> void:
+	pre_enemy_sprite.hide()
+	
 	enemy.max_active_masks = max_active_masks
 	enemy.start_encounter(emotion_targets)
 	SignalBus.start_encounter.emit(self)
@@ -65,5 +68,6 @@ func start_encounter() -> void:
 	
 func _on_enemy_defeated() -> void:
 	SignalBus.end_encounter.emit()
+	trigger.body_entered.disconnect(_on_trigger_body_entered)
 	await enemy.tree_exited
 	queue_free()

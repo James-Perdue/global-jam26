@@ -25,6 +25,7 @@ var interactable_in_zone: Node3D = null
 var camera_starting_position: Vector3 = Vector3.ZERO
 var base_rotation: Vector2 = Vector2.ZERO
 var is_clamped: bool = false
+var is_loading: bool = true
 var clamp_angle: float = deg_to_rad(30.0)
 
 @onready var camera = $Camera3D
@@ -40,7 +41,6 @@ func _ready() -> void:
 	SignalBus.wrong_mask.connect(_on_wrong_mask)
 	camera_starting_position = camera.position
 	add_child(damage_timer)
-	#damage_timer.one_shot = true
 	damage_timer.wait_time = damage_cooldown
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
 	interact_zone.body_entered.connect(_on_interact_zone_body_entered)
@@ -50,13 +50,24 @@ func _ready() -> void:
 	SignalBus.player_health_changed.emit(health)
 	damage_timer.start()
 
+	#spin 360 to force loading
+	var tween = create_tween()
+	var start_rotation = rotation.y
+	var end_rotation = start_rotation + TAU # 360 degrees in radians
+	tween.tween_property(self, "rotation:y", end_rotation, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await tween.finished
+	# Ensures rotation.y stays within 0..TAU
+	rotation.y = 0
+	is_loading = false
+	SignalBus.done_loading.emit()
+
 
 func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
 	current_encounter = encounter
 	damage_rate = ceil(encounter.damage_rate)
 	#arbitrary delay so gun not out before enemy spawns
-	await get_tree().create_timer(1.5).timeout 
+	#await get_tree().create_timer(1.5).timeout 
 	revolver.show()
 	revolver.get_node("AnimationPlayer").play("Ready")
 	await revolver.get_node("AnimationPlayer").animation_finished
@@ -93,6 +104,8 @@ func _on_interact_zone_body_exited(body: Node3D) -> void:
 		interactable_in_zone.hide_preview()
 		interactable_in_zone = null
 func _input(event: InputEvent) -> void:
+	if(is_loading):
+		return
 	if event is InputEventMouseMotion and not rotation_locked:
 		if is_clamped:
 			var rot_y = rotation.y - event.relative.x * mouse_sensitivity
@@ -137,7 +150,7 @@ func shoot() -> void:
 	var result = space_state.intersect_ray(query)
 	
 	if result:
-		_draw_hit_marker(result.position)
+		#_draw_hit_marker(result.position)
 		print("Hit: ", result.collider.name)
 		if result.collider.owner is Mask:
 			result.collider.owner.hit.emit()
@@ -165,7 +178,9 @@ func _draw_hit_marker(pos: Vector3) -> void:
 func _physics_process(delta: float) -> void:
 	if in_encounter:
 		return
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var input_dir :Vector2 = Vector2.ZERO
+	if not is_loading:
+		input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	# Apply gravity

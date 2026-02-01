@@ -87,3 +87,28 @@ offset_top = 14.0
 offset_right = 196.0
 offset_bottom = 52.0
 text = "FPS: ##"
+
+[node name="LoadingScreen" type="ColorRect" parent="HudBaseControl" unique_id=1043852925]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="Label" type="Label" parent="HudBaseControl/LoadingScreen" unique_id=2041230758]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Loading..."

@@ -38,7 +38,7 @@ func start_encounter(new_emotion_targets: Array[EmotionMessage]) -> void:
 	animation_tree.active = true
 	var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/StateMachine/playback")
 	playback.travel("Spawn")
-	await get_tree().create_timer(2.291).timeout 
+	await get_tree().create_timer(1).timeout 
 	
 	for mask in masks:
 		mask.enable_collision()
@@ -94,7 +94,7 @@ func _on_mask_hit(mask: Mask) -> void:
 	SignalBus.correct_mask.emit()
 	#emotion_message_label.text = emotion_targets[targeting_message_index].message
 	_clear_masks()
-	await get_tree().create_timer(.25).timeout 
+	await get_tree().create_timer(.3).timeout 
 	_enable_masks()
 	
 	for mask_item in masks:
@@ -106,8 +106,10 @@ func end_encounter() -> void:
 	for mask_item in masks:
 		mask_item.reset_mask()
 	animation_tree.set("parameters/StateMachine/conditions/is_dead", true)
-	await get_tree().create_timer(1.25).timeout 
+	await get_tree().create_timer(.2).timeout 
 	enemy_defeated.emit()
+	while animation_tree.get("parameters/StateMachine/playback").get_current_node() != "End":
+		await get_tree().process_frame
 	queue_free()
 	in_encounter = false
 	
