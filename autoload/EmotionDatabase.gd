@@ -6,6 +6,17 @@ var colors: Dictionary = {"HAPPY": "yellow", "SAD": "blue", "ANGRY": "red", "ANN
 
 var used_emotion_keys: Array[String] = []
 
+var audio_lookup: Dictionary[String, AudioStream] = {
+	#"happy_1": preload("res://Audio/ReversedAudio/happy_1.wav"),
+	# "happy_2": preload("res://Audio/ReversedAudio/happy_2.wav"),
+	 "happy_3": preload("res://Audio/ReversedAudio/happy_3.wav"),
+	# "sad_1": preload("res://Audio/ReversedAudio/sad_1.wav"),
+	# "sad_2": preload("res://Audio/ReversedAudio/sad_2.wav"),
+	# "angry_1": preload("res://Audio/ReversedAudio/angry_1.wav"),
+	# "angry_2": preload("res://Audio/ReversedAudio/angry_2.wav"),
+	# "fear_1": preload("res://Audio/ReversedAudio/fear_1.wav"),
+}
+
 func _ready() -> void:
 	_load_emotions()
 
@@ -62,3 +73,11 @@ func select_specific_emotion_message(audio_key: String) -> EmotionMessage:
 	else:
 		push_error("EmotionDatabase: Audio key not found: " + audio_key)
 		return null
+	
+
+
+func get_audio_file_for_message(message: EmotionMessage) -> AudioStream:
+	if not message.audio_key in audio_lookup:
+		print("Warning: Audio file not found: " + message.audio_key)
+		return null
+	return audio_lookup[message.audio_key]
