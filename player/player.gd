@@ -197,7 +197,7 @@ func shoot() -> void:
 		return
 	gunshot_effect.show()
 	gunshot_effect.get_node("CPUParticles3D").emitting = true
-	
+	%GunshotAudio.play()
 	weapon.get_node("AnimationPlayer").play("Fire")
 	
 	# Recoil effect
@@ -293,13 +293,15 @@ func take_damage(damage: int) -> void:
 
 func _on_wrong_mask(_mask: Mask) -> void:
 	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
-	if(line_audio_player.stream != null):
-		line_audio_player.play()
 	take_damage(wrong_mask_damage)
+	if(line_audio_player.stream != null):
+		await get_tree().create_timer(.15).timeout
+		line_audio_player.play()
 
 func _on_correct_mask(_mask: Mask) -> void:
 	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
 	if(line_audio_player.stream != null):
+		await get_tree().create_timer(.15).timeout
 		line_audio_player.play()
 
 func choose_canned(emotion: String)->String:
