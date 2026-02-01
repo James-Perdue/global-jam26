@@ -26,6 +26,7 @@ func set_emotion(value: Enums.Emotion) -> void:
 	if mat is StandardMaterial3D:
 		# Duplicate material to ensure UV offset is unique to this instance
 		mat = mat.duplicate()
+		mat.albedo_color = EmotionDatabase.colors[Enums.Emotion.keys()[emotion]]
 		mesh.set_surface_override_material(0, mat)
 		
 		mat.uv1_offset.x = float(_atlas_index_from_emotion(emotion)) * (1/6.0)
