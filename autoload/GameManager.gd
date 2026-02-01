@@ -4,8 +4,7 @@ var levels: Dictionary = {
 	"win_screen": preload("res://ui/win_screen.tscn"),
 	"game_over_screen": preload("res://ui/game_over_screen.tscn"),
 	"level_1": preload("res://levels/test_level_1.tscn"),
-	"test": preload("res://levels/playground.tscn"),
-	"stress_test": preload("res://levels/stress_test.tscn")
+	"test": preload("res://levels/playground.tscn")
 }
 
 

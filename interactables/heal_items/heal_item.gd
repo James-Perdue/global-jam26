@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _on_interacted() -> void:
 	SignalBus.player_healed.emit(heal_amount)
+	SignalBus.drunk_started.emit()
 	interact_component.hide_preview()
 	collision_shape.disabled = true
 	mesh.visible = false

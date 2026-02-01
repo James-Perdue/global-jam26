@@ -8,7 +8,7 @@ var completed_objectives: Array[Objective] = []
 var current_objective_tier: int = 0
 var objective_tiers = {} # Dictionary[int, Array[Objective]]
 
-@onready var tier_level_nodes: Array = [null, %Tier2, %Tier3]
+@onready var tier_level_nodes: Array = [$Tier1, %Tier2, %Tier3]
 @onready var player: Player = $Player
 @onready var hud: Hud = $Hud
 
@@ -23,8 +23,9 @@ func _ready() -> void:
 			continue
 		print(objective.name)
 		objective.completed.connect(_on_objective_completed)
-	for tier in tier_level_nodes:
-		if tier != null:
+	for i in range(tier_level_nodes.size()):
+		var tier = tier_level_nodes[i]
+		if tier != null and i != 0:
 			tier.hide()
 	_process_objective_tier()
 
@@ -52,6 +53,8 @@ func _on_objective_completed(objective: Objective) -> void:
 
 func advance_objective_tier() -> void:
 	completed_objectives.clear()
+	if(tier_level_nodes[current_objective_tier] != null and current_objective_tier < 0):
+		tier_level_nodes[current_objective_tier-1].hide()
 	current_objective_tier += 1
 	if current_objective_tier not in objective_tiers:
 		print("No more objectives to complete")
