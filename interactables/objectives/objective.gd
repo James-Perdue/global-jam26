@@ -31,3 +31,4 @@ func complete() -> void:
 	SignalBus.player_healed.emit(heal_amount)
 	collision_shape.disabled = true
 	mesh.visible = false
+	visible = false

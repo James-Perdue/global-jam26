@@ -95,7 +95,7 @@ layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 285.0
-offset_bottom = 113.0
+offset_bottom = 87.0
 
 [node name="ObjectiveLabel" type="RichTextLabel" parent="HudBaseControl/PanelContainer" unique_id=1192429999]
 unique_name_in_owner = true

@@ -94,11 +94,10 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	if(has_shotgun):
 		weapon = shotgun
 	weapon.show()
+	
 	weapon.get_node("AnimationPlayer").play("Ready")
 	await weapon.get_node("AnimationPlayer").animation_finished
 	rotation_locked = false
-
-	
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
@@ -112,7 +111,8 @@ func _on_encounter_ended() -> void:
 		await weapon.get_node("AnimationPlayer").animation_finished
 	weapon.get_node("AnimationPlayer").play("PutAway")
 	await weapon.get_node("AnimationPlayer").animation_finished
-	weapon.hide()
+	if(!in_encounter):
+		weapon.hide()
 
 func _on_player_healed(amount: int) -> void:
 	health = min(health + amount, max_health)
@@ -214,6 +214,7 @@ func _draw_hit_marker(pos: Vector3) -> void:
 
 func _physics_process(delta: float) -> void:
 	if in_encounter:
+		_apply_sway(delta)
 		return
 	var input_dir :Vector2 = Vector2.ZERO
 	if not is_loading:
@@ -237,15 +238,28 @@ func _physics_process(delta: float) -> void:
 		t_bob += delta * velocity.length() * float(is_on_floor())
 		camera.position = camera_starting_position + _headbob(t_bob)
 	else:
+		_apply_sway(delta)
 		# Smoothly return camera to center when still
 		camera.position = camera.position.lerp(camera_starting_position, delta * 5.0)
 
 	move_and_slide()
 
+func _apply_sway(delta) -> void:
+	if is_on_floor():
+		t_bob += delta * 2 * float(is_on_floor())
+		camera.position = camera_starting_position + _sway_idle(t_bob)
+
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * bob_freq) * bob_amp
 	pos.x = cos(time * bob_freq * 0.5) * bob_amp / 2
+	return pos
+
+func _sway_idle(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * bob_freq) * bob_amp * .2
+	#pos.y = sin(time * bob_freq) * bob_amp
+	pos.x = cos(time * bob_freq * 0.5) * bob_amp *.3
 	return pos
 
 func _on_damage_timer_timeout() -> void:
