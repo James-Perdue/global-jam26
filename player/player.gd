@@ -122,6 +122,7 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	weapon.get_node("AnimationPlayer").play("Ready")
 	await weapon.get_node("AnimationPlayer").animation_finished
 	rotation_locked = false
+	SignalBus.toggled_crosshair.emit(true)
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
@@ -133,6 +134,7 @@ func _on_encounter_ended() -> void:
 		weapon = shotgun
 	if(weapon.get_node("AnimationPlayer").current_animation != ""):
 		await weapon.get_node("AnimationPlayer").animation_finished
+	SignalBus.toggled_crosshair.emit(false)
 	weapon.get_node("AnimationPlayer").play("PutAway")
 	await weapon.get_node("AnimationPlayer").animation_finished
 	if(!in_encounter):
