@@ -129,6 +129,6 @@ parameters/StateMachine/conditions/is_dead = false
 unique_name_in_owner = true
 
 [node name="EnemySmoke" parent="." unique_id=1375066680 instance=ExtResource("5_1wwld")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37354398, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51323867, 0.10141438)
 
 [editable path="EnemyMesh"]
