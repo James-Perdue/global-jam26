@@ -74,7 +74,10 @@ func select_new_emotion_message(num_emotions: int = -1) -> EmotionMessage:
 		available_messages = emotions.values().filter(func(m: EmotionMessage): return not m.audio_key in used_emotion_keys)
 	else:
 		available_messages = emotions.values().filter(func(m: EmotionMessage): return m.emotions.size() == num_emotions and not m.audio_key in used_emotion_keys)
-
+	if(available_messages.size() == 0):
+		push_warning("No more unique messages available for emotion count, picking random message: " + str(num_emotions))
+		return emotions.values().filter(func(m: EmotionMessage): return m.emotions.size() == num_emotions).pick_random()
+	
 	var new_message = available_messages.pick_random()
 	used_emotion_keys.append(new_message.audio_key)
 	return new_message

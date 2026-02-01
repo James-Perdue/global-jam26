@@ -1,8 +1,15 @@
-[gd_scene format=3 uid="uid://b0ug7rmbcarwm"]
+[gd_scene format=3 uid="uid://mu1gwxjotwcp"]
 
 [ext_resource type="PackedScene" uid="uid://w3b7st5b1cds" path="res://assets/level_models/Couch_RedSpawn.glb" id="1_ucj6d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucj6d"]
+size = Vector3(1.105957, 1, 3.1577148)
 
 [node name="CouchRed" type="StaticBody3D" unique_id=272237701]
 
 [node name="Couch_RedSpawn" parent="." unique_id=1412825333 instance=ExtResource("1_ucj6d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03668894, 0.003561616, 0.0077064037)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1380813001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052978516, 0.5054985, 0.1184082)
+shape = SubResource("BoxShape3D_ucj6d")
