@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c2uyy0xk8nlst"]
+
+[ext_resource type="Material" uid="uid://dty5qr8c8ri5c" path="res://ParticleEffects/Smoke/SmokeParticleMat.tres" id="1_me7x7"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_aa0ec"]
+material = ExtResource("1_me7x7")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_jkbox"]
+_data = [Vector2(0, 0.50314134), 0.0, 0.0, 0, 0, Vector2(0.24731183, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.6538434, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_pk05j"]
+offsets = PackedFloat32Array(0, 0.22254336, 1)
+colors = PackedColorArray(0.32941177, 0.2901961, 0.69803923, 0, 0.32787374, 0.28874916, 0.6981631, 1, 0.32941177, 0.2901961, 0.69803923, 0)
+
+[node name="EnemySmoke" type="Node3D" unique_id=1375066680]
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1345316908]
+amount = 32
+explosiveness = 0.25
+randomness = 0.35
+mesh = SubResource("QuadMesh_aa0ec")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.25
+emission_ring_radius = 0.75
+emission_ring_inner_radius = 0.25
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -2.5, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+angle_max = 360.0
+scale_amount_curve = SubResource("Curve_jkbox")
+color_ramp = SubResource("Gradient_pk05j")
