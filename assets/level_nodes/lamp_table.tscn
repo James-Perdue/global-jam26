@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b8mpr56s46dn2"]
+
+[ext_resource type="PackedScene" uid="uid://c5gow6w7vuu13" path="res://assets/level_models/Lamp_Table.glb" id="1_vtrwf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1o52b"]
+height = 0.7621155
+radius = 0.42382813
+
+[node name="LampTable" type="StaticBody3D" unique_id=107104151]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=801766056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4407196, 0)
+shape = SubResource("CylinderShape3D_1o52b")
+
+[node name="Lamp_Table" parent="." unique_id=2028630043 instance=ExtResource("1_vtrwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004731059, 0, -0.021956325)
