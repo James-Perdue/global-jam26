@@ -81,9 +81,53 @@ custom_effects = [SubResource("RichTextEffect_7ihmi"), SubResource("RichTextEffe
 
 [node name="FPSLabel" type="Label" parent="HudBaseControl" unique_id=1501802051]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 26.0
-offset_top = 14.0
-offset_right = 196.0
-offset_bottom = 52.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_bottom = 38.0
+grow_horizontal = 0
 text = "FPS: ##"
+
+[node name="PanelContainer" type="PanelContainer" parent="HudBaseControl" unique_id=691482212]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 285.0
+offset_bottom = 113.0
+
+[node name="ObjectiveLabel" type="RichTextLabel" parent="HudBaseControl/PanelContainer" unique_id=1192429999]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/strikethrough_alpha = 100
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "Example Objective"
+fit_content = true
+
+[node name="LoadingScreen" type="ColorRect" parent="HudBaseControl" unique_id=1043852925]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="Label" type="Label" parent="HudBaseControl/LoadingScreen" unique_id=2041230758]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Loading..."

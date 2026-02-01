@@ -25,12 +25,30 @@ var interactable_in_zone: Node3D = null
 var camera_starting_position: Vector3 = Vector3.ZERO
 var base_rotation: Vector2 = Vector2.ZERO
 var is_clamped: bool = false
+var is_loading: bool = true
 var clamp_angle: float = deg_to_rad(30.0)
+var has_shotgun: bool = false
+
+var happy_response: Array[String]= ["great", "nice"]
+var sad_response: Array[String]= ["bummer", "that_sucks"]
+var angry_response: Array[String]= ["woah", "damn"]
+var fear_response: Array[String]= ["be_okay", "fine"]
+var annoyed_response: Array[String]= ["crazy", "really"]
+
+var responses: Dictionary[String,Array] = {
+	"HAPPY": happy_response,
+	"SAD": sad_response,
+	"ANGRY": angry_response,
+	"FEAR": fear_response,
+	"ANNOYED": annoyed_response
+}
 
 @onready var camera = $Camera3D
 @onready var damage_timer: Timer = Timer.new()
 @onready var interact_zone: Area3D = %InteractZone
 @onready var revolver: Node3D = %Revolver
+@onready var shotgun: Node3D = %Shotgun
+@onready var line_audio_player: AudioStreamPlayer3D = %CannedAudio
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -38,28 +56,46 @@ func _ready() -> void:
 	SignalBus.end_encounter.connect(_on_encounter_ended)
 	SignalBus.player_healed.connect(_on_player_healed)
 	SignalBus.wrong_mask.connect(_on_wrong_mask)
+	SignalBus.correct_mask.connect(_on_correct_mask)
+	SignalBus.shotgun_picked_up.connect(_on_shotgun_picked_up)
 	camera_starting_position = camera.position
 	add_child(damage_timer)
-	#damage_timer.one_shot = true
 	damage_timer.wait_time = damage_cooldown
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
 	interact_zone.body_entered.connect(_on_interact_zone_body_entered)
 	interact_zone.body_exited.connect(_on_interact_zone_body_exited)
 	revolver.hide()
+	shotgun.hide()
 	await get_tree().process_frame
 	SignalBus.player_health_changed.emit(health)
 	damage_timer.start()
 
+	#spin 360 to force loading
+	var tween = create_tween()
+	var start_rotation = rotation.y
+	var end_rotation = start_rotation + TAU # 360 degrees in radians
+	tween.tween_property(self, "rotation:y", end_rotation, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await tween.finished
+	# Ensures rotation.y stays within 0..TAU
+	rotation.y = 0
+	is_loading = false
+	SignalBus.done_loading.emit()
+
+func _on_shotgun_picked_up() -> void:
+	has_shotgun = true
 
 func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
 	current_encounter = encounter
 	damage_rate = ceil(encounter.damage_rate)
 	#arbitrary delay so gun not out before enemy spawns
-	await get_tree().create_timer(1.5).timeout 
-	revolver.show()
-	revolver.get_node("AnimationPlayer").play("Ready")
-	await revolver.get_node("AnimationPlayer").animation_finished
+	#await get_tree().create_timer(1.5).timeout 
+	var weapon = revolver
+	if(has_shotgun):
+		weapon = shotgun
+	weapon.show()
+	weapon.get_node("AnimationPlayer").play("Ready")
+	await weapon.get_node("AnimationPlayer").animation_finished
 	rotation_locked = false
 
 	
@@ -69,9 +105,14 @@ func _on_encounter_ended() -> void:
 	is_clamped = false
 	current_encounter = null
 	damage_rate = default_damage_rate
-	revolver.get_node("AnimationPlayer").play("PutAway")
-	await revolver.get_node("AnimationPlayer").animation_finished
-	revolver.hide()
+	var weapon = revolver
+	if(has_shotgun):
+		weapon = shotgun
+	if(weapon.get_node("AnimationPlayer").current_animation != ""):
+		await weapon.get_node("AnimationPlayer").animation_finished
+	weapon.get_node("AnimationPlayer").play("PutAway")
+	await weapon.get_node("AnimationPlayer").animation_finished
+	weapon.hide()
 
 func _on_player_healed(amount: int) -> void:
 	health = min(health + amount, max_health)
@@ -93,6 +134,8 @@ func _on_interact_zone_body_exited(body: Node3D) -> void:
 		interactable_in_zone.hide_preview()
 		interactable_in_zone = null
 func _input(event: InputEvent) -> void:
+	if(is_loading):
+		return
 	if event is InputEventMouseMotion and not rotation_locked:
 		if is_clamped:
 			var rot_y = rotation.y - event.relative.x * mouse_sensitivity
@@ -117,9 +160,12 @@ func _input(event: InputEvent) -> void:
 func shoot() -> void:
 	if not in_encounter:
 		return
-	if(revolver.get_node("AnimationPlayer").current_animation != ""):
+	var weapon = revolver
+	if(has_shotgun):
+		weapon = shotgun
+	if(weapon.get_node("AnimationPlayer").current_animation != ""):
 		return
-	revolver.get_node("AnimationPlayer").play("Fire")
+	weapon.get_node("AnimationPlayer").play("Fire")
 	
 	# Recoil effect
 	var original_rotation = camera.rotation.x
@@ -129,18 +175,22 @@ func shoot() -> void:
 	tween.tween_property(camera, "rotation:x", target_rotation, recoil_duration / 3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property(camera, "rotation:x", original_rotation, recoil_duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	
-	var space_state = get_world_3d().direct_space_state
-	var origin = camera.global_position
-	var end = origin - camera.global_transform.basis.z * 100.0
-	var query = PhysicsRayQueryParameters3D.create(origin, end)
-	
-	var result = space_state.intersect_ray(query)
-	
-	if result:
-		_draw_hit_marker(result.position)
-		print("Hit: ", result.collider.name)
-		if result.collider.owner is Mask:
-			result.collider.owner.hit.emit()
+	if(!has_shotgun):
+		var space_state = get_world_3d().direct_space_state
+		var origin = camera.global_position
+		var end = origin - camera.global_transform.basis.z * 100.0
+		var query = PhysicsRayQueryParameters3D.create(origin, end)
+		
+		var result = space_state.intersect_ray(query)
+		
+		if result:
+			#_draw_hit_marker(result.position)
+			print("Hit: ", result.collider.name)
+			if result.collider.owner is Mask:
+				result.collider.owner.hit.emit()
+	else:
+		if current_encounter and current_encounter.enemy:
+			current_encounter.enemy.auto_win()
 
 func _draw_hit_marker(pos: Vector3) -> void:
 	var mesh_instance = MeshInstance3D.new()
@@ -165,7 +215,9 @@ func _draw_hit_marker(pos: Vector3) -> void:
 func _physics_process(delta: float) -> void:
 	if in_encounter:
 		return
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var input_dir :Vector2 = Vector2.ZERO
+	if not is_loading:
+		input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	# Apply gravity
@@ -213,4 +265,16 @@ func take_damage(damage: int) -> void:
 		SignalBus.game_over.emit()
 
 func _on_wrong_mask(_mask: Mask) -> void:
+	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
+	if(line_audio_player.stream != null):
+		line_audio_player.play()
 	take_damage(wrong_mask_damage)
+
+func _on_correct_mask(_mask: Mask) -> void:
+	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
+	if(line_audio_player.stream != null):
+		line_audio_player.play()
+
+func choose_canned(emotion: String)->String:
+	var choice = responses[emotion]
+	return choice[randi()%choice.size()]

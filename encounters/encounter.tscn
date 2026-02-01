@@ -9,6 +9,7 @@ size = Vector3(2.013916, 3.0408936, 2.0566406)
 
 [node name="Encounter" type="Node3D" unique_id=1653614673]
 script = ExtResource("1_7nhbq")
+damage_rate = 2.0
 
 [node name="Trigger" type="Area3D" parent="." unique_id=361826163]
 
@@ -16,7 +17,7 @@ script = ExtResource("1_7nhbq")
 shape = SubResource("BoxShape3D_7nhbq")
 
 [node name="Enemy" parent="." unique_id=2005698740 instance=ExtResource("2_368r3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044003844, 0, -2.1226804)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044003844, -0.11112982, -2.1226804)
 
 [node name="PreEnemySprite" type="Sprite3D" parent="." unique_id=123805813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1260395)

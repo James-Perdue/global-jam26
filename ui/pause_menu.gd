@@ -27,6 +27,7 @@ func _on_resume_pressed() -> void:
 
 func _on_reset_pressed() -> void:
 	get_tree().paused = false
+	GameManager.reset_game()
 	get_tree().reload_current_scene()
 
 func _on_menu_pressed() -> void:

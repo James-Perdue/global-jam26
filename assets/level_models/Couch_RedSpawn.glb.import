@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c1r6smlwt0wgf"
-path="res://.godot/imported/FloorPlane.glb-c6f71435f5e4ba0d99b8673f3d077325.scn"
+uid="uid://w3b7st5b1cds"
+path="res://.godot/imported/Couch_RedSpawn.glb-3bc2b5e4bfac7d9f72d8fa1685c4c425.scn"
 
 [deps]
 
-source_file="res://assets/level_models/FloorPlane.glb"
-dest_files=["res://.godot/imported/FloorPlane.glb-c6f71435f5e4ba0d99b8673f3d077325.scn"]
+source_file="res://assets/level_models/Couch_RedSpawn.glb"
+dest_files=["res://.godot/imported/Couch_RedSpawn.glb-3bc2b5e4bfac7d9f72d8fa1685c4c425.scn"]
 
 [params]
 
@@ -23,7 +23,7 @@ nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
-meshes/create_shadow_meshes=false
+meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false

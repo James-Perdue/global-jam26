@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ntg2vr5wg2t7"]
+
+[ext_resource type="PackedScene" uid="uid://biw15y84ch86s" path="res://assets/level_models/Bar_WhiteMarble.glb" id="1_7ul8c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2gi7u"]
+size = Vector3(3.1346588, 1.2614746, 1.5713654)
+
+[node name="BarWhite" type="StaticBody3D" unique_id=898099283]
+
+[node name="Bar_WhiteMarble" parent="." unique_id=1717882339 instance=ExtResource("1_7ul8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010893464, 0, -0.1967609)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1387182207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00978899, 0.6209805, -0.18442988)
+shape = SubResource("BoxShape3D_2gi7u")

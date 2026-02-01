@@ -17,6 +17,7 @@ var in_encounter = false
 @onready var person: MeshInstance3D = $PersonMesh
 @onready var enemy_mesh: Node3D = %EnemyMesh
 @onready var animation_tree: AnimationTree = %AnimationTree
+@onready var line_audio_player: AudioStreamPlayer3D = %LineAudioPlayer
 
 func _ready() -> void:
 	emotion_message_label.text = ""
@@ -34,21 +35,25 @@ func start_encounter(new_emotion_targets: Array[EmotionMessage]) -> void:
 	emotion_message_label.text = emotion_targets[0].message
 	emotion_count = len(emotion_targets[0].emotions)
 	message_parts = emotion_targets[0].message.split("|")
+	line_audio_player.stream = EmotionDatabase.get_audio_file_for_message(emotion_targets[0])
 	_enable_masks()
+	if(line_audio_player.stream != null):
+		line_audio_player.play()
 	animation_tree.active = true
 	var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/StateMachine/playback")
 	playback.travel("Spawn")
-	await get_tree().create_timer(2.291).timeout 
-	
+	await get_tree().create_timer(1).timeout 
 	for mask in masks:
 		mask.enable_collision()
 	#enemy_mesh.get_node("AnimationPlayer").play("Idle")
 
+	
 func _clear_masks() -> void:
 	for mask in masks:
 		if(mask.is_connected("hit", _on_mask_hit)):
 			mask.hit.disconnect(_on_mask_hit)
 		mask.reset_mask()
+
 
 func _enable_masks() -> void:
 	var active_masks: int = 0
@@ -88,13 +93,14 @@ func _on_mask_hit(mask: Mask) -> void:
 		targeting_message_index += 1
 		print("Message: ", targeting_message_index, " Emotion: ", targeting_emotion_index)
 		if targeting_message_index >= emotion_targets.size():
-			SignalBus.correct_mask.emit()
+			SignalBus.correct_mask.emit(mask)
 			end_encounter()
 			return
-	SignalBus.correct_mask.emit()
+		line_audio_player.stream = EmotionDatabase.get_audio_file_for_message(emotion_targets[targeting_message_index])
+	SignalBus.correct_mask.emit(mask)
 	#emotion_message_label.text = emotion_targets[targeting_message_index].message
 	_clear_masks()
-	await get_tree().create_timer(.25).timeout 
+	await get_tree().create_timer(.3).timeout 
 	_enable_masks()
 	
 	for mask_item in masks:
@@ -106,11 +112,18 @@ func end_encounter() -> void:
 	for mask_item in masks:
 		mask_item.reset_mask()
 	animation_tree.set("parameters/StateMachine/conditions/is_dead", true)
-	await get_tree().create_timer(1.25).timeout 
+	line_audio_player.stop()
+	await get_tree().create_timer(.2).timeout 
 	enemy_defeated.emit()
+	while animation_tree.get("parameters/StateMachine/playback").get_current_node() != "End":
+		await get_tree().process_frame
 	queue_free()
 	in_encounter = false
 	
+func auto_win() -> void:
+	#Play effects and sounds here
+	end_encounter()
+
 func get_label_location():
 	return emotion_message_label.global_position
 
