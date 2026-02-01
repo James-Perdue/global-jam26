@@ -104,9 +104,9 @@ func end_encounter() -> void:
 	print("enemy defeated")
 	for mask_item in masks:
 		mask_item.reset_mask()
-	enemy_defeated.emit()
 	animation_tree.set("parameters/StateMachine/conditions/is_dead", true)
 	await get_tree().create_timer(1.25).timeout 
+	enemy_defeated.emit()
 	queue_free()
 	in_encounter = false
 	
