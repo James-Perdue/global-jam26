@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c1hkrnn27o38j" path="res://assets/level_nodes/wall_slamming_door.tscn" id="12_5vfu0"]
 [ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="13_kgy88"]
 [ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="14_aupmd"]
+[ext_resource type="PackedScene" uid="uid://div88ejasiajp" path="res://assets/CrowdSillhouettes/CrowdBlockers/CrowdBlockerCapsule.tscn" id="15_t58ta"]
 
 [sub_resource type="Environment" id="Environment_84ig8"]
 
@@ -2102,5 +2103,8 @@ tier = 2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=870877869]
 transform = Transform3D(-0.76300055, 0.07586775, 0.6453672, -0.016537774, 2.074094, -0.07588956, -0.64618576, -0.14266506, -0.7600923, -3.0117908, 1.314926, 2.6220264)
 mesh = SubResource("QuadMesh_t58ta")
+
+[node name="CrowdBlockerCapsule" parent="." unique_id=1635286611 instance=ExtResource("15_t58ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33666694, 0.20855051, -1.6738043)
 
 [editable path="Encounters/Encounter2"]
