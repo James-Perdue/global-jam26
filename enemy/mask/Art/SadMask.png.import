@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sptrd0i3knd2"
-path.s3tc="res://.godot/imported/Mask_SadMask.png-1692e7bb37103491bba927a4356e05bf.s3tc.ctex"
+uid="uid://2drf26w36bal"
+path="res://.godot/imported/SadMask.png-e2966519987f58b1e36e41ea7b18753b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/mask/Art/Mask_SadMask.png"
-dest_files=["res://.godot/imported/Mask_SadMask.png-1692e7bb37103491bba927a4356e05bf.s3tc.ctex"]
+source_file="res://enemy/mask/Art/SadMask.png"
+dest_files=["res://.godot/imported/SadMask.png-e2966519987f58b1e36e41ea7b18753b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

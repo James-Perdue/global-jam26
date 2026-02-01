@@ -6,6 +6,14 @@ class_name Player
 @export var max_health: int = 100
 @export var damage_cooldown: float = 1.0
 @export var default_damage_rate: int = 1
+@export var wrong_mask_damage: int = 10
+@export_category("Camera")
+@export var bob_freq = 2.0
+@export var bob_amp = 0.1
+@export var t_bob = 0.0
+@export_category("Recoil")
+@export var recoil_amount = deg_to_rad(10.0)
+@export var recoil_duration = 0.15
 
 var health: int = max_health
 var damage_rate: int = default_damage_rate
@@ -14,21 +22,27 @@ var in_encounter : bool = false
 var rotation_locked : bool = false
 var current_encounter : Encounter = null
 var interactable_in_zone: Node3D = null
+var camera_starting_position: Vector3 = Vector3.ZERO
 
 @onready var camera = $Camera3D
 @onready var damage_timer: Timer = Timer.new()
 @onready var interact_zone: Area3D = %InteractZone
+@onready var revolver: Node3D = %Revolver
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	SignalBus.start_encounter.connect(_on_encounter_started)
 	SignalBus.end_encounter.connect(_on_encounter_ended)
+	SignalBus.player_healed.connect(_on_player_healed)
+	SignalBus.wrong_mask.connect(_on_wrong_mask)
+	camera_starting_position = camera.position
 	add_child(damage_timer)
 	#damage_timer.one_shot = true
 	damage_timer.wait_time = damage_cooldown
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
 	interact_zone.body_entered.connect(_on_interact_zone_body_entered)
 	interact_zone.body_exited.connect(_on_interact_zone_body_exited)
+	revolver.hide()
 	await get_tree().process_frame
 	SignalBus.player_health_changed.emit(health)
 	damage_timer.start()
@@ -38,27 +52,38 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
 	current_encounter = encounter
 	damage_rate = ceil(encounter.damage_rate)
+	await get_tree().create_timer(2).timeout 
+	revolver.show()
+	revolver.get_node("AnimationPlayer").play("Ready")
+	
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
 	current_encounter = null
 	damage_rate = default_damage_rate
+	revolver.get_node("AnimationPlayer").play("PutAway")
+	await revolver.get_node("AnimationPlayer").animation_finished
+	revolver.hide()
+
+func _on_player_healed(amount: int) -> void:
+	health = min(health + amount, max_health)
+	print("Player healed: ", health)
+	SignalBus.player_health_changed.emit(health)
 
 func _on_interact_zone_body_entered(body: Node3D) -> void:
 	if(in_encounter):
 		return
 	print("Body entered interact zone: ", body.name)
-	var object_owner = body.owner
-	if object_owner is Objective:
-		print("Objective in zone: ", body.name)
-		interactable_in_zone = object_owner
+	if body is InteractComponent:
+		print("Interactable in zone: ", body.name)
+		interactable_in_zone = body
 		#body.complete()
 
 func _on_interact_zone_body_exited(body: Node3D) -> void:
 	if(in_encounter):
 		return
-	if body is Objective:
-		print("Objective exited zone: ", body.name)
+	if body == interactable_in_zone:
+		print("Interactable exited zone: ", body.name)
 		interactable_in_zone = null
 	
 func _input(event: InputEvent) -> void:
@@ -78,12 +103,23 @@ func _input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if event.is_action_pressed("interact"):
 		if interactable_in_zone:
-			if interactable_in_zone.has_method("complete"):
-				interactable_in_zone.complete()
+			interactable_in_zone.interact()
 
 func shoot() -> void:
 	if not in_encounter:
 		return
+	if(revolver.get_node("AnimationPlayer").current_animation != ""):
+		return
+	revolver.get_node("AnimationPlayer").play("Fire")
+	
+	# Recoil effect
+	var original_rotation = camera.rotation.x
+	var target_rotation = original_rotation + recoil_amount
+	
+	var tween = create_tween()
+	tween.tween_property(camera, "rotation:x", target_rotation, recoil_duration / 3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(camera, "rotation:x", original_rotation, recoil_duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	
 	var space_state = get_world_3d().direct_space_state
 	var origin = camera.global_position
 	var end = origin - camera.global_transform.basis.z * 100.0
@@ -135,20 +171,37 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
 		velocity.z = move_toward(velocity.z, 0, move_speed)
 
+	# Only bob when moving and on the floor
+	if is_on_floor() and velocity.length() > 0.1:
+		t_bob += delta * velocity.length() * float(is_on_floor())
+		camera.position = camera_starting_position + _headbob(t_bob)
+	else:
+		# Smoothly return camera to center when still
+		camera.position = camera.position.lerp(camera_starting_position, delta * 5.0)
+
 	move_and_slide()
+
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * bob_freq) * bob_amp
+	pos.x = cos(time * bob_freq * 0.5) * bob_amp / 2
+	return pos
 
 func _on_damage_timer_timeout() -> void:
 	if not is_inside_tree():
 		return
-	take_damage()
+	take_damage(damage_rate)
 	if health > 0:
 		damage_timer.start()
 
-func take_damage() -> void:
-	health -= damage_rate
+func take_damage(damage: int) -> void:
+	health -= damage
 	print("Player damaged: ", health)
 	SignalBus.player_health_changed.emit(health)
 	if health <= 0:
 		print("Game over")
 		damage_timer.stop()
 		SignalBus.game_over.emit()
+
+func _on_wrong_mask(_mask: Mask) -> void:
+	take_damage(wrong_mask_damage)
