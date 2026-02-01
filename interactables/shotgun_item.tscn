@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhy53penddmvu" path="res://interactables/shotgun_item.gd" id="1_i5www"]
 [ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_u73o6"]
+[ext_resource type="PackedScene" uid="uid://dl62hq65vx8qf" path="res://assets/level_models/BeerCan.glb" id="3_u73o6"]
 
 [node name="ShotgunItem" type="Node3D" unique_id=1765869013]
 script = ExtResource("1_i5www")
@@ -10,5 +11,8 @@ script = ExtResource("1_i5www")
 
 [node name="MeshInstance3D" parent="InteractComponent" index="1" unique_id=505492712]
 visible = false
+
+[node name="BeerCan" parent="." unique_id=2124541860 instance=ExtResource("3_u73o6")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.21703938, 0)
 
 [editable path="InteractComponent"]

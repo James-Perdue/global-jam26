@@ -13,3 +13,5 @@ signal player_health_changed(health:int)
 signal player_healed(amount:int)
 signal done_loading
 signal shotgun_picked_up
+signal drunk_started
+signal toggled_crosshair(show:bool)

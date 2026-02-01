@@ -7,10 +7,12 @@ class_name Player
 @export var damage_cooldown: float = 1.0
 @export var default_damage_rate: int = 1
 @export var wrong_mask_damage: int = 10
+@export var drunk_duration: float = 10.0
 @export_category("Camera")
 @export var bob_freq = 2.0
 @export var bob_amp = 0.1
-@export var t_bob = 0.0
+@onready var default_bob_amp: float = bob_amp
+var t_bob = 0.0
 @export_category("Recoil")
 @export var recoil_amount = deg_to_rad(10.0)
 @export var recoil_duration = 0.15
@@ -28,6 +30,7 @@ var is_clamped: bool = false
 var is_loading: bool = true
 var clamp_angle: float = deg_to_rad(30.0)
 var has_shotgun: bool = false
+var is_drunk: bool = false
 
 var happy_response: Array[String]= ["great", "nice"]
 var sad_response: Array[String]= ["bummer", "that_sucks"]
@@ -49,6 +52,8 @@ var responses: Dictionary[String,Array] = {
 @onready var revolver: Node3D = %Revolver
 @onready var shotgun: Node3D = %Shotgun
 @onready var line_audio_player: AudioStreamPlayer3D = %CannedAudio
+@onready var drunk_timer: Timer = Timer.new()
+@onready var gunshot_effect: Node3D = %GunshotEffect
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -58,7 +63,9 @@ func _ready() -> void:
 	SignalBus.wrong_mask.connect(_on_wrong_mask)
 	SignalBus.correct_mask.connect(_on_correct_mask)
 	SignalBus.shotgun_picked_up.connect(_on_shotgun_picked_up)
+	SignalBus.drunk_started.connect(_start_drunk)
 	camera_starting_position = camera.position
+	add_child(drunk_timer)
 	add_child(damage_timer)
 	damage_timer.wait_time = damage_cooldown
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
@@ -66,10 +73,12 @@ func _ready() -> void:
 	interact_zone.body_exited.connect(_on_interact_zone_body_exited)
 	revolver.hide()
 	shotgun.hide()
+	gunshot_effect.get_node("CPUParticles3D").emitting = false
+	gunshot_effect.get_node("CPUParticles3D").one_shot = true
 	await get_tree().process_frame
 	SignalBus.player_health_changed.emit(health)
 	damage_timer.start()
-
+	is_drunk = false
 	#spin 360 to force loading
 	var tween = create_tween()
 	var start_rotation = rotation.y
@@ -80,6 +89,24 @@ func _ready() -> void:
 	rotation.y = 0
 	is_loading = false
 	SignalBus.done_loading.emit()
+
+func _start_drunk() -> void:
+	is_drunk = true
+	if(!drunk_timer.is_stopped()):
+		drunk_timer.stop()
+	
+	var tween = create_tween()
+	tween.tween_property(self, "bob_amp", default_bob_amp * 4.0, .5).set_trans(Tween.TRANS_SINE)
+	
+	drunk_timer.wait_time = drunk_duration
+	drunk_timer.start()
+	if not drunk_timer.timeout.is_connected(_stop_drunk):
+		drunk_timer.timeout.connect(_stop_drunk)
+
+func _stop_drunk() -> void:
+	is_drunk = false
+	var tween = create_tween()
+	tween.tween_property(self, "bob_amp", default_bob_amp, .5).set_trans(Tween.TRANS_SINE)
 
 func _on_shotgun_picked_up() -> void:
 	has_shotgun = true
@@ -98,6 +125,7 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	weapon.get_node("AnimationPlayer").play("Ready")
 	await weapon.get_node("AnimationPlayer").animation_finished
 	rotation_locked = false
+	SignalBus.toggled_crosshair.emit(true)
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
@@ -109,6 +137,7 @@ func _on_encounter_ended() -> void:
 		weapon = shotgun
 	if(weapon.get_node("AnimationPlayer").current_animation != ""):
 		await weapon.get_node("AnimationPlayer").animation_finished
+	SignalBus.toggled_crosshair.emit(false)
 	weapon.get_node("AnimationPlayer").play("PutAway")
 	await weapon.get_node("AnimationPlayer").animation_finished
 	if(!in_encounter):
@@ -133,6 +162,7 @@ func _on_interact_zone_body_exited(body: Node3D) -> void:
 	if body == interactable_in_zone:
 		interactable_in_zone.hide_preview()
 		interactable_in_zone = null
+
 func _input(event: InputEvent) -> void:
 	if(is_loading):
 		return
@@ -165,6 +195,9 @@ func shoot() -> void:
 		weapon = shotgun
 	if(weapon.get_node("AnimationPlayer").current_animation != ""):
 		return
+	gunshot_effect.show()
+	gunshot_effect.get_node("CPUParticles3D").emitting = true
+	
 	weapon.get_node("AnimationPlayer").play("Fire")
 	
 	# Recoil effect
@@ -191,26 +224,6 @@ func shoot() -> void:
 	else:
 		if current_encounter and current_encounter.enemy:
 			current_encounter.enemy.auto_win()
-
-func _draw_hit_marker(pos: Vector3) -> void:
-	var mesh_instance = MeshInstance3D.new()
-	var sphere_mesh = SphereMesh.new()
-	var material = ORMMaterial3D.new()
-	
-	sphere_mesh.radius = 0.1
-	sphere_mesh.height = 0.2
-	mesh_instance.mesh = sphere_mesh
-	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.albedo_color = Color.RED
-	mesh_instance.material_override = material
-	
-	get_tree().get_root().add_child(mesh_instance)
-	mesh_instance.global_position = pos
-	
-	await get_tree().create_timer(0.1).timeout
-	mesh_instance.queue_free()
 
 func _physics_process(delta: float) -> void:
 	if in_encounter:
@@ -251,15 +264,15 @@ func _apply_sway(delta) -> void:
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
-	pos.y = sin(time * bob_freq) * bob_amp
+	pos.y = sin(time * bob_freq) * bob_amp * (1 if not is_drunk else .6)
 	pos.x = cos(time * bob_freq * 0.5) * bob_amp / 2
 	return pos
 
 func _sway_idle(time) -> Vector3:
 	var pos = Vector3.ZERO
-	pos.y = sin(time * bob_freq) * bob_amp * .2
+	pos.y = sin(time * bob_freq) * bob_amp * .2 
 	#pos.y = sin(time * bob_freq) * bob_amp
-	pos.x = cos(time * bob_freq * 0.5) * bob_amp *.3
+	pos.x = cos(time * bob_freq * 0.5) * bob_amp * .3
 	return pos
 
 func _on_damage_timer_timeout() -> void:

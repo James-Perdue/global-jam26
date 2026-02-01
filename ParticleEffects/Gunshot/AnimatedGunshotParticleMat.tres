@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c5nw5oiiwifj0"]
+
+[ext_resource type="Texture2D" uid="uid://xy7qeq60mmdr" path="res://ParticleEffects/Gunshot/Gunshot-Sheet.png" id="1_v75jl"]
+
+[resource]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_v75jl")
+billboard_mode = 3
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false

@@ -22,13 +22,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.5
-offset_top = -11.5
-offset_right = 48.5
-offset_bottom = 11.5
+offset_left = -112.5
+offset_top = -70.0
+offset_right = 112.5
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Masquerade"
+theme_override_font_sizes/font_size = 60
+text = "No Yeah, For Sure"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuBaseControl" unique_id=1154166995]
 layout_mode = 1
@@ -37,24 +39,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
+offset_left = -127.0
 offset_top = 27.0
-offset_right = 50.0
-offset_bottom = 128.0
+offset_right = 126.0
+offset_bottom = 265.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/MenuBaseControl/VBoxContainer" unique_id=1767715709]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
 text = "Play"
 
 [node name="PlaygroundButton" type="Button" parent="CanvasLayer/MenuBaseControl/VBoxContainer" unique_id=1765820214]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
 text = "Playground"
-
-[node name="StressTestButton" type="Button" parent="CanvasLayer/MenuBaseControl/VBoxContainer" unique_id=809415573]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Stress Test"

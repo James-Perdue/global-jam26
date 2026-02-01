@@ -27,4 +27,4 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7708871, 0)
 billboard = 1
 no_depth_test = true
-text = "Interact"
+text = "Interact (E)"

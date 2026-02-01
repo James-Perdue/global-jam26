@@ -11,6 +11,11 @@ radius = 0.29296875
 
 [sub_resource type="BoxMesh" id="BoxMesh_ofsxj"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y5vj3"]
+animation = &"Hit_Reaction"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_5ffra"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p200p"]
 animation = &"Die"
 
@@ -48,10 +53,15 @@ transitions = ["Start", "Spawn", SubResource("AnimationNodeStateMachineTransitio
 graph_offset = Vector2(125, -25)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_xoplw"]
-graph_offset = Vector2(-301.53265, 32.896347)
+graph_offset = Vector2(-257.6574, 146.07077)
+nodes/output/position = Vector2(448, 224)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_o3pv7")
-nodes/StateMachine/position = Vector2(-48, 144)
-node_connections = [&"output", 0, &"StateMachine"]
+nodes/StateMachine/position = Vector2(-160, 240)
+nodes/HitReact/node = SubResource("AnimationNodeOneShot_5ffra")
+nodes/HitReact/position = Vector2(144, 288)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_y5vj3")
+nodes/Animation/position = Vector2(-112, 496)
+node_connections = [&"output", 0, &"HitReact", &"HitReact", 0, &"StateMachine", &"HitReact", 1, &"Animation"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=2005698740]
 script = ExtResource("1_2mvqj")
@@ -65,44 +75,53 @@ disabled = true
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.52551943, 0)
 
-[node name="MaskMonster" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 298564037) index="0" unique_id=720920421]
+[node name="MaskMonster" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="0" unique_id=500085102]
 surface_material_override/0 = ExtResource("3_pmsee")
 
-[node name="MaskSocket1" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 298564037) index="1" unique_id=1398618424]
+[node name="MaskSocket1" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="1" unique_id=1398618424]
 transform = Transform3D(-0.70744175, -0.6577664, 0.2585915, 0.49071783, -0.19381276, 0.84948957, -0.50864744, 0.7278599, 0.4598888, 1.3851335e-09, 2.9762833, 0.006909771)
 bone_name = "MaskBone.UpperSpine.R"
 bone_idx = 117
 
-[node name="Mask1" parent="EnemyMesh/rig/Skeleton3D/MaskSocket1" unique_id=1702853835 instance=ExtResource("2_ofsxj")]
-unique_name_in_owner = true
-transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="EnemyMesh/rig/Skeleton3D/MaskSocket1" unique_id=1482928030]
+remote_path = NodePath("../../../../../Mask1")
+update_scale = false
 
-[node name="MaskSocket2" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 298564037) index="2" unique_id=1825298830]
+[node name="MaskSocket2" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="2" unique_id=1825298830]
 transform = Transform3D(-0.36560884, 0.5800026, -0.7279609, -0.6059857, 0.44531122, 0.65914994, 0.7064779, 0.6821251, 0.1886636, 0.45811725, 2.8324122, -0.017699867)
 bone_name = "MaskBone.Shoulder.L"
 bone_idx = 109
 
-[node name="Mask2" parent="EnemyMesh/rig/Skeleton3D/MaskSocket2" unique_id=1500641921 instance=ExtResource("2_ofsxj")]
-unique_name_in_owner = true
-transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="EnemyMesh/rig/Skeleton3D/MaskSocket2" unique_id=1076638042]
+remote_path = NodePath("../../../../../Mask2")
+update_scale = false
 
-[node name="MaskSocket3" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 298564037) index="3" unique_id=788118794]
+[node name="MaskSocket3" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="3" unique_id=788118794]
 transform = Transform3D(0.3073303, -0.72284997, 0.6188989, 0.76151603, -0.20319298, -0.61547196, 0.5706498, 0.6604548, 0.48801443, 1.3851379e-09, 1.9278834, 0.035886668)
 bone_name = "MaskBone.LowLowSpine.R"
 bone_idx = 26
 
-[node name="Mask3" parent="EnemyMesh/rig/Skeleton3D/MaskSocket3" unique_id=1870763949 instance=ExtResource("2_ofsxj")]
-unique_name_in_owner = true
-transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="EnemyMesh/rig/Skeleton3D/MaskSocket3" unique_id=1775397994]
+remote_path = NodePath("../../../../../Mask3")
+update_scale = false
 
-[node name="MaskSocket4" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 298564037) index="4" unique_id=1310851106]
+[node name="MaskSocket4" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="4" unique_id=1310851106]
 transform = Transform3D(0.04401651, -0.6386755, 0.7682162, 0.99381787, -0.05045949, -0.09889356, 0.10192472, 0.7678199, 0.63250613, 1.385132e-09, 2.2496564, 0.025502104)
 bone_name = "MaskBone.LowSpine.R"
 bone_idx = 33
 
-[node name="Mask4" parent="EnemyMesh/rig/Skeleton3D/MaskSocket4" unique_id=1746759714 instance=ExtResource("2_ofsxj")]
-unique_name_in_owner = true
-transform = Transform3D(0.33718896, 0.47159114, 0.1546137, -0.23539937, -0.012583264, 0.5517507, 0.43691048, -0.37073365, 0.17794888, 0.3053214, 0.35337073, 0.26110804)
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="EnemyMesh/rig/Skeleton3D/MaskSocket4" unique_id=1412481218]
+remote_path = NodePath("../../../../../Mask4")
+update_scale = false
+
+[node name="MaskSocket5" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="5" unique_id=439922011]
+transform = Transform3D(-0.26872525, -0.8915643, -0.36455417, 0.36455485, -0.44446152, 0.8182623, -0.8915638, 0.08698771, 0.44446212, -0.32019526, 2.4391987, 0.28302386)
+bone_name = "MaskBone.Breast.R"
+bone_idx = 107
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="EnemyMesh/rig/Skeleton3D/MaskSocket5" unique_id=78038032]
+remote_path = NodePath("../../../../../Mask5")
+update_scale = false
 
 [node name="EmotionMessage" type="Label3D" parent="." unique_id=1178853147]
 unique_name_in_owner = true
@@ -124,11 +143,34 @@ root_node = NodePath("%EnemyMesh")
 tree_root = SubResource("AnimationNodeBlendTree_xoplw")
 anim_player = NodePath("../EnemyMesh/AnimationPlayer")
 parameters/StateMachine/conditions/is_dead = false
+parameters/HitReact/active = false
+parameters/HitReact/internal_active = false
+parameters/HitReact/request = 0
 
 [node name="LineAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1757610979]
 unique_name_in_owner = true
 
 [node name="EnemySmoke" parent="." unique_id=1375066680 instance=ExtResource("5_1wwld")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37354398, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51323867, 0.10141438)
+
+[node name="Mask1" parent="." unique_id=1702853835 instance=ExtResource("2_ofsxj")]
+unique_name_in_owner = true
+transform = Transform3D(-0.21223252, -0.19732992, 0.07757747, 0.14721534, -0.058143828, 0.25484693, -0.15259422, 0.21835798, 0.13796668, 6.925667e-10, 0.9626222, 0.0034548854)
+
+[node name="Mask2" parent="." unique_id=387575481 instance=ExtResource("2_ofsxj")]
+unique_name_in_owner = true
+transform = Transform3D(-0.1096827, 0.1740008, -0.2183883, -0.18179579, 0.1335934, 0.19774503, 0.21194346, 0.20463756, 0.05659909, 0.22905862, 0.8906867, -0.008849934)
+
+[node name="Mask3" parent="." unique_id=1356020020 instance=ExtResource("2_ofsxj")]
+unique_name_in_owner = true
+transform = Transform3D(0.0921991, -0.216855, 0.18566972, 0.22845486, -0.060957897, -0.18464163, 0.17119497, 0.19813645, 0.14640436, 6.9256895e-10, 0.43842226, 0.017943334)
+
+[node name="Mask4" parent="." unique_id=907144258 instance=ExtResource("2_ofsxj")]
+unique_name_in_owner = true
+transform = Transform3D(0.013204974, -0.19160265, 0.23046486, 0.29814583, -0.015137846, -0.029668069, 0.030577466, 0.23034595, 0.18975185, 6.92566e-10, 0.5993088, 0.012751052)
+
+[node name="Mask5" parent="." unique_id=1510193214 instance=ExtResource("2_ofsxj")]
+unique_name_in_owner = true
+transform = Transform3D(-0.080617614, -0.26746932, -0.10936628, 0.10936651, -0.13333847, 0.24547875, -0.26746923, 0.026096316, 0.13333867, -0.16009763, 0.69407994, 0.14151193)
 
 [editable path="EnemyMesh"]
