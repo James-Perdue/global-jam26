@@ -2,6 +2,8 @@ extends Node
 
 var emotions: Dictionary = {} # Dictionary[string, Array[EmotionMessage]]
 
+var colors: Dictionary = {"HAPPY": "yellow", "SAD": "blue", "ANGRY": "red", "ANNOYED": "green", "FEAR": "purple"} #Dictionary[string emotion, string color]
+
 func _ready() -> void:
 	_load_emotions()
 
