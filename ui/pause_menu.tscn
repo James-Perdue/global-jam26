@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://6bgufeecppy"]
+
+[ext_resource type="Script" uid="uid://d0ylteic1kyv6" path="res://ui/pause_menu.gd" id="1_50142"]
+
+[node name="PauseMenu" type="Control" unique_id=273993750]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_50142")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=696470467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 445.0
+offset_top = 219.0
+offset_right = -445.0
+offset_bottom = -219.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1790925162]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=258600096]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1732108154]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1137657117]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Resume"
+
+[node name="ResetButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=964984157]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Reset Level"
+
+[node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=133281066]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Back to Menu"
