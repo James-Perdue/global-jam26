@@ -51,7 +51,7 @@ func _on_correct_mask():
 	rich_text.text = monster_effect
 	while emotion < len(enemy.emotion_targets[0].emotions):
 		
-		if emotion <  enemy.targeting_emotion_index:
+		if emotion <=  enemy.targeting_emotion_index:
 			rich_text.text += start_effect
 			rich_text.text +=color_type + EmotionDatabase.colors[Enums.Emotion.keys()[enemy.emotion_targets[0].emotions[emotion]]]
 			rich_text.text += "]"  
