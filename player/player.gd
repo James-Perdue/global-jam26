@@ -52,8 +52,10 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
 	current_encounter = encounter
 	damage_rate = ceil(encounter.damage_rate)
+	await get_tree().create_timer(2).timeout 
 	revolver.show()
 	revolver.get_node("AnimationPlayer").play("Ready")
+	
 
 func _on_encounter_ended() -> void:
 	in_encounter = false

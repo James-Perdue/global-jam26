@@ -1,17 +1,14 @@
-[gd_scene format=4 uid="uid://6muuir2bfjfl"]
+[gd_resource type="ArrayMesh" format=4 uid="uid://c0ktg8u2ranbv"]
 
-[ext_resource type="Script" uid="uid://b5hg7tkyjhvx" path="res://enemy/mask/mask.gd" id="1_anl1o"]
-[ext_resource type="Texture2D" uid="uid://sptrd0i3knd2" path="res://enemy/mask/Art/Mask_SadMask.png" id="2_ld8ii"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_w3pss"]
+[ext_resource type="Texture2D" uid="uid://sptrd0i3knd2" path="res://enemy/mask/Art/Mask_SadMask.png" id="1_yynor"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx0lw"]
 resource_name = "MaskMaterial"
 cull_mode = 2
-albedo_texture = ExtResource("2_ld8ii")
+albedo_texture = ExtResource("1_yynor")
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8svxl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_h2qy0"]
 _surfaces = [{
 "aabb": AABB(-0.9999999, -1.2443877, 0, 1.9999998, 2.2443876, 0.9999999),
 "format": 34896613377,
@@ -26,7 +23,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_acude"]
+[resource]
 resource_name = "Mask_Sphere"
 _surfaces = [{
 "aabb": AABB(-0.9999999, -1.2443877, 0, 1.9999998, 2.2443876, 0.9999999),
@@ -43,37 +40,4 @@ _surfaces = [{
 "vertex_data": PackedByteArray("+7CuCAAA4b+ioq4IRUUzt4HaaCEAAOS1/38AAAAAo8iB2jSZBLUGoED221MAAAKx//80mQAAA7BA9trEAAACsoHakuYAAP64oqJQ90VFcLr7sFD3AACTwv9///8AAKPI/3///wAADbxcXVD3RUVwuv9/NJn//2iB/38AAAAADbwDT1D3AACTwv9///8AAKPIfSWS5gAA/rh9JTSZBLUGoL4J2sQAAAKyAAA0mQAAA7B9JWghAADktb4J21MAAAKxXF2uCEVFM7cDT64IAADhv/9/AAAAAKPI/79oIf9/1Kmd09tTPKfcof9/aCEEta2b/3/bU4LsX4ud09rEPKefo/9/2sSC7BSQ/7+S5v9/Sa7/f5LmBLVbomEs2sQ8p5+j/39Q9/dhQLL/f///AAANvP8/kub/f0muYSzbUzyn3KH/P2gh/3/Uqf9/rgj3YTiu/38AAAAADbyEUYhN/kGvVzldATpbS/RcI4cMBSxtZx/mhPACjahPGObBgSeT2gxA+9CMMPTcpDTj2beRDMBqpf///38bJkdui7ACr6O0CqOBpxi+DIXb+E6Ycdfvghf7/kU53ZhgK+1PKP7BdjKE0QojWsuCTv1Fp2KAKQAA/38AAP9/7LO3JP///39vzcE2////f7akEsz///9/Ru7kWcG2jrJ/VqbiAjqBzgAA/3+4ERqm")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_8svxl")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lpr4y"]
-load_path = "res://.godot/imported/Mask-Sheet.png-a2e0469868713d2f4aeed3ff541419dd.s3tc.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ld8ii"]
-atlas = SubResource("CompressedTexture2D_lpr4y")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8svxl"]
-albedo_texture = SubResource("AtlasTexture_ld8ii")
-uv1_scale = Vector3(0.167, 1, 1)
-billboard_mode = 1
-billboard_keep_scale = true
-
-[node name="Mask" type="Node3D" unique_id=1702853835]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
-script = ExtResource("1_anl1o")
-
-[node name="Collider" type="StaticBody3D" parent="." unique_id=1025832801]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collider" unique_id=793920818]
-shape = SubResource("SphereShape3D_w3pss")
-
-[node name="Mesh" type="MeshInstance3D" parent="Collider" unique_id=1187605097]
-unique_name_in_owner = true
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("ArrayMesh_acude")
-surface_material_override/0 = SubResource("StandardMaterial3D_8svxl")
-
-[node name="EmotionDebugLabel" type="Label3D" parent="." unique_id=1519027903]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.53348684)
-text = "HAPPY"
+shadow_mesh = SubResource("ArrayMesh_h2qy0")

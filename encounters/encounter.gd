@@ -27,4 +27,5 @@ func start_encounter() -> void:
 	
 func _on_enemy_defeated() -> void:
 	SignalBus.end_encounter.emit()
+	await enemy.tree_exited
 	queue_free()
