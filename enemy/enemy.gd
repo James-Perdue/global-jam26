@@ -113,6 +113,10 @@ func end_encounter() -> void:
 	queue_free()
 	in_encounter = false
 	
+func auto_win() -> void:
+	#Play effects and sounds here
+	end_encounter()
+
 func get_label_location():
 	return emotion_message_label.global_position
 

@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dtda1h5ag44c1" path="res://player/player.tscn" id="3_1y5p2"]
 [ext_resource type="PackedScene" uid="uid://bg5llagmpo288" path="res://ui/hud.tscn" id="4_i7xqd"]
 [ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="5_ek3o3"]
-[ext_resource type="PackedScene" path="res://interactables/heal_item.tscn" id="6_1y5p2"]
+[ext_resource type="PackedScene" uid="uid://gkisya1730eg" path="res://interactables/heal_item.tscn" id="6_1y5p2"]
+[ext_resource type="PackedScene" uid="uid://c3vh87qjxe5jm" path="res://interactables/shotgun_item.tscn" id="7_i7xqd"]
 
 [node name="Node3D" type="Node3D" unique_id=1317390877]
 script = ExtResource("1_wcyx1")
@@ -69,3 +70,12 @@ tier = 1
 
 [node name="HealItem" parent="." unique_id=1765869013 instance=ExtResource("6_1y5p2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3656034, 1.364546, -1.8640461)
+
+[node name="ShotgunItem" parent="." unique_id=1810663129 instance=ExtResource("7_i7xqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0402093, 1.4086189, -2.8328743)
+
+[node name="Tier2" type="Node3D" parent="." unique_id=1720174218]
+unique_name_in_owner = true
+
+[node name="Tier3" type="Node3D" parent="." unique_id=1421466000]
+unique_name_in_owner = true

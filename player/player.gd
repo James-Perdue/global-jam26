@@ -27,11 +27,13 @@ var base_rotation: Vector2 = Vector2.ZERO
 var is_clamped: bool = false
 var is_loading: bool = true
 var clamp_angle: float = deg_to_rad(30.0)
+var has_shotgun: bool = false
 
 @onready var camera = $Camera3D
 @onready var damage_timer: Timer = Timer.new()
 @onready var interact_zone: Area3D = %InteractZone
 @onready var revolver: Node3D = %Revolver
+@onready var shotgun: Node3D = %Shotgun
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -39,6 +41,7 @@ func _ready() -> void:
 	SignalBus.end_encounter.connect(_on_encounter_ended)
 	SignalBus.player_healed.connect(_on_player_healed)
 	SignalBus.wrong_mask.connect(_on_wrong_mask)
+	SignalBus.shotgun_picked_up.connect(_on_shotgun_picked_up)
 	camera_starting_position = camera.position
 	add_child(damage_timer)
 	damage_timer.wait_time = damage_cooldown
@@ -46,6 +49,7 @@ func _ready() -> void:
 	interact_zone.body_entered.connect(_on_interact_zone_body_entered)
 	interact_zone.body_exited.connect(_on_interact_zone_body_exited)
 	revolver.hide()
+	shotgun.hide()
 	await get_tree().process_frame
 	SignalBus.player_health_changed.emit(health)
 	damage_timer.start()
@@ -61,6 +65,8 @@ func _ready() -> void:
 	is_loading = false
 	SignalBus.done_loading.emit()
 
+func _on_shotgun_picked_up() -> void:
+	has_shotgun = true
 
 func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
@@ -68,9 +74,12 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	damage_rate = ceil(encounter.damage_rate)
 	#arbitrary delay so gun not out before enemy spawns
 	#await get_tree().create_timer(1.5).timeout 
-	revolver.show()
-	revolver.get_node("AnimationPlayer").play("Ready")
-	await revolver.get_node("AnimationPlayer").animation_finished
+	var weapon = revolver
+	if(has_shotgun):
+		weapon = shotgun
+	weapon.show()
+	weapon.get_node("AnimationPlayer").play("Ready")
+	await weapon.get_node("AnimationPlayer").animation_finished
 	rotation_locked = false
 
 	
@@ -80,9 +89,14 @@ func _on_encounter_ended() -> void:
 	is_clamped = false
 	current_encounter = null
 	damage_rate = default_damage_rate
-	revolver.get_node("AnimationPlayer").play("PutAway")
-	await revolver.get_node("AnimationPlayer").animation_finished
-	revolver.hide()
+	var weapon = revolver
+	if(has_shotgun):
+		weapon = shotgun
+	if(weapon.get_node("AnimationPlayer").current_animation != ""):
+		await weapon.get_node("AnimationPlayer").animation_finished
+	weapon.get_node("AnimationPlayer").play("PutAway")
+	await weapon.get_node("AnimationPlayer").animation_finished
+	weapon.hide()
 
 func _on_player_healed(amount: int) -> void:
 	health = min(health + amount, max_health)
@@ -130,9 +144,12 @@ func _input(event: InputEvent) -> void:
 func shoot() -> void:
 	if not in_encounter:
 		return
-	if(revolver.get_node("AnimationPlayer").current_animation != ""):
+	var weapon = revolver
+	if(has_shotgun):
+		weapon = shotgun
+	if(weapon.get_node("AnimationPlayer").current_animation != ""):
 		return
-	revolver.get_node("AnimationPlayer").play("Fire")
+	weapon.get_node("AnimationPlayer").play("Fire")
 	
 	# Recoil effect
 	var original_rotation = camera.rotation.x
@@ -142,18 +159,22 @@ func shoot() -> void:
 	tween.tween_property(camera, "rotation:x", target_rotation, recoil_duration / 3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property(camera, "rotation:x", original_rotation, recoil_duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	
-	var space_state = get_world_3d().direct_space_state
-	var origin = camera.global_position
-	var end = origin - camera.global_transform.basis.z * 100.0
-	var query = PhysicsRayQueryParameters3D.create(origin, end)
-	
-	var result = space_state.intersect_ray(query)
-	
-	if result:
-		#_draw_hit_marker(result.position)
-		print("Hit: ", result.collider.name)
-		if result.collider.owner is Mask:
-			result.collider.owner.hit.emit()
+	if(!has_shotgun):
+		var space_state = get_world_3d().direct_space_state
+		var origin = camera.global_position
+		var end = origin - camera.global_transform.basis.z * 100.0
+		var query = PhysicsRayQueryParameters3D.create(origin, end)
+		
+		var result = space_state.intersect_ray(query)
+		
+		if result:
+			#_draw_hit_marker(result.position)
+			print("Hit: ", result.collider.name)
+			if result.collider.owner is Mask:
+				result.collider.owner.hit.emit()
+	else:
+		if current_encounter and current_encounter.enemy:
+			current_encounter.enemy.auto_win()
 
 func _draw_hit_marker(pos: Vector3) -> void:
 	var mesh_instance = MeshInstance3D.new()

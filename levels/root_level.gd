@@ -23,6 +23,9 @@ func _ready() -> void:
 			continue
 		print(objective.name)
 		objective.completed.connect(_on_objective_completed)
+	for tier in tier_level_nodes:
+		if tier != null:
+			tier.hide()
 	_process_objective_tier()
 
 func build_objective_tiers() -> void:
@@ -44,6 +47,8 @@ func _on_objective_completed(objective: Objective) -> void:
 	if completed_objectives.size() == current_objectives.size():
 		print("All objectives completed for tier: ", current_objective_tier)
 		advance_objective_tier()
+	else:
+		hud.update_objectives()
 
 func advance_objective_tier() -> void:
 	completed_objectives.clear()
@@ -60,6 +65,7 @@ func _process_objective_tier() -> void:
 	if(len(objective_tiers.keys()) <= 0):
 		return
 	current_objectives = objective_tiers[current_objective_tier]
+	hud.set_objectives(current_objectives)
 	# for objective in current_objectives:
 	# 	objective.enable_objective()
 
