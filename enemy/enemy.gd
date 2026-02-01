@@ -93,11 +93,11 @@ func _on_mask_hit(mask: Mask) -> void:
 		targeting_message_index += 1
 		print("Message: ", targeting_message_index, " Emotion: ", targeting_emotion_index)
 		if targeting_message_index >= emotion_targets.size():
-			SignalBus.correct_mask.emit()
+			SignalBus.correct_mask.emit(mask)
 			end_encounter()
 			return
 		line_audio_player.stream = EmotionDatabase.get_audio_file_for_message(emotion_targets[targeting_message_index])
-	SignalBus.correct_mask.emit()
+	SignalBus.correct_mask.emit(mask)
 	#emotion_message_label.text = emotion_targets[targeting_message_index].message
 	_clear_masks()
 	await get_tree().create_timer(.3).timeout 

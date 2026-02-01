@@ -34,3 +34,6 @@ transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.092784
 [node name="Shotgun" parent="Camera3D" unique_id=1705330155 instance=ExtResource("3_g1dw6")]
 unique_name_in_owner = true
 transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0.22889313, -0.07684076, -0.48503482)
+
+[node name="CannedAudio" type="AudioStreamPlayer3D" parent="." unique_id=800257367]
+unique_name_in_owner = true
