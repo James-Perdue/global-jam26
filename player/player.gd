@@ -23,6 +23,9 @@ var rotation_locked : bool = false
 var current_encounter : Encounter = null
 var interactable_in_zone: Node3D = null
 var camera_starting_position: Vector3 = Vector3.ZERO
+var base_rotation: Vector2 = Vector2.ZERO
+var is_clamped: bool = false
+var clamp_angle: float = deg_to_rad(30.0)
 
 @onready var camera = $Camera3D
 @onready var damage_timer: Timer = Timer.new()
@@ -56,10 +59,14 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	await get_tree().create_timer(1.5).timeout 
 	revolver.show()
 	revolver.get_node("AnimationPlayer").play("Ready")
+	await revolver.get_node("AnimationPlayer").animation_finished
+	rotation_locked = false
+
 	
 
 func _on_encounter_ended() -> void:
 	in_encounter = false
+	is_clamped = false
 	current_encounter = null
 	damage_rate = default_damage_rate
 	revolver.get_node("AnimationPlayer").play("PutAway")
@@ -87,13 +94,16 @@ func _on_interact_zone_body_exited(body: Node3D) -> void:
 		interactable_in_zone = null
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not rotation_locked:
-		# Rotate character body left/right
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		
-		# Rotate camera up/down
-		var camera_x_rotation = $Camera3D.rotation.x - event.relative.y * mouse_sensitivity
-		camera_x_rotation = clamp(camera_x_rotation, -PI/2, PI/2)
-		camera.rotation.x = camera_x_rotation
+		if is_clamped:
+			var rot_y = rotation.y - event.relative.x * mouse_sensitivity
+			var rot_x = camera.rotation.x - event.relative.y * mouse_sensitivity
+			
+			rotation.y = lerp_angle(rotation.y, clamp(rot_y, base_rotation.y - clamp_angle, base_rotation.y + clamp_angle), 1.0)
+			camera.rotation.x = clamp(rot_x, base_rotation.x - clamp_angle, base_rotation.x + clamp_angle)
+		else:
+			rotate_y(-event.relative.x * mouse_sensitivity)
+			camera.rotate_x(-event.relative.y * mouse_sensitivity)
+			camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 	if event.is_action_pressed("shoot"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

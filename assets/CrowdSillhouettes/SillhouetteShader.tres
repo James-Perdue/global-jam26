@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://buccwhtq40cbf"]
 
-[ext_resource type="Shader" uid="uid://dg2pp41xfn41f" path="res://assets/CrowdSillhouettes/SillhouetteShader.gdshader" id="1_r0tt8"]
+[ext_resource type="Shader" path="res://assets/CrowdSillhouettes/SillhouetteShader.gdshader" id="1_r0tt8"]
 [ext_resource type="Texture2D" uid="uid://j74pp27hou4h" path="res://assets/CrowdSillhouettes/CrowdSillhouette2.png" id="2_8owiu"]
 
 [resource]
