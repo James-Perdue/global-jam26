@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0ug7rmbcarwm"]
+
+[ext_resource type="PackedScene" uid="uid://w3b7st5b1cds" path="res://assets/level_models/Couch_RedSpawn.glb" id="1_ucj6d"]
+
+[node name="CouchRed" type="StaticBody3D" unique_id=272237701]
+
+[node name="Couch_RedSpawn" parent="." unique_id=1412825333 instance=ExtResource("1_ucj6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03668894, 0.003561616, 0.0077064037)

@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://xu27a4d8qveu" path="res://assets/level_models/Shotglass.glb" id="9_gdq3w"]
 [ext_resource type="PackedScene" uid="uid://b1y2bjnx8qv4o" path="res://assets/level_models/Carkeys.glb" id="10_foy8p"]
 [ext_resource type="PackedScene" uid="uid://bpe0pji1edm80" path="res://assets/level_models/Phone.glb" id="11_px3ys"]
+[ext_resource type="PackedScene" uid="uid://ntg2vr5wg2t7" path="res://assets/level_nodes/bar_white.tscn" id="13_ly652"]
+[ext_resource type="PackedScene" uid="uid://bm1c1agjxiqo4" path="res://assets/level_nodes/countertop_white.tscn" id="13_rirmo"]
+[ext_resource type="PackedScene" uid="uid://b0ug7rmbcarwm" path="res://assets/level_nodes/couch_red.tscn" id="14_rirmo"]
+[ext_resource type="PackedScene" uid="uid://d2qwfwigokcf0" path="res://assets/level_models/BeerBottle.glb" id="15_80v5j"]
 
 [node name="Node3D" type="Node3D" unique_id=1317390877]
 script = ExtResource("1_6witb")
@@ -75,3 +79,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2884483, 0.8355904, 1.67484
 
 [node name="Phone" parent="." unique_id=424677951 instance=ExtResource("11_px3ys")]
 transform = Transform3D(0.8061349, 0, 0.59173185, 0, 1, 0, -0.59173185, 0, 0.8061349, 1.8013506, 0.8424127, 1.6513612)
+
+[node name="CountertopWhite" parent="." unique_id=1620607076 instance=ExtResource("13_rirmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0329447, -0.0026657581, 1.9693108)
+
+[node name="BarWhite" parent="." unique_id=898099283 instance=ExtResource("13_ly652")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.281527, -0.002666235, 2.0563245)
+
+[node name="CouchRed" parent="." unique_id=272237701 instance=ExtResource("14_rirmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7682242, 0.011716366, -1.6513071)
+
+[node name="BeerBottle" parent="." unique_id=1975348445 instance=ExtResource("15_80v5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0556183, 1.3141078, 1.5879111)
