@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://cbi8jvx33pyb7"]
+
+[ext_resource type="Script" uid="uid://dyybbvbqif1pd" path="res://levels/root_level.gd" id="1_3wrdu"]
+[ext_resource type="PackedScene" uid="uid://dtda1h5ag44c1" path="res://player/player.tscn" id="2_5nwde"]
+[ext_resource type="PackedScene" uid="uid://bg5llagmpo288" path="res://ui/hud.tscn" id="3_hsh5q"]
+[ext_resource type="PackedScene" uid="uid://c4wvyyk5rwef5" path="res://assets/level_nodes/floor_carpet.tscn" id="4_4xl1r"]
+[ext_resource type="PackedScene" uid="uid://lxpql5k7mg28" path="res://encounters/encounter.tscn" id="10_ssqhj"]
+[ext_resource type="PackedScene" uid="uid://b7bjpckv7eeb7" path="res://assets/level_nodes/wall_bathroom.tscn" id="11_42vgc"]
+[ext_resource type="PackedScene" uid="uid://c1hkrnn27o38j" path="res://assets/level_nodes/wall_slamming_door.tscn" id="12_thj1e"]
+[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="13_gj64b"]
+[ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="14_0fxj2"]
+
+[sub_resource type="Environment" id="Environment_84ig8"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_7lf0s"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_t58ta"]
+material = ExtResource("14_0fxj2")
+size = Vector2(1.5, 1.5)
+subdivide_width = 8
+subdivide_depth = 8
+
+[node name="TestLevel1" type="Node3D" unique_id=810766990]
+script = ExtResource("1_3wrdu")
+
+[node name="Player" parent="." unique_id=1257764422 instance=ExtResource("2_5nwde")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3660441, 0.67242646, 2.4827516)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=194715375]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1, 0)
+light_color = Color(0, 0.3372549, 0.3647059, 1)
+light_energy = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2008249598]
+environment = SubResource("Environment_84ig8")
+camera_attributes = SubResource("CameraAttributesPhysical_7lf0s")
+
+[node name="Hud" parent="." unique_id=1560016975 instance=ExtResource("3_hsh5q")]
+
+[node name="Level" type="Node3D" parent="." unique_id=390229301]
+
+[node name="FloorPlane" parent="Level" unique_id=1309082723 instance=ExtResource("4_4xl1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="FloorPlane2" parent="Level" unique_id=1482141982 instance=ExtResource("4_4xl1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="FloorPlane3" parent="Level" unique_id=952681851 instance=ExtResource("4_4xl1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="FloorPlane4" parent="Level" unique_id=243454864 instance=ExtResource("4_4xl1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Encounters" type="Node3D" parent="." unique_id=1510019465]
+
+[node name="Encounter" parent="Encounters" unique_id=1653614673 instance=ExtResource("10_ssqhj")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 7, 1, -3)
+
+[node name="Encounter2" parent="Encounters" unique_id=428858938 instance=ExtResource("10_ssqhj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 1, -6)
+
+[node name="Trigger" parent="Encounters/Encounter2" index="0" unique_id=361826163]
+transform = Transform3D(1.9000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Encounter3" parent="Encounters" unique_id=2030480746 instance=ExtResource("10_ssqhj")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 13, 1, -18)
+
+[node name="Encounter4" parent="Encounters" unique_id=1409132824 instance=ExtResource("10_ssqhj")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 2, 1, -14)
+
+[node name="Encounter5" parent="Encounters" unique_id=662663173 instance=ExtResource("10_ssqhj")]
+transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, 13, 1, -6)
+
+[node name="Encounter" parent="." unique_id=212260574 instance=ExtResource("10_ssqhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1, -11)
+
+[node name="WallNormal" parent="." unique_id=48824918 instance=ExtResource("11_42vgc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 34, 0, -40)
+
+[node name="WallNormal2" parent="." unique_id=1852807789 instance=ExtResource("11_42vgc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 38, 0, -40)
+
+[node name="WallNormal3" parent="." unique_id=555270697 instance=ExtResource("11_42vgc")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 38, 0, -44)
+
+[node name="WallNormal4" parent="." unique_id=1327354630 instance=ExtResource("11_42vgc")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 34, 0, -44)
+
+[node name="WallNormal5" parent="." unique_id=678358589 instance=ExtResource("11_42vgc")]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 40, 0, -42)
+
+[node name="WallSlammedDoor" parent="." unique_id=795046026 instance=ExtResource("12_thj1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -46)
+
+[node name="WallSlammedDoor2" parent="." unique_id=1496065061 instance=ExtResource("12_thj1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -54)
+
+[node name="WallSlammedDoor5" parent="." unique_id=342964014 instance=ExtResource("12_thj1e")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6, 0, -64)
+
+[node name="WallSlammedDoor3" parent="." unique_id=386418996 instance=ExtResource("12_thj1e")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -50)
+
+[node name="WallSlammedDoor4" parent="." unique_id=2145406579 instance=ExtResource("12_thj1e")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -58)
+
+[node name="Objectives" type="Node3D" parent="." unique_id=1208245457]
+
+[node name="Objective" parent="Objectives" unique_id=225475714 instance=ExtResource("13_gj64b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.15762, 0.24975586, -10.451388)
+
+[node name="Objective2" parent="Objectives" unique_id=1371716076 instance=ExtResource("13_gj64b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.573848, 0.24975586, -16.25217)
+
+[node name="Objective3" parent="Objectives" unique_id=1298166070 instance=ExtResource("13_gj64b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.35993, 0.24975967, -31.852716)
+tier = 1
+
+[node name="Objective4" parent="Objectives" unique_id=2019033554 instance=ExtResource("13_gj64b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.709698, 0.24975204, -42.397293)
+tier = 1
+
+[node name="Objective5" parent="Objectives" unique_id=1998271064 instance=ExtResource("13_gj64b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.490847, 0.24975586, -90.58883)
+tier = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=870877869]
+transform = Transform3D(-0.76300055, 0.07586775, 0.6453672, -0.016537774, 2.074094, -0.07588956, -0.64618576, -0.14266506, -0.7600923, -3.0117908, 1.314926, 2.6220264)
+mesh = SubResource("QuadMesh_t58ta")
+
+[editable path="Encounters/Encounter2"]

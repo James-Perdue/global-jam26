@@ -28,10 +28,27 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 	if(body is Player):
 		print("Body entered: ", body.name)
 
+		body.rotation_locked = true
 		var tween = create_tween()
+		tween.set_parallel(true)
 		tween.tween_property(body, "position:x", trigger.global_position.x, drag_duration)
-		tween.parallel().tween_property(body, "position:z", trigger.global_position.z, drag_duration)
-		tween.tween_callback(func(): start_encounter())
+		tween.tween_property(body, "position:z", trigger.global_position.z, drag_duration)
+		
+		# Face the enemy
+		var target_dir = (enemy.global_position - trigger.global_position).normalized()
+		target_dir.y = 0
+		var target_yaw = atan2(-target_dir.x, -target_dir.z)
+		var target_pitch = asin(target_dir.y)
+		
+		tween.tween_property(body, "rotation:y", target_yaw, drag_duration).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(body.camera, "rotation:x", target_pitch, drag_duration).set_trans(Tween.TRANS_SINE)
+		
+		tween.set_parallel(false)
+		tween.tween_callback(func(): 
+			body.base_rotation = Vector2(target_pitch, target_yaw)
+			body.is_clamped = true
+			start_encounter()
+		)
 
 func start_encounter() -> void:
 	pre_enemy_sprite.hide()

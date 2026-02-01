@@ -88,6 +88,7 @@ func _on_mask_hit(mask: Mask) -> void:
 		targeting_message_index += 1
 		print("Message: ", targeting_message_index, " Emotion: ", targeting_emotion_index)
 		if targeting_message_index >= emotion_targets.size():
+			SignalBus.correct_mask.emit()
 			end_encounter()
 			return
 	SignalBus.correct_mask.emit()
