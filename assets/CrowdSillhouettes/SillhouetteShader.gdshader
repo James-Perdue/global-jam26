@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode blend_mix;
+render_mode cull_disabled;
 uniform sampler2D silhouetteTexture;
 
 const float wiggleStrength = 0.15;
