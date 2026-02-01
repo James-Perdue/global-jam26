@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://csyer07ftxyax" path="res://player/Shotgun/Shotgun.glb" id="2_hewt0"]
 [ext_resource type="PackedScene" uid="uid://dnoouc5e0reku" path="res://enemy/Monster/MaskMonster.glb" id="3_daqx6"]
 [ext_resource type="PackedScene" uid="uid://jr65we5gpqap" path="res://enemy/mask/Art/Mask.glb" id="4_daqx6"]
+[ext_resource type="PackedScene" uid="uid://c2uyy0xk8nlst" path="res://ParticleEffects/Smoke/EnemySmoke.tscn" id="4_k274b"]
 [ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="5_igkwo"]
 [ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objectives/objective.tscn" id="6_igkwo"]
 
@@ -21,9 +22,11 @@ script = ExtResource("1_gidhp")
 
 [node name="Shotgun" parent="." unique_id=1675829778 instance=ExtResource("2_hewt0")]
 
+[node name="EnemySmoke" parent="." unique_id=1375066680 instance=ExtResource("4_k274b")]
+
 [node name="MaskMonster2" parent="." unique_id=1628372574 instance=ExtResource("3_daqx6")]
 
-[node name="Skeleton3D" parent="MaskMonster2/rig" parent_id_path=PackedInt32Array(1628372574, 1229890942) index="0" unique_id=391046139]
+[node name="Skeleton3D" parent="MaskMonster2/rig" parent_id_path=PackedInt32Array(1628372574, 926514508) index="0" unique_id=4449168]
 bones/1/position = Vector3(1.7217646e-08, -0.011835292, -0.027601704)
 bones/1/rotation = Quaternion(0.74140036, 7.99969e-08, 8.8381796e-08, 0.67106295)
 bones/1/scale = Vector3(1.2234787, 0.66804737, 1.2234787)

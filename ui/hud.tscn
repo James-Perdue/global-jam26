@@ -32,6 +32,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Crosshair" type="TextureRect" parent="HudBaseControl" unique_id=1559269841]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
