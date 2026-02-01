@@ -2,7 +2,8 @@ extends Node
 var levels: Dictionary = {
 	"main_menu": preload("res://ui/main_menu.tscn"),
 	"level_1": preload("res://levels/test_level_1.tscn"),
-	"test": preload("res://levels/playground.tscn")
+	"test": preload("res://levels/playground.tscn"),
+	"stress_test": preload("res://levels/stress_test.tscn")
 }
 
 
