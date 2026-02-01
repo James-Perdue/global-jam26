@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bg5llagmpo288"]
 
 [ext_resource type="Script" uid="uid://bqub8lkxiqtak" path="res://ui/hud.gd" id="1_276te"]
-[ext_resource type="Texture2D" uid="uid://bla5jjpa7oa5y" path="res://icon.svg" id="1_rbyyf"]
+[ext_resource type="Texture2D" uid="uid://cx16fvci3bsvs" path="res://ui/UI_Art/Crosshair.png" id="2_en2x2"]
 [ext_resource type="Script" uid="uid://dtxlju7he8e3q" path="res://ui/Text Effects/EmotionColor.gd" id="3_546lt"]
 [ext_resource type="Script" uid="uid://cawny8ajvn3rf" path="res://ui/Text Effects/WritingEffect.gd" id="4_7ihmi"]
 [ext_resource type="Script" uid="uid://bglfhcoxx86m1" path="res://ui/Text Effects/MonsterEffect.gd" id="5_en2x2"]
@@ -32,7 +32,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Crosshair" type="TextureRect" parent="HudBaseControl" unique_id=1559269841]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,7 +45,7 @@ offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_rbyyf")
+texture = ExtResource("2_en2x2")
 
 [node name="HealthBar" type="ProgressBar" parent="HudBaseControl" unique_id=1287639065]
 unique_name_in_owner = true
