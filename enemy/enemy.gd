@@ -5,6 +5,7 @@ signal enemy_defeated
 
 var max_active_masks: int = 3
 var emotion_targets: Array[EmotionMessage] = []
+var message_parts: PackedStringArray = []
 var emotion_count: int = 0
 var targeting_message_index: int = 0
 var targeting_emotion_index: int = 0
@@ -32,6 +33,7 @@ func start_encounter(new_emotion_targets: Array[EmotionMessage]) -> void:
 	emotion_targets = new_emotion_targets
 	emotion_message_label.text = emotion_targets[0].message
 	emotion_count = len(emotion_targets[0].emotions)
+	message_parts = emotion_targets[0].message.split("|")
 	_enable_masks()
 	animation_tree.active = true
 	var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/StateMachine/playback")
@@ -88,8 +90,8 @@ func _on_mask_hit(mask: Mask) -> void:
 		if targeting_message_index >= emotion_targets.size():
 			end_encounter()
 			return
-	
-	emotion_message_label.text = emotion_targets[targeting_message_index].message
+	SignalBus.correct_mask.emit()
+	#emotion_message_label.text = emotion_targets[targeting_message_index].message
 	_clear_masks()
 	await get_tree().create_timer(.25).timeout 
 	_enable_masks()
