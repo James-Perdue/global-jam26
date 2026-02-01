@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://baspra3fddhxp"]
+
+[ext_resource type="Texture2D" uid="uid://yx32fxc3x5fj" path="res://assets/level_models/Ceiling_CeilingTexture.png" id="1_jqfn3"]
+
+[resource]
+resource_name = "CeilingMarterial"
+albedo_texture = ExtResource("1_jqfn3")
+roughness = 0.5
+texture_filter = 2
