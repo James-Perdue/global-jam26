@@ -6,6 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_hqkpl"]
 size = Vector3(0.2, 4, 4)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sba2t"]
+size = Vector3(6.8363037, 1, 8.015381)
+
 [node name="WallNormal" type="StaticBody3D" unique_id=1101017953]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1846020360]
@@ -16,3 +19,10 @@ shape = SubResource("BoxShape3D_hqkpl")
 
 [node name="Door2" parent="." unique_id=1852157432 instance=ExtResource("2_efbxr")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 0, 0, 1.1)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=341378365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5519192, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=411884296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4147339, 0, 0)
+shape = SubResource("BoxShape3D_sba2t")

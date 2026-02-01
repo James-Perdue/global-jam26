@@ -2,7 +2,7 @@ extends Node3D
 class_name Objective
 
 @export var tier: int = 0
-
+@export var heal_amount: int = 30
 signal completed(objective: Objective)
 
 @onready var mesh: MeshInstance3D = $InteractComponent/MeshInstance3D
@@ -23,5 +23,7 @@ func _on_interacted() -> void:
 # 		mesh.material_override = new_material
 
 func complete() -> void:
+	interact_component.hide_preview()
+	SignalBus.player_healed.emit(heal_amount)
 	collision_shape.disabled = true
 	mesh.visible = false

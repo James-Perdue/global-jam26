@@ -20,7 +20,7 @@ func reset_mask():
 
 func set_emotion(value: Enums.Emotion) -> void:
 	emotion = value
-	emotion_debug_label.text = Enums.Emotion.keys()[emotion]
+	#emotion_debug_label.text = Enums.Emotion.keys()[emotion]
 	
 	var mat = mesh.get_surface_override_material(0)
 	if mat is StandardMaterial3D:

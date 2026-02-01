@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://f2pauekgmolu" path="res://assets/level_nodes/wall_closed_door.tscn" id="9_02ec3"]
 [ext_resource type="PackedScene" uid="uid://b7bjpckv7eeb7" path="res://assets/level_nodes/wall_bathroom.tscn" id="9_grhbk"]
 [ext_resource type="PackedScene" uid="uid://c1hkrnn27o38j" path="res://assets/level_nodes/wall_slamming_door.tscn" id="12_5vfu0"]
+[ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objective.tscn" id="13_kgy88"]
 
 [sub_resource type="Environment" id="Environment_84ig8"]
 
@@ -21,7 +22,7 @@
 script = ExtResource("1_nnacv")
 
 [node name="Player" parent="." unique_id=1257764422 instance=ExtResource("2_84ig8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3660441, 1.1749823, 2.4827516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3660441, 0.67242646, 2.4827516)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=194715375]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1, 0)
@@ -2056,19 +2057,39 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 34, 
 [node name="WallNormal5" parent="." unique_id=678358589 instance=ExtResource("9_grhbk")]
 transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 40, 0, -42)
 
-[node name="WallNormal6" parent="." unique_id=795046026 instance=ExtResource("12_5vfu0")]
+[node name="WallSlammedDoor" parent="." unique_id=795046026 instance=ExtResource("12_5vfu0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -46)
 
-[node name="WallNormal7" parent="." unique_id=1496065061 instance=ExtResource("12_5vfu0")]
+[node name="WallSlammedDoor2" parent="." unique_id=1496065061 instance=ExtResource("12_5vfu0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -54)
 
-[node name="WallNormal8" parent="." unique_id=342964014 instance=ExtResource("12_5vfu0")]
+[node name="WallSlammedDoor5" parent="." unique_id=342964014 instance=ExtResource("12_5vfu0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6, 0, -64)
 
-[node name="WallNormal9" parent="." unique_id=386418996 instance=ExtResource("12_5vfu0")]
+[node name="WallSlammedDoor3" parent="." unique_id=386418996 instance=ExtResource("12_5vfu0")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -50)
 
-[node name="WallNormal10" parent="." unique_id=2145406579 instance=ExtResource("12_5vfu0")]
+[node name="WallSlammedDoor4" parent="." unique_id=2145406579 instance=ExtResource("12_5vfu0")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -58)
+
+[node name="Objectives" type="Node3D" parent="." unique_id=1208245457]
+
+[node name="Objective" parent="Objectives" unique_id=225475714 instance=ExtResource("13_kgy88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.15762, 0.24975586, -10.451388)
+
+[node name="Objective2" parent="Objectives" unique_id=1371716076 instance=ExtResource("13_kgy88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.573848, 0.24975586, -16.25217)
+
+[node name="Objective3" parent="Objectives" unique_id=1298166070 instance=ExtResource("13_kgy88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.35993, 0.24975967, -31.852716)
+tier = 1
+
+[node name="Objective4" parent="Objectives" unique_id=2019033554 instance=ExtResource("13_kgy88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.709698, 0.24975204, -42.397293)
+tier = 1
+
+[node name="Objective5" parent="Objectives" unique_id=1998271064 instance=ExtResource("13_kgy88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.490847, 0.24975586, -90.58883)
+tier = 2
 
 [editable path="Encounters/Encounter2"]

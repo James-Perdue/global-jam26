@@ -52,6 +52,7 @@ func _on_encounter_started(encounter: Encounter) -> void:
 	in_encounter = true
 	current_encounter = encounter
 	damage_rate = ceil(encounter.damage_rate)
+	#arbitrary delay so gun not out before enemy spawns
 	await get_tree().create_timer(2).timeout 
 	revolver.show()
 	revolver.get_node("AnimationPlayer").play("Ready")
@@ -73,19 +74,17 @@ func _on_player_healed(amount: int) -> void:
 func _on_interact_zone_body_entered(body: Node3D) -> void:
 	if(in_encounter):
 		return
-	print("Body entered interact zone: ", body.name)
 	if body is InteractComponent:
-		print("Interactable in zone: ", body.name)
 		interactable_in_zone = body
+		body.show_preview()
 		#body.complete()
 
 func _on_interact_zone_body_exited(body: Node3D) -> void:
 	if(in_encounter):
 		return
 	if body == interactable_in_zone:
-		print("Interactable exited zone: ", body.name)
+		interactable_in_zone.hide_preview()
 		interactable_in_zone = null
-	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not rotation_locked:
 		# Rotate character body left/right
