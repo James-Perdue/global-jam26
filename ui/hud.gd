@@ -6,6 +6,9 @@ var enemy: Enemy = null
 var start_effect = "[eb"
 var color_type = " color="
 var end_effect = "[/eb]"
+
+var writing_effect = "[we]"
+var end_writing_effect = "[/we]"
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var rich_text: RichTextLabel = %DialogueBox
 # Called when the node enters the scene tree for the first time.
@@ -27,10 +30,11 @@ func _on_player_health_changed(health: int) -> void:
 func _on_encounter_start(encounter:Encounter):
 	enemy = encounter.enemy
 	
-	rich_text.text = start_effect
+	#rich_text.text = start_effect
 	# TODO: put if statement here
-	rich_text.text +=color_type + EmotionDatabase.colors[Enums.Emotion.keys()[enemy.emotion_targets[0].emotions[0]]]
-	rich_text.text += "]" + enemy.emotion_targets[0].message + end_effect
+	if false:
+		rich_text.text +=color_type + EmotionDatabase.colors[Enums.Emotion.keys()[enemy.emotion_targets[0].emotions[0]]]
+	rich_text.text = writing_effect + enemy.emotion_targets[0].message + end_writing_effect
 
 func _on_encounter_end():
 	rich_text.hide()
