@@ -11,6 +11,8 @@ var objective_tiers = {} # Dictionary[int, Array[Objective]]
 @onready var tier_level_nodes: Array = [$Tier1, %Tier2, %Tier3]
 @onready var player: Player = $Player
 @onready var hud: Hud = $Hud
+@onready var blockers: Array[Node3D] = [null, %Tier2Blocker, %Tier3Blocker]
+
 
 func _ready() -> void:
 	hud.player = player
@@ -62,6 +64,8 @@ func advance_objective_tier() -> void:
 		return
 	if(tier_level_nodes[current_objective_tier] != null):
 		tier_level_nodes[current_objective_tier].show()
+		if(blockers[current_objective_tier] != null):
+			blockers[current_objective_tier].queue_free()
 	_process_objective_tier()
 
 func _process_objective_tier() -> void:
