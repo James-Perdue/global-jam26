@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cranivhfu363i"
-path="res://.godot/imported/happy_1.wav-ec6dbc441adf2a7358f30c7f3dc25dcc.sample"
+uid="uid://bhaqke3b2dsuv"
+path="res://.godot/imported/see.wav-9935cdc09526cb9094900d2947ad8cf6.sample"
 
 [deps]
 
-source_file="res://Audio/ReversedAudio/happy_1.wav"
-dest_files=["res://.godot/imported/happy_1.wav-ec6dbc441adf2a7358f30c7f3dc25dcc.sample"]
+source_file="res://Audio/ReversedAudio/see.wav"
+dest_files=["res://.godot/imported/see.wav-9935cdc09526cb9094900d2947ad8cf6.sample"]
 
 [params]
 
