@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dtxlju7he8e3q" path="res://ui/Text Effects/EmotionColor.gd" id="3_546lt"]
 [ext_resource type="Script" uid="uid://cawny8ajvn3rf" path="res://ui/Text Effects/WritingEffect.gd" id="4_7ihmi"]
 [ext_resource type="Script" uid="uid://bglfhcoxx86m1" path="res://ui/Text Effects/MonsterEffect.gd" id="5_en2x2"]
+[ext_resource type="Texture2D" uid="uid://bygxkx6wdg1ij" path="res://ui/UI_Art/Battery/SocialBattery_Empty.png" id="6_1v5rv"]
+[ext_resource type="Texture2D" uid="uid://bd0fygu5cphs0" path="res://ui/UI_Art/Battery/SocialBattery_Full.png" id="7_q43x7"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_7ihmi"]
 script = ExtResource("3_546lt")
@@ -32,6 +34,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Crosshair" type="TextureRect" parent="HudBaseControl" unique_id=1559269841]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,18 +49,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_en2x2")
-
-[node name="HealthBar" type="ProgressBar" parent="HudBaseControl" unique_id=1287639065]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 28.0
-offset_top = -66.0
-offset_right = 211.0
-offset_bottom = -39.0
-grow_vertical = 0
 
 [node name="DialogueBox" type="RichTextLabel" parent="HudBaseControl" unique_id=90986855]
 unique_name_in_owner = true
@@ -81,6 +72,7 @@ custom_effects = [SubResource("RichTextEffect_7ihmi"), SubResource("RichTextEffe
 
 [node name="FPSLabel" type="Label" parent="HudBaseControl" unique_id=1501802051]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -102,10 +94,27 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 6
 theme_override_constants/strikethrough_alpha = 100
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "Example Objective"
 fit_content = true
+
+[node name="HealthBar" type="TextureProgressBar" parent="HudBaseControl" unique_id=1798789491]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -74.0
+offset_right = 128.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_under = ExtResource("6_1v5rv")
+texture_progress = ExtResource("7_q43x7")
 
 [node name="LoadingScreen" type="ColorRect" parent="HudBaseControl" unique_id=1043852925]
 unique_name_in_owner = true

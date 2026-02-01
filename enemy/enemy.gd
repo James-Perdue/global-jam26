@@ -11,7 +11,7 @@ var targeting_message_index: int = 0
 var targeting_emotion_index: int = 0
 var in_encounter = false
 
-@onready var masks: Array[Mask] = [%Mask1, %Mask2, %Mask3, %Mask4]
+@onready var masks: Array[Mask] = [%Mask1, %Mask2, %Mask3, %Mask4, %Mask5]
 
 @onready var emotion_message_label: Label3D = %EmotionMessage
 @onready var person: MeshInstance3D = $PersonMesh
@@ -83,6 +83,8 @@ func _enable_masks() -> void:
 
 func _on_mask_hit(mask: Mask) -> void:
 	# TODO: handle multiple emotions in one message
+	animation_tree.set("parameters/HitReact/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
 	if mask.emotion != emotion_targets[targeting_message_index].emotions[targeting_emotion_index]:
 		print("Emotion Incorrect: ", mask.emotion, " Expected: ", emotion_targets[targeting_message_index])
 		SignalBus.wrong_mask.emit(mask)
