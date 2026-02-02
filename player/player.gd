@@ -146,7 +146,7 @@ func _on_encounter_ended() -> void:
 	await weapon.get_node("AnimationPlayer").animation_finished
 	if(!in_encounter):
 		weapon.hide()
-	if(has_shotgun):
+	if(has_shotgun and weapon == shotgun):
 		has_shotgun = false
 
 func _on_player_healed(amount: int) -> void:

@@ -39,7 +39,7 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 		var target_yaw = atan2(-target_dir.x, -target_dir.z)
 		
 		tween.tween_property(body, "rotation:y", target_yaw, drag_duration).set_trans(Tween.TRANS_SINE)
-		
+		body.in_encounter = true
 		tween.set_parallel(false)
 		tween.tween_callback(func(): 
 			body.base_rotation = Vector2(body.camera.rotation.x, target_yaw)

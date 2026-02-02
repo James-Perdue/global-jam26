@@ -3150,7 +3150,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9595428, -0.00012207031, -
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.9595428, -0.00012207031, -31.46545)
 
 [node name="ShotgunItem" parent="Encounters" unique_id=1038805842 instance=ExtResource("23_wh4jk")]
-transform = Transform3D(0.035370436, 0, -0.9993743, 0, 1, 0, 0.9993743, 0, 0.035370436, -19.299452, 1.3903395, -26.248337)
+transform = Transform3D(0.035370436, 0, -0.9993743, 0, 1, 0, 0.9993743, 0, 0.035370436, -21.548891, 1.3903395, -26.248337)
 
 [node name="ShotgunItem2" parent="Encounters" unique_id=879472260 instance=ExtResource("23_wh4jk")]
 transform = Transform3D(-0.62784076, 0, 0.7783418, 0, 1, 0, -0.7783418, 0, -0.62784076, 17.198984, 1.4196337, -50.713383)
@@ -3583,7 +3583,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 21.3
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.860137, 0.01413846, -47.465908)
 
 [node name="ShotHeal" parent="." unique_id=1099385476 instance=ExtResource("11_rr58p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.23649, 0.91402435, -23.447063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.18313, 1.2535536, -21.055431)
 
 [node name="ShotHeal2" parent="." unique_id=95364328 instance=ExtResource("11_rr58p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.432022, 1.2572303, -20.972458)
@@ -3615,9 +3615,6 @@ objective_description = "Find out where your friend went."
 
 [node name="FriendEncounter" parent="." unique_id=679040533 instance=ExtResource("31_b0b66")]
 transform = Transform3D(-0.016038846, 0, -0.9998714, 0, 1, 0, 0.9998714, 0, -0.016038846, 21.301306, 1.2976575, -87.36378)
-
-[node name="ShotHeal6" parent="." unique_id=1257122800 instance=ExtResource("11_rr58p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.498, 0.9135357, -32.511833)
 
 [node name="ShotHeal7" parent="." unique_id=2049776861 instance=ExtResource("11_rr58p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.12299, 0.9135357, -30.876749)
