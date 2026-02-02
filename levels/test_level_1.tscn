@@ -3316,6 +3316,22 @@ light_bake_mode = 1
 spot_range = 5.833
 spot_angle = 78.33
 
+[node name="SpotLight3D38" type="SpotLight3D" parent="Lights" unique_id=300623778]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -24.44497, 3.3529181, -43.80179)
+light_color = Color(1.272317, 1.9729998, 0.7501033, 1)
+light_energy = 2.502
+light_bake_mode = 1
+spot_range = 5.833
+spot_angle = 78.33
+
+[node name="SpotLight3D39" type="SpotLight3D" parent="Lights" unique_id=1765437681]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -35.196144, 3.3529181, -43.80179)
+light_color = Color(1.272317, 1.9729998, 0.7501033, 1)
+light_energy = 2.502
+light_bake_mode = 1
+spot_range = 5.833
+spot_angle = 78.33
+
 [node name="SpotLight3D12" type="SpotLight3D" parent="Lights" unique_id=912061866]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 20.33523, 3.3529181, -30.801788)
 light_color = Color(1.9731646, 1.7047501, 1.3046933, 1)
@@ -3599,5 +3615,11 @@ objective_description = "Find out where your friend went."
 
 [node name="FriendEncounter" parent="." unique_id=679040533 instance=ExtResource("31_b0b66")]
 transform = Transform3D(-0.016038846, 0, -0.9998714, 0, 1, 0, 0.9998714, 0, -0.016038846, 21.301306, 1.2976575, -87.36378)
+
+[node name="ShotHeal6" parent="." unique_id=1257122800 instance=ExtResource("11_rr58p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.498, 0.9135357, -32.511833)
+
+[node name="ShotHeal7" parent="." unique_id=2049776861 instance=ExtResource("11_rr58p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.12299, 0.9135357, -30.876749)
 
 [editable path="Tier1/LampTable"]
