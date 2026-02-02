@@ -308,14 +308,14 @@ func _on_wrong_mask(_mask: Mask) -> void:
 	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
 	take_damage(wrong_mask_damage)
 	if(line_audio_player.stream != null):
-		if(get_tree() != null):
+		if(is_instance_valid(self)):
 			await get_tree().create_timer(.15).timeout
 			line_audio_player.play()
 
 func _on_correct_mask(_mask: Mask) -> void:
 	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
 	if(line_audio_player.stream != null):
-		if(get_tree() != null):
+		if(is_instance_valid(self)):
 			await get_tree().create_timer(.15).timeout
 			line_audio_player.play()
 

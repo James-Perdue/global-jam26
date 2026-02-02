@@ -3,7 +3,8 @@ extends Node
 
 var music = {
 	"main_menu": preload("res://Audio/Menu Music Masquerade.wav"),
-	"level_1": preload("res://Audio/Main Level Music Masquerade.wav")
+	"level_1": preload("res://Audio/Main Level Music Masquerade.wav"),
+	"game_over": preload("res://Audio/Game Over Track.wav")
 }
 
 @onready var music_player = AudioStreamPlayer.new()

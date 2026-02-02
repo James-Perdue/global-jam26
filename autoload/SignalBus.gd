@@ -1,5 +1,5 @@
 extends Node
-
+@warning_ignore_start("unused_signal")
 
 signal start_encounter(encounter:Encounter)
 signal end_encounter
@@ -15,3 +15,4 @@ signal done_loading
 signal shotgun_picked_up
 signal drunk_started
 signal toggled_crosshair(show:bool)
+@warning_ignore_restore("unused_signal")
