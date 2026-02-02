@@ -7,6 +7,7 @@ signal hit
 var original_scale: Vector3 = Vector3.ONE
 @onready var emotion_debug_label: Label3D = %EmotionDebugLabel
 @onready var mesh: MeshInstance3D = %Mesh
+@onready var sparks: Node3D = %MaskSparks
 
 func _ready() -> void:
 	hit.connect(_on_hit)
@@ -32,6 +33,7 @@ func set_emotion(value: Enums.Emotion) -> void:
 		# Duplicate material to ensure UV offset is unique to this instance
 		mat = mat.duplicate()
 		mat.albedo_color = EmotionDatabase.colors[Enums.Emotion.keys()[emotion]]
+		sparks.get_node("CPUParticles3D").color = EmotionDatabase.colors[Enums.Emotion.keys()[emotion]]
 		mesh.set_surface_override_material(0, mat)
 		
 		mat.uv1_offset.x = float(_atlas_index_from_emotion(emotion)) * (1/6.0)
@@ -45,6 +47,7 @@ func enable_collision() -> void:
 
 func _on_hit() -> void:
 	print("Mask hit: ", emotion)
+	sparks.get_node("CPUParticles3D").emitting = true
 
 func _atlas_index_from_emotion(emotion_input: Enums.Emotion) -> int:
 	match emotion_input:
