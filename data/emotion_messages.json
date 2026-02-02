@@ -118,7 +118,7 @@
 		{
 			"audio_key": "shoe",
 			"message": "Did you just step on my shoe?| I just got these!",
-			"emotions": ["ANGER","SAD"]
+			"emotions": ["ANGRY","SAD"]
 		},
 		{
 			"audio_key": "puke",
@@ -133,12 +133,12 @@
 		{
 			"audio_key": "uber",
 			"message": "Hey those are my keys!| Wait, oh no I can't find my keys.| I'll have to buy a damn uber.",
-			"emotions": ["ANGER","FEAR","ANGER"]
+			"emotions": ["ANGRY","FEAR","ANGRY"]
 		},
 		{
 			"audio_key": "monologue",
 			"message": "Yeah so the thirteenth king of the Cynthian kingdom died to a plague,| but his son was actually the one to bring peace to the reigon.| I think this was a stupid writing decision personally| but my mom says i should get a job. Whatever",
-			"emotions": ["SAD","HAPPY","ANGER","ANNOYED"]
+			"emotions": ["SAD","HAPPY","ANGRY","ANNOYED"]
 		},
 		{
 			"audio_key": "fear_5",
@@ -164,6 +164,11 @@
 			"audio_key": "annoyed_6",
 			"message": "There's too much smoke, I need pure air...",
 			"emotions": ["ANNOYED"]
+		},
+		{
+			"audio_key": "drink",
+			"message": "I don't drink very often, is it supposed to feel this way?| Why does it taste so bad??",
+			"emotions": ["FEAR","ANNOYED"]
 		}
 	]
 }

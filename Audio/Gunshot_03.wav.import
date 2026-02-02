@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://5qjyc4elbuj3"
-path="res://.godot/imported/festival.wav-c0bd57d95f3328f17f4d272c8c5bea77.sample"
+uid="uid://4s0oyupqh20e"
+path="res://.godot/imported/Gunshot_03.wav-420722e2f703c7f0584fee2491998fbe.sample"
 
 [deps]
 
-source_file="res://Audio/ReversedAudio/festival.wav"
-dest_files=["res://.godot/imported/festival.wav-c0bd57d95f3328f17f4d272c8c5bea77.sample"]
+source_file="res://Audio/Gunshot_03.wav"
+dest_files=["res://.godot/imported/Gunshot_03.wav-420722e2f703c7f0584fee2491998fbe.sample"]
 
 [params]
 
