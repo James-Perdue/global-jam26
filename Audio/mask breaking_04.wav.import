@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2aj7i4qfjrol"
+path="res://.godot/imported/mask breaking_04.wav-50f658c65cc76ec37d5432053b21dbb8.sample"
+
+[deps]
+
+source_file="res://Audio/mask breaking_04.wav"
+dest_files=["res://.godot/imported/mask breaking_04.wav-50f658c65cc76ec37d5432053b21dbb8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
