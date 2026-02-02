@@ -20,6 +20,7 @@ func _ready() -> void:
 	for objective in temp_objectives:
 		objectives.append(objective as Objective)
 	build_objective_tiers()
+	MusicManager.play_music("level_1")
 	for objective in objectives:
 		if(objective.tier < 0):
 			continue
