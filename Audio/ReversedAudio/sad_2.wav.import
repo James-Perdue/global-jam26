@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://34ae10bhkc4d"
-path="res://.godot/imported/fireball.wav-23a59ae74ecfc0e6c8ffbf3f9c7182a8.sample"
+uid="uid://b26p5pmcn0tk6"
+path="res://.godot/imported/sad_2.wav-5aa36021259c799b27da350c2c2cd3df.sample"
 
 [deps]
 
-source_file="res://Audio/ReversedAudio/fireball.wav"
-dest_files=["res://.godot/imported/fireball.wav-23a59ae74ecfc0e6c8ffbf3f9c7182a8.sample"]
+source_file="res://Audio/ReversedAudio/sad_2.wav"
+dest_files=["res://.godot/imported/sad_2.wav-5aa36021259c799b27da350c2c2cd3df.sample"]
 
 [params]
 
