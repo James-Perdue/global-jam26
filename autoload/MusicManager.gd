@@ -13,7 +13,7 @@ func _ready() -> void:
 	add_child(music_player)
 	music_player.finished.connect(func(): music_player.play())
 
-	music_player.volume_db = -10
+	music_player.volume_db = -15
 
 func _on_settings_change():
 	pass
