@@ -1,25 +1,25 @@
-[gd_scene format=3 uid="uid://bfmbgk8gc2ba8"]
+[gd_scene format=3 uid="uid://dj7hy3aab5bqu"]
 
-[ext_resource type="Script" uid="uid://mxt5kes1olcg" path="res://interactables/objectives/objective.gd" id="1_btvub"]
-[ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_ruxtk"]
-[ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="3_btvub"]
-[ext_resource type="AudioStream" uid="uid://b5hp5c1bpb4rq" path="res://Audio/Friend/FriendJustLeft.wav" id="3_ruxtk"]
+[ext_resource type="Script" uid="uid://mxt5kes1olcg" path="res://interactables/objectives/objective.gd" id="1_e62tc"]
+[ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_g8257"]
+[ext_resource type="AudioStream" uid="uid://b5hp5c1bpb4rq" path="res://Audio/Friend/FriendJustLeft.wav" id="3_bvkwt"]
+[ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="4_yve67"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ruxtk"]
 lightmap_size_hint = Vector2i(7, 12)
-material = ExtResource("3_btvub")
+material = ExtResource("4_yve67")
 uv2_padding = 0.0
 size = Vector2(1, 2)
 subdivide_width = 2
 subdivide_depth = 2
 
 [node name="FriendMissing" type="Node3D" unique_id=225475714 groups=["ObjectiveGroup"]]
-script = ExtResource("1_btvub")
+script = ExtResource("1_e62tc")
 heal_amount = 20
 objective_description = "Where's my car keys?"
 
-[node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_ruxtk")]
-stream = ExtResource("3_ruxtk")
+[node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_g8257")]
+stream = ExtResource("3_bvkwt")
 
 [node name="CollisionShape3D" parent="InteractComponent" index="0" unique_id=1152483864]
 transform = Transform3D(1.1582048, 0, 0, 0, 1.77408, 0, 0, 0, 1.1094445, 0, 0, 0)
@@ -39,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75274014, 0)
 visible = false
 billboard = 1
 no_depth_test = true
+text = "Uhh, I think your friend just left?"
 outline_size = 13
 
 [editable path="InteractComponent"]

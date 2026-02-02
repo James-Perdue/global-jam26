@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bpswersdjg53j"]
+
+[ext_resource type="Script" uid="uid://i867gtx2al4a" path="res://encounters/friend_encounter.gd" id="1_kswsw"]
+[ext_resource type="AudioStream" uid="uid://bw13gyi12mfra" path="res://Audio/Friend/where_did_you_go.wav" id="2_1bnoa"]
+[ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="3_1bnoa"]
+[ext_resource type="AudioStream" uid="uid://cj48h3iwn5u6l" path="res://Audio/Friend/how_much_you_drink_2.wav" id="3_a1bw5"]
+[ext_resource type="AudioStream" uid="uid://bciih4vrwvtux" path="res://Audio/Friend/lets_get_outta_here.wav" id="4_xvnhx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7nhbq"]
+size = Vector3(2.013916, 3.0408936, 2.0566406)
+
+[sub_resource type="QuadMesh" id="QuadMesh_hv6hw"]
+lightmap_size_hint = Vector2i(7, 12)
+material = ExtResource("3_1bnoa")
+uv2_padding = 0.0
+size = Vector2(1, 2)
+subdivide_width = 2
+subdivide_depth = 2
+
+[node name="FriendEncounter" type="Node3D" unique_id=1653614673]
+script = ExtResource("1_kswsw")
+audio_clips = Array[AudioStream]([ExtResource("2_1bnoa"), ExtResource("3_a1bw5"), ExtResource("4_xvnhx")])
+dialog_texts = Array[String](["Where'd you go? I left you on the couch for five minutes!", "Are you drunk right now? Dude - how much did you drink?", "C'mon man let's get out of here."])
+
+[node name="Trigger" type="Area3D" parent="." unique_id=361826163]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=1373126186]
+shape = SubResource("BoxShape3D_7nhbq")
+
+[node name="SillhouetteInstance" type="MeshInstance3D" parent="." unique_id=1059036769]
+transform = Transform3D(1.2951086, 0, 0, 0, 1.3303818, 0, 0, 0, 1, 0, 0.03248009, -1.4705786)
+mesh = SubResource("QuadMesh_hv6hw")
+
+[node name="DialogLabel" type="Label3D" parent="." unique_id=701984951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87503815, -1.4705786)
+billboard = 1
+no_depth_test = true
+text = "TESTING"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2088273480]
