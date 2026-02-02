@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xu27a4d8qveu"
-path="res://.godot/imported/Shotglass.glb-bcc57d4bd748b44b2056a2b675af3ca1.scn"
+uid="uid://cmxjbawpmdt2y"
+path="res://.godot/imported/Bathtub.glb-fadd17a7ee7663c6e6c7fa36789f92fc.scn"
 
 [deps]
 
-source_file="res://assets/level_models/Shotglass.glb"
-dest_files=["res://.godot/imported/Shotglass.glb-bcc57d4bd748b44b2056a2b675af3ca1.scn"]
+source_file="res://assets/level_models/Bathtub.glb"
+dest_files=["res://.godot/imported/Bathtub.glb-fadd17a7ee7663c6e6c7fa36789f92fc.scn"]
 
 [params]
 
@@ -37,14 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"Glass": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets/level_models/Glass.tres",
-"use_external/path": "uid://cf6j3i7h7r3s7"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
