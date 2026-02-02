@@ -7,6 +7,8 @@ func _ready() -> void:
 	play_button.pressed.connect(_on_play_button_pressed)
 	playground_button.pressed.connect(_on_playground_button_pressed)
 	MusicManager.play_music("main_menu")
+	if not OS.is_debug_build():
+		playground_button.hide()
 
 func _on_play_button_pressed() -> void:
 	#TODO: Jared ref your level in GameManager
