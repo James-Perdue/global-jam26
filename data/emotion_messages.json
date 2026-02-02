@@ -164,6 +164,11 @@
 			"audio_key": "annoyed_6",
 			"message": "There's too much smoke, I need pure air...",
 			"emotions": ["ANNOYED"]
+		},
+		{
+			"audio_key": "drink",
+			"message": "I don't drink very often, is it supposed to feel this way?| Why does it taste so bad??",
+			"emotions": ["FEAR","ANNOYED"]
 		}
 	]
 }
