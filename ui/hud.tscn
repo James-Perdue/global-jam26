@@ -72,7 +72,6 @@ custom_effects = [SubResource("RichTextEffect_7ihmi"), SubResource("RichTextEffe
 
 [node name="FPSLabel" type="Label" parent="HudBaseControl" unique_id=1501802051]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

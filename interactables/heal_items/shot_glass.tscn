@@ -3,12 +3,18 @@
 [ext_resource type="Script" uid="uid://dv7ee6a2h5gse" path="res://interactables/heal_items/heal_item.gd" id="1_1f0ab"]
 [ext_resource type="PackedScene" uid="uid://xu27a4d8qveu" path="res://assets/level_models/Shotglass.glb" id="2_a41ca"]
 [ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_d7vnn"]
+[ext_resource type="Material" uid="uid://utoyg0c75cxn" path="res://interactables/heal_items/ShotGlassLiquid.tres" id="3_a41ca"]
+[ext_resource type="Material" uid="uid://cf6j3i7h7r3s7" path="res://assets/level_models/Glass.tres" id="3_jx1be"]
 
 [node name="ShotHeal" type="Node3D" unique_id=1765869013]
 script = ExtResource("1_1f0ab")
 
-[node name="Shotglass" parent="." unique_id=236873711 instance=ExtResource("2_a41ca")]
+[node name="Shotglass" parent="." unique_id=463952402 instance=ExtResource("2_a41ca")]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="ShotGlass_Glass" parent="Shotglass" index="0" unique_id=1678479341]
+surface_material_override/0 = ExtResource("3_jx1be")
+surface_material_override/1 = ExtResource("3_a41ca")
 
 [node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_d7vnn")]
 
