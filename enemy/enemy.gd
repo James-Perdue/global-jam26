@@ -18,6 +18,7 @@ var in_encounter = false
 @onready var enemy_mesh: Node3D = %EnemyMesh
 @onready var animation_tree: AnimationTree = %AnimationTree
 @onready var line_audio_player: AudioStreamPlayer3D = %LineAudioPlayer
+@onready var spawn_audio_player: AudioStreamPlayer3D = %SpawnNoise
 
 func _ready() -> void:
 	emotion_message_label.text = ""
@@ -30,7 +31,7 @@ func _ready() -> void:
 func start_encounter(new_emotion_targets: Array[EmotionMessage]) -> void:
 	show()
 	# Only pick one message target for now
-	
+	spawn_audio_player.play()
 	emotion_targets = new_emotion_targets
 	emotion_message_label.text = emotion_targets[0].message
 	emotion_count = len(emotion_targets[0].emotions)

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b61alq4wxlntv"
-path="res://.godot/imported/pure_air.wav-8d884379cb8f26e3005d80749111718b.sample"
+path="res://.godot/imported/annoyed_6.wav-834a27e96ea463d8d22a39a8de3622eb.sample"
 
 [deps]
 
-source_file="res://Audio/ReversedAudio/pure_air.wav"
-dest_files=["res://.godot/imported/pure_air.wav-8d884379cb8f26e3005d80749111718b.sample"]
+source_file="res://Audio/ReversedAudio/annoyed_6.wav"
+dest_files=["res://.godot/imported/annoyed_6.wav-834a27e96ea463d8d22a39a8de3622eb.sample"]
 
 [params]
 
