@@ -7,3 +7,8 @@
 script = ExtResource("1_8k5o3")
 
 [node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("1_2wbwf")]
+
+[node name="InteractLabel" parent="InteractComponent" index="2" unique_id=2144635504]
+text = "Take a Shot (E)"
+
+[editable path="InteractComponent"]

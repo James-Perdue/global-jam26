@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b5hg7tkyjhvx" path="res://enemy/mask/mask.gd" id="1_anl1o"]
 [ext_resource type="Texture2D" uid="uid://sptrd0i3knd2" path="res://enemy/mask/Art/Mask_SadMask.png" id="2_ld8ii"]
+[ext_resource type="PackedScene" uid="uid://bpli2bmok02x" path="res://ParticleEffects/Sparks/MaskSparks.tscn" id="3_ld8ii"]
+[ext_resource type="AudioStream" uid="uid://dca2cknt7qvuc" path="res://Audio/mask breaking_01.wav" id="4_865ja"]
+[ext_resource type="AudioStream" uid="uid://dgk2uqgf15ds2" path="res://Audio/mask breaking_02.wav" id="5_oogq1"]
+[ext_resource type="AudioStream" uid="uid://k5o7f0ad8ici" path="res://Audio/mask breaking_03.wav" id="6_yfwh0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_w3pss"]
 
@@ -60,6 +64,12 @@ uv1_scale = Vector3(0.167, 1, 1)
 billboard_mode = 1
 billboard_keep_scale = true
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_va3k7"]
+streams_count = 3
+stream_0/stream = ExtResource("4_865ja")
+stream_1/stream = ExtResource("5_oogq1")
+stream_2/stream = ExtResource("6_yfwh0")
+
 [node name="Mask" type="Node3D" unique_id=1702853835]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("1_anl1o")
@@ -79,3 +89,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8svxl")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.53348684)
 text = "HAPPY"
+
+[node name="MaskSparks" parent="." unique_id=115632460 instance=ExtResource("3_ld8ii")]
+unique_name_in_owner = true
+
+[node name="BreakPlayer" type="AudioStreamPlayer3D" parent="." unique_id=289997089]
+stream = SubResource("AudioStreamRandomizer_va3k7")

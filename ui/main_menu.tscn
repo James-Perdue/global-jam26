@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://45f8k7oes3io"]
 
 [ext_resource type="Script" uid="uid://4mlgtq6ag2pp" path="res://ui/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="PackedScene" uid="uid://c4wvyyk5rwef5" path="res://assets/level_nodes/floor_carpet.tscn" id="2_arv2f"]
+[ext_resource type="Texture2D" uid="uid://dxgbjhqx5s3gi" path="res://ui/NoYeahOkayLogo.png" id="2_lsdqh"]
+[ext_resource type="PackedScene" uid="uid://cfhvfhf5a65hw" path="res://assets/level_nodes/wall_normal.tscn" id="3_5klac"]
+[ext_resource type="PackedScene" uid="uid://dy364yt7x0ooc" path="res://assets/level_nodes/wall_doorway.tscn" id="4_lsdqh"]
+[ext_resource type="PackedScene" uid="uid://csnedhf20jrq2" path="res://assets/level_models/Ceiling.glb" id="5_jiymt"]
+[ext_resource type="PackedScene" uid="uid://div88ejasiajp" path="res://assets/CrowdSillhouettes/CrowdBlockers/CrowdBlockerCapsule.tscn" id="6_bgtsx"]
+[ext_resource type="PackedScene" uid="uid://mu1gwxjotwcp" path="res://assets/level_nodes/couch_red.tscn" id="7_kaxbk"]
+[ext_resource type="PackedScene" uid="uid://bh62i3sjeb0at" path="res://assets/level_nodes/lamp_floor.tscn" id="8_0nobx"]
+[ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="9_iyrh0"]
+[ext_resource type="PackedScene" uid="uid://cmdhq5lhus1ry" path="res://interactables/heal_items/shot_glass.tscn" id="10_5klac"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8jgmr"]
+material = ExtResource("9_iyrh0")
+size = Vector2(1.5, 1.5)
+subdivide_width = 8
+subdivide_depth = 8
 
 [node name="MainMenu" type="Node3D" unique_id=1053416477]
 script = ExtResource("1_t7e0r")
@@ -16,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/MenuBaseControl" unique_id=1132212036]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,3 +74,131 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Playground"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MenuBaseControl" unique_id=804940096]
+position = Vector2(636, 284.00003)
+scale = Vector2(0.515625, 0.515625)
+texture = ExtResource("2_lsdqh")
+
+[node name="Set Dressing" type="Node3D" parent="." unique_id=2008599433]
+
+[node name="FloorPlane" parent="Set Dressing" unique_id=1309082723 instance=ExtResource("2_arv2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="FloorPlane2" parent="Set Dressing" unique_id=1069244882 instance=ExtResource("2_arv2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="FloorPlane3" parent="Set Dressing" unique_id=899993311 instance=ExtResource("2_arv2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="FloorPlane4" parent="Set Dressing" unique_id=1688178032 instance=ExtResource("2_arv2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="FloorPlane5" parent="Set Dressing" unique_id=1445689120 instance=ExtResource("2_arv2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+
+[node name="FloorPlane6" parent="Set Dressing" unique_id=1691973928 instance=ExtResource("2_arv2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+
+[node name="WallNormal" parent="Set Dressing" unique_id=1101017953 instance=ExtResource("3_5klac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+
+[node name="WallNormal2" parent="Set Dressing" unique_id=2049162232 instance=ExtResource("3_5klac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="WallNormal3" parent="Set Dressing" unique_id=353591995 instance=ExtResource("3_5klac")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, -2)
+
+[node name="WallNormal8" parent="Set Dressing" unique_id=529015912 instance=ExtResource("3_5klac")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, -7.9999995)
+
+[node name="WallNormal6" parent="Set Dressing" unique_id=1209433815 instance=ExtResource("3_5klac")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2, 0, -8)
+
+[node name="WallNormal4" parent="Set Dressing" unique_id=979457628 instance=ExtResource("3_5klac")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, 2)
+
+[node name="WallNormal11" parent="Set Dressing" unique_id=1373797972 instance=ExtResource("3_5klac")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 0, 4)
+
+[node name="WallNormal12" parent="Set Dressing" unique_id=920881747 instance=ExtResource("3_5klac")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 0, 4)
+
+[node name="WallDoorway" parent="Set Dressing" unique_id=1802230513 instance=ExtResource("4_lsdqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+
+[node name="WallDoorway3" parent="Set Dressing" unique_id=962824572 instance=ExtResource("4_lsdqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="Ceiling" parent="Set Dressing" unique_id=1286667548 instance=ExtResource("5_jiymt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Ceiling2" parent="Set Dressing" unique_id=922120097 instance=ExtResource("5_jiymt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Ceiling3" parent="Set Dressing" unique_id=1283262814 instance=ExtResource("5_jiymt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Ceiling4" parent="Set Dressing" unique_id=2013007981 instance=ExtResource("5_jiymt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="Ceiling5" parent="Set Dressing" unique_id=1099027789 instance=ExtResource("5_jiymt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+
+[node name="Ceiling6" parent="Set Dressing" unique_id=1384737350 instance=ExtResource("5_jiymt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+
+[node name="CrowdBlockerCapsule" parent="Set Dressing" unique_id=1635286611 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0335553, 0.20855016, 0.9527862)
+
+[node name="CrowdBlockerCapsule2" parent="Set Dressing" unique_id=1175272157 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2126036, 0.20855016, 2.8490963)
+
+[node name="CrowdBlockerCapsule3" parent="Set Dressing" unique_id=1489593688 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9296923, 0.20855016, 1.117506)
+
+[node name="CrowdBlockerCapsule4" parent="Set Dressing" unique_id=1582391609 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1953678, 0.20855016, -0.8504993)
+
+[node name="CrowdBlockerCapsule7" parent="Set Dressing" unique_id=605344770 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0054817, 0.20855016, -2.2746482)
+
+[node name="CrowdBlockerCapsule8" parent="Set Dressing" unique_id=1302118367 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8535719, 0.20855016, -4.0595818)
+
+[node name="CrowdBlockerCapsule9" parent="Set Dressing" unique_id=1344217516 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6273127, 0.20855016, -2.5242276)
+
+[node name="CrowdBlockerCapsule11" parent="Set Dressing" unique_id=718155461 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8264666, 0.20855016, -0.56137574)
+
+[node name="CrowdBlockerCapsule5" parent="Set Dressing" unique_id=1013903099 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7198038, 0.20855016, -3.6574838)
+
+[node name="CrowdBlockerCapsule53" parent="Set Dressing" unique_id=1699329829 instance=ExtResource("6_bgtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0686321, 0.20855016, -1.2574005)
+
+[node name="CouchRed" parent="Set Dressing" unique_id=272237701 instance=ExtResource("7_kaxbk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.009897232, 0.01413846, 3.3419771)
+
+[node name="LampFloor" parent="Set Dressing" unique_id=1066000718 instance=ExtResource("8_0nobx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0156648, 0.005731195, 3.2955098)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Set Dressing" unique_id=1956113178]
+transform = Transform3D(-0.76300055, 0.07586775, 0.6453672, -0.016537774, 2.074094, -0.07588956, -0.64618576, -0.14266506, -0.7600923, -3.0117908, 1.314926, 2.6220264)
+mesh = SubResource("QuadMesh_8jgmr")
+
+[node name="SpotLight3D32" type="SpotLight3D" parent="Set Dressing" unique_id=752976870]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.14344597, 3.3529181, 3.5602417)
+light_color = Color(1.9731646, 1.7047501, 1.3046933, 1)
+light_energy = 2.502
+light_bake_mode = 1
+spot_range = 5.833
+spot_angle = 78.33
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1978342481]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.3068264, -5.183902)
+fov = 43.4
+
+[node name="ShotHeal" parent="." unique_id=1765869013 instance=ExtResource("10_5klac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3187242, 0.07333851, 2.538724)
