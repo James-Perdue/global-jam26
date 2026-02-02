@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjfllev2cbdtw"]
 
-[ext_resource type="Script" path="res://levels/loader_scene.gd" id="1_gidhp"]
+[ext_resource type="Script" uid="uid://cqls06xmr1ohq" path="res://levels/loader_scene.gd" id="1_gidhp"]
 [ext_resource type="PackedScene" uid="uid://c5tn5rf6tk730" path="res://player/Revolver/Revolver.glb" id="1_skm6e"]
 [ext_resource type="PackedScene" uid="uid://csyer07ftxyax" path="res://player/Shotgun/Shotgun.glb" id="2_hewt0"]
 [ext_resource type="PackedScene" uid="uid://dnoouc5e0reku" path="res://enemy/Monster/MaskMonster.glb" id="3_daqx6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="5_igkwo"]
 [ext_resource type="PackedScene" uid="uid://mwx7yc6xsx0p" path="res://interactables/objectives/objective.tscn" id="6_igkwo"]
 [ext_resource type="PackedScene" uid="uid://rrw0sf0ssewh" path="res://ParticleEffects/Gunshot/GunshotEffect.tscn" id="9_6k3ho"]
+[ext_resource type="PackedScene" uid="uid://bpli2bmok02x" path="res://ParticleEffects/Sparks/MaskSparks.tscn" id="10_h3hdk"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_gidhp"]
 material = ExtResource("5_igkwo")
@@ -174,5 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1697393, 0, 0.060196877)
 tier = -1
 
 [node name="GunshotEffect" parent="." unique_id=1660818070 instance=ExtResource("9_6k3ho")]
+
+[node name="monsterPart" parent="." unique_id=115632460 instance=ExtResource("10_h3hdk")]
 
 [editable path="MaskMonster2"]

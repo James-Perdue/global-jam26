@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpli2bmok02x"]
 
-[ext_resource type="Script" uid="uid://byiwuiottib72" path="res://ParticleEffects/Sparks/mask_sparks.gd" id="1_mpdgx"]
+[ext_resource type="Script" path="res://ParticleEffects/Sparks/mask_sparks.gd" id="1_mpdgx"]
 [ext_resource type="Material" uid="uid://dq3hm4osrxa7a" path="res://ParticleEffects/Sparks/SparkParticleSimple.tres" id="1_u8r77"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_mc4mh"]

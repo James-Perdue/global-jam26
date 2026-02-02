@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5hg7tkyjhvx" path="res://enemy/mask/mask.gd" id="1_anl1o"]
 [ext_resource type="Texture2D" uid="uid://sptrd0i3knd2" path="res://enemy/mask/Art/Mask_SadMask.png" id="2_ld8ii"]
+[ext_resource type="PackedScene" uid="uid://bpli2bmok02x" path="res://ParticleEffects/Sparks/MaskSparks.tscn" id="3_ld8ii"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_w3pss"]
 
@@ -79,3 +80,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8svxl")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.53348684)
 text = "HAPPY"
+
+[node name="MaskSparks" parent="." unique_id=115632460 instance=ExtResource("3_ld8ii")]
+unique_name_in_owner = true

@@ -53,7 +53,6 @@ var responses: Dictionary[String,Array] = {
 @onready var shotgun: Node3D = %Shotgun
 @onready var line_audio_player: AudioStreamPlayer3D = %CannedAudio
 @onready var drunk_timer: Timer = Timer.new()
-@onready var gunshot_effect: Node3D = %GunshotEffect
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -73,8 +72,13 @@ func _ready() -> void:
 	interact_zone.body_exited.connect(_on_interact_zone_body_exited)
 	revolver.hide()
 	shotgun.hide()
-	gunshot_effect.get_node("CPUParticles3D").emitting = false
-	gunshot_effect.get_node("CPUParticles3D").one_shot = true
+	
+	# Initialize all gunshot effects
+	for weapon in [revolver, shotgun]:
+		var effect = weapon.get_node("GunshotEffect/CPUParticles3D")
+		effect.emitting = false
+		effect.one_shot = true
+	
 	await get_tree().process_frame
 	SignalBus.player_health_changed.emit(health)
 	damage_timer.start()
@@ -142,6 +146,8 @@ func _on_encounter_ended() -> void:
 	await weapon.get_node("AnimationPlayer").animation_finished
 	if(!in_encounter):
 		weapon.hide()
+	if(has_shotgun):
+		has_shotgun = false
 
 func _on_player_healed(amount: int) -> void:
 	health = min(health + amount, max_health)
@@ -195,9 +201,16 @@ func shoot() -> void:
 		weapon = shotgun
 	if(weapon.get_node("AnimationPlayer").current_animation != ""):
 		return
+	
+	var gunshot_effect = weapon.get_node("GunshotEffect")
+	var gunshot_audio = weapon.get_node("GunshotAudio")
+	var optional_audio = weapon.get_node("OptionalAudio")
+	
 	gunshot_effect.show()
 	gunshot_effect.get_node("CPUParticles3D").emitting = true
-	%GunshotAudio.play()
+	gunshot_audio.play()
+	if(optional_audio.stream != null):
+		optional_audio.play()
 	weapon.get_node("AnimationPlayer").play("Fire")
 	
 	# Recoil effect
