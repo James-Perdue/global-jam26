@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cg05jybdius72"]
+
+[ext_resource type="Shader" uid="uid://dg2pp41xfn41f" path="res://assets/CrowdSillhouettes/SillhouetteShader.gdshader" id="1_6p2o6"]
+[ext_resource type="Texture2D" uid="uid://d06hj7w8hn45g" path="res://assets/CrowdSillhouettes/CrowdSillhouette_Friend.png" id="2_6p2o6"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_6p2o6")
+shader_parameter/silhouetteTexture = ExtResource("2_6p2o6")

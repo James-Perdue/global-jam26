@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://buccwhtq40cbf"]
 
 [ext_resource type="Shader" uid="uid://dg2pp41xfn41f" path="res://assets/CrowdSillhouettes/SillhouetteShader.gdshader" id="1_r0tt8"]
-[ext_resource type="Texture2D" uid="uid://b76uc4ivp0qpf" path="res://assets/CrowdSillhouettes/CrowdSillhouette-Sheet.png" id="2_8owiu"]
+[ext_resource type="Texture2D" uid="uid://v6jkqq42p3c3" path="res://assets/CrowdSillhouettes/CrowdSillhouette3.png" id="2_8owiu"]
 
 [resource]
 resource_local_to_scene = true

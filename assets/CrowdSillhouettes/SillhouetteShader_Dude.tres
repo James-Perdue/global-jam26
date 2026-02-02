@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ctany5xoaj0xu"]
+
+[ext_resource type="Shader" uid="uid://dg2pp41xfn41f" path="res://assets/CrowdSillhouettes/SillhouetteShader.gdshader" id="1_wakf5"]
+[ext_resource type="Texture2D" uid="uid://ude6ncyy4iyc" path="res://assets/CrowdSillhouettes/CrowdSillhouette_Dude.png" id="2_wakf5"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_wakf5")
+shader_parameter/silhouetteTexture = ExtResource("2_wakf5")
