@@ -6,6 +6,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	play_button.pressed.connect(_on_play_button_pressed)
 	playground_button.pressed.connect(_on_playground_button_pressed)
+	MusicManager.play_music("main_menu")
 
 func _on_play_button_pressed() -> void:
 	#TODO: Jared ref your level in GameManager
