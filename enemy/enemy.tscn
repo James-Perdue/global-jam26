@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://b5e3244vsgv42" path="res://enemy/enemy.gd" id="1_2mvqj"]
 [ext_resource type="PackedScene" uid="uid://6muuir2bfjfl" path="res://enemy/mask/mask.tscn" id="2_ofsxj"]
 [ext_resource type="PackedScene" uid="uid://dnoouc5e0reku" path="res://enemy/Monster/MaskMonster.glb" id="2_ppra6"]
-[ext_resource type="Material" uid="uid://dskfylrfkwc85" path="res://enemy/Monster/MonsterShaderMat.tres" id="3_pmsee"]
+[ext_resource type="Material" path="res://enemy/Monster/MonsterShaderMat.tres" id="3_pmsee"]
 [ext_resource type="PackedScene" uid="uid://c2uyy0xk8nlst" path="res://ParticleEffects/Smoke/EnemySmoke.tscn" id="5_1wwld"]
+[ext_resource type="AudioStream" uid="uid://ch7kr11nylg8y" path="res://Audio/Spawn_02.wav" id="6_1wwld"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_scxef"]
 radius = 0.29296875
@@ -75,10 +76,10 @@ disabled = true
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.52551943, 0)
 
-[node name="MaskMonster" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="0" unique_id=500085102]
+[node name="MaskMonster" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1387297195) index="0" unique_id=1765959675]
 surface_material_override/0 = ExtResource("3_pmsee")
 
-[node name="MaskSocket1" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="1" unique_id=1398618424]
+[node name="MaskSocket1" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1387297195) index="1" unique_id=1398618424]
 transform = Transform3D(-0.70744175, -0.6577664, 0.2585915, 0.49071783, -0.19381276, 0.84948957, -0.50864744, 0.7278599, 0.4598888, 1.3851335e-09, 2.9762833, 0.006909771)
 bone_name = "MaskBone.UpperSpine.R"
 bone_idx = 117
@@ -87,7 +88,7 @@ bone_idx = 117
 remote_path = NodePath("../../../../../Mask1")
 update_scale = false
 
-[node name="MaskSocket2" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="2" unique_id=1825298830]
+[node name="MaskSocket2" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1387297195) index="2" unique_id=1825298830]
 transform = Transform3D(-0.36560884, 0.5800026, -0.7279609, -0.6059857, 0.44531122, 0.65914994, 0.7064779, 0.6821251, 0.1886636, 0.45811725, 2.8324122, -0.017699867)
 bone_name = "MaskBone.Shoulder.L"
 bone_idx = 109
@@ -96,7 +97,7 @@ bone_idx = 109
 remote_path = NodePath("../../../../../Mask2")
 update_scale = false
 
-[node name="MaskSocket3" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="3" unique_id=788118794]
+[node name="MaskSocket3" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1387297195) index="3" unique_id=788118794]
 transform = Transform3D(0.3073303, -0.72284997, 0.6188989, 0.76151603, -0.20319298, -0.61547196, 0.5706498, 0.6604548, 0.48801443, 1.3851379e-09, 1.9278834, 0.035886668)
 bone_name = "MaskBone.LowLowSpine.R"
 bone_idx = 26
@@ -105,7 +106,7 @@ bone_idx = 26
 remote_path = NodePath("../../../../../Mask3")
 update_scale = false
 
-[node name="MaskSocket4" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="4" unique_id=1310851106]
+[node name="MaskSocket4" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1387297195) index="4" unique_id=1310851106]
 transform = Transform3D(0.04401651, -0.6386755, 0.7682162, 0.99381787, -0.05045949, -0.09889356, 0.10192472, 0.7678199, 0.63250613, 1.385132e-09, 2.2496564, 0.025502104)
 bone_name = "MaskBone.LowSpine.R"
 bone_idx = 33
@@ -114,7 +115,7 @@ bone_idx = 33
 remote_path = NodePath("../../../../../Mask4")
 update_scale = false
 
-[node name="MaskSocket5" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 4449168) index="5" unique_id=439922011]
+[node name="MaskSocket5" type="BoneAttachment3D" parent="EnemyMesh/rig/Skeleton3D" parent_id_path=PackedInt32Array(1169895927, 1387297195) index="5" unique_id=439922011]
 transform = Transform3D(-0.26872525, -0.8915643, -0.36455417, 0.36455485, -0.44446152, 0.8182623, -0.8915638, 0.08698771, 0.44446212, -0.32019526, 2.4391987, 0.28302386)
 bone_name = "MaskBone.Breast.R"
 bone_idx = 107
@@ -172,5 +173,10 @@ transform = Transform3D(0.013204974, -0.19160265, 0.23046486, 0.29814583, -0.015
 [node name="Mask5" parent="." unique_id=1510193214 instance=ExtResource("2_ofsxj")]
 unique_name_in_owner = true
 transform = Transform3D(-0.080617614, -0.26746932, -0.10936628, 0.10936651, -0.13333847, 0.24547875, -0.26746923, 0.026096316, 0.13333867, -0.16009763, 0.69407994, 0.14151193)
+
+[node name="SpawnNoise" type="AudioStreamPlayer3D" parent="." unique_id=1893064561]
+unique_name_in_owner = true
+stream = ExtResource("6_1wwld")
+volume_db = -25.0
 
 [editable path="EnemyMesh"]

@@ -35,7 +35,7 @@ var monster_audio_lookup: Dictionary[String, AudioStream] = {
 	"monologue": preload("res://Audio/ReversedAudio/monologue.wav"),
 	"pants": preload("res://Audio/ReversedAudio/pants.wav"),
 	"puke": preload("res://Audio/ReversedAudio/puke.wav"),
-	"pure_air": preload("res://Audio/ReversedAudio/pure_air.wav"),
+	"annoyed_6": preload("res://Audio/ReversedAudio/annoyed_6.wav"),
 	"see": preload("res://Audio/ReversedAudio/see.wav"),
 	"shoe": preload("res://Audio/ReversedAudio/shoe.wav"),
 	"uber": preload("res://Audio/ReversedAudio/uber.wav"),
