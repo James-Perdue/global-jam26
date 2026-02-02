@@ -106,11 +106,6 @@
 			"emotions": ["ANNOYED","HAPPY"]
 		},
 		{
-			"audio_key": "hump_day",
-			"message": "Its hump day!| But i gotta work tomorrow",
-			"emotions": ["HAPPY","SAD"]
-		},
-		{
 			"audio_key": "see",
 			"message": "AHHHHH AHHHHH,| WHY CAN'T I SEE,| HELP ME",
 			"emotions": ["FEAR","FEAR","FEAR"]
