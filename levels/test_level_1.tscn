@@ -51,6 +51,8 @@ script = ExtResource("1_nnacv")
 
 [node name="Player" parent="." unique_id=1257764422 instance=ExtResource("2_84ig8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3660441, 0.67242646, 2.4827516)
+damage_cooldown = 1.5
+wrong_mask_damage = 5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=194715375]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1, 0)
@@ -820,13 +822,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2017002, 0.20855016, -28.6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1701298, 0.20855016, -31.866558)
 
 [node name="CrowdBlockerCapsule49" parent="Tier1" unique_id=1654455428 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1073656, 0.20855016, -34.621433)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.287785, 0.20855016, -34.905724)
 
 [node name="CrowdBlockerCapsule50" parent="Tier1" unique_id=552448903 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.424019, 0.20855016, -33.71646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.400408, 0.2085504, -34.678078)
 
 [node name="CrowdBlockerCapsule51" parent="Tier1" unique_id=657831423 instance=ExtResource("14_ly28y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.424019, 0.20855016, -32.71646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.074013, 0.20855016, -33.347584)
 
 [node name="CrowdBlockerCapsule52" parent="Tier1" unique_id=433030785 instance=ExtResource("14_ly28y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5262895, 0.20855016, -35.454613)
@@ -1414,10 +1416,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -44,
 [node name="WallNormal222" parent="Tier2" unique_id=1624744150 instance=ExtResource("9_02ec3")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -34, 0, -20)
 
-[node name="Objective3" parent="Tier2" unique_id=225475714 instance=ExtResource("13_kgy88")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.86499, 1.0753449, -31.910044)
-tier = 1
-
 [node name="FloorPlane56" parent="Tier2" unique_id=1300670496 instance=ExtResource("1_hri27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -26)
 
@@ -1781,6 +1779,8 @@ transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 40, 
 [node name="Objective4" parent="Tier2" unique_id=1436415921 instance=ExtResource("13_kgy88")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.808308, 0.38663733, -41.21377)
 tier = 1
+heal_amount = 80
+objective_description = "Use the toilet!"
 
 [node name="FloorPlane61" parent="Tier2" unique_id=1288531168 instance=ExtResource("1_hri27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -22)
@@ -2010,7 +2010,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.085772, 0.20855016, -27.76
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.085772, 0.20855016, -29.764591)
 
 [node name="PropTable" parent="Tier2" unique_id=1621373832 instance=ExtResource("18_lgfx6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.6941555, -40.915092, -0.00024414063, -31.944992)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.6941555, -41.7561, -0.00024414063, -31.944992)
 
 [node name="CouchRed" parent="Tier2" unique_id=1494163544 instance=ExtResource("16_1j1kj")]
 transform = Transform3D(-0.00598646, 0, 0.99998206, 0, 1, 0, -0.99998206, 0, -0.00598646, -41.2965, 0.01413846, -35.46773)
@@ -3036,6 +3036,7 @@ transform = Transform3D(-0.9325761, 0, -0.36097363, 0, 1, 0, 0.36097363, 0, -0.9
 
 [node name="Encounter4" parent="Encounters" unique_id=1409132824 instance=ExtResource("7_vodbx")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 2.2492971, 1.0000002, -14.226041)
+emotion_count = 1
 
 [node name="Encounter5" parent="Encounters" unique_id=355094813 instance=ExtResource("7_vodbx")]
 transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, 13, 1, -6)
@@ -3082,7 +3083,8 @@ emotion_count = 2
 
 [node name="Encounter15" parent="Encounters" unique_id=1504481181 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-0.99650896, 0, 0.08348659, 0, 1, 0, -0.08348659, 0, -0.99650896, 19.863838, 1, -26.406796)
-emotion_count = 3
+damage_rate = 1.0
+emotion_count = 2
 max_active_masks = 5
 
 [node name="Encounter16" parent="Encounters" unique_id=256234721 instance=ExtResource("7_vodbx")]
@@ -3102,11 +3104,13 @@ max_active_masks = 4
 
 [node name="Encounter19" parent="Encounters" unique_id=720662732 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-0.7097429, 0, -0.70446074, 0, 1, 0, 0.70446074, 0, -0.7097429, 4.3851876, 1, -35.777195)
+damage_rate = 1.0
 emotion_count = 3
 max_active_masks = 4
 
 [node name="Encounter20" parent="Encounters" unique_id=1652103732 instance=ExtResource("7_vodbx")]
 transform = Transform3D(0.67892885, 0, -0.7342042, 0, 1, 0, 0.7342042, 0, 0.67892885, 18.256807, 1, -61.462555)
+damage_rate = 1.0
 emotion_count = 3
 max_active_masks = 4
 
@@ -3117,7 +3121,7 @@ max_active_masks = 5
 
 [node name="Encounter22" parent="Encounters" unique_id=1012961422 instance=ExtResource("7_vodbx")]
 transform = Transform3D(0.9773828, 0, -0.21147832, 0, 1, 0, 0.21147832, 0, 0.9773828, 13.061903, 1, -68.937965)
-emotion_count = 3
+emotion_count = 2
 max_active_masks = 5
 
 [node name="Encounter23" parent="Encounters" unique_id=1269517564 instance=ExtResource("7_vodbx")]
@@ -3127,7 +3131,7 @@ max_active_masks = 5
 
 [node name="Encounter24" parent="Encounters" unique_id=100167896 instance=ExtResource("7_vodbx")]
 transform = Transform3D(-0.22860563, 0, 0.9735191, 0, 1, 0, -0.9735191, 0, -0.22860563, 35.320225, 1, -80.31773)
-emotion_count = 3
+emotion_count = 1
 max_active_masks = 5
 
 [node name="Encounter25" parent="Encounters" unique_id=198114423 instance=ExtResource("7_vodbx")]
@@ -3137,7 +3141,7 @@ max_active_masks = 5
 
 [node name="Encounter26" parent="Encounters" unique_id=2117657978 instance=ExtResource("7_vodbx")]
 transform = Transform3D(0.75994116, 0, 0.649992, 0, 1, 0, -0.649992, 0, 0.75994116, 11.623689, 1, -83.57857)
-emotion_count = 3
+emotion_count = 4
 max_active_masks = 5
 
 [node name="BarWhite" parent="Encounters" unique_id=1798888282 instance=ExtResource("9_6q8gj")]
