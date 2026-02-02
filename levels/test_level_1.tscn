@@ -1067,7 +1067,7 @@ light_energy = 3.433
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.272728, 1.2723864, -29.77282)
 
 [node name="ShotHeal2" parent="Tier1" unique_id=1890888272 instance=ExtResource("11_rr58p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7910967, 1.2723864, -31.276165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9448195, 1.2723864, -31.592253)
 
 [node name="Tier2" type="Node3D" parent="." unique_id=727602597]
 unique_name_in_owner = true
@@ -3541,7 +3541,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.264933, 1.2572303, -25.97
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.35901, 0.91302407, -29.547909)
 
 [node name="ShotHeal4" parent="." unique_id=971955724 instance=ExtResource("11_rr58p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.968666, 1.254668, -50.677685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.670998, 1.254668, -50.677685)
 
 [node name="LampTable" parent="." unique_id=1108656457 instance=ExtResource("22_5au7l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.843897, 1.146095, -51.22789)
