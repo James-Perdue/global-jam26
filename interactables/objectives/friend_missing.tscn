@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://mxt5kes1olcg" path="res://interactables/objectives/objective.gd" id="1_btvub"]
 [ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_ruxtk"]
 [ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="3_btvub"]
+[ext_resource type="AudioStream" uid="uid://b5hp5c1bpb4rq" path="res://Audio/Friend/FriendJustLeft.wav" id="3_ruxtk"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ruxtk"]
 lightmap_size_hint = Vector2i(7, 12)
@@ -18,12 +19,16 @@ heal_amount = 20
 objective_description = "Where's my car keys?"
 
 [node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_ruxtk")]
+stream = ExtResource("3_ruxtk")
 
 [node name="CollisionShape3D" parent="InteractComponent" index="0" unique_id=1152483864]
 transform = Transform3D(1.1582048, 0, 0, 0, 1.77408, 0, 0, 0, 1.1094445, 0, 0, 0)
 
 [node name="MeshInstance3D" parent="InteractComponent" index="1" unique_id=505492712]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="InteractComponent" index="3" unique_id=1501432566]
+volume_db = -20.0
 
 [node name="SillhouetteInstance" type="MeshInstance3D" parent="." unique_id=427205418]
 transform = Transform3D(1.2951086, 0, 0, 0, 1.3303818, 0, 0, 0, 1, 0, -0.475, 0)
