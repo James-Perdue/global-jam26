@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://mxt5kes1olcg" path="res://interactables/objectives/objective.gd" id="1_ol0i6"]
 [ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_t0dyp"]
 [ext_resource type="PackedScene" uid="uid://bc6i8sitd2efm" path="res://assets/level_models/Door.glb" id="3_ol0i6"]
+[ext_resource type="AudioStream" uid="uid://ba3bhyy4hotf" path="res://Audio/door slams_02.wav" id="4_t0dyp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ol0i6"]
 radius = 0.8598633
@@ -18,6 +19,7 @@ objective_description = "Time to leave!"
 transform = Transform3D(0.95992273, 0, 0.28026468, 0, 1, 0, -0.28026468, 0, 0.95992273, -0.08397555, -1.3091699, 1.0728526)
 
 [node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_t0dyp")]
+stream = ExtResource("4_t0dyp")
 
 [node name="CollisionShape3D" parent="InteractComponent" index="0" unique_id=1152483864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.001953125, 0)

@@ -28,6 +28,7 @@ func _ready() -> void:
 	SignalBus.start_encounter.connect(_on_encounter_start)
 	SignalBus.end_encounter.connect(_on_encounter_end)
 	SignalBus.correct_mask.connect(_on_correct_mask)
+	SignalBus.wrong_mask.connect(_on_wrong_mask)
 	SignalBus.done_loading.connect(_on_done_loading)
 	SignalBus.toggled_crosshair.connect(_on_toggled_crosshair)
 	loading_screen.show()
@@ -57,6 +58,8 @@ func _on_encounter_start(encounter:Encounter):
 		rich_text.text += enemy.message_parts[temp]
 		temp+=1
 	rich_text.text += end_monster_effect + writing_effect
+	
+	focusStartAnim()
 		
 func _on_encounter_end():
 	rich_text.hide()
@@ -78,6 +81,11 @@ func _on_correct_mask(_mask: Mask):
 		emotion+=1
 		
 	rich_text.text += end_monster_effect 
+	
+	focusEndAnim()
+	
+func _on_wrong_mask(_mask: Mask):
+	hurtAnim()
 
 func _on_toggled_crosshair(show: bool) -> void:
 	var target_alpha = 1.0 if show else 0.0
@@ -109,3 +117,30 @@ func set_objectives(objectives: Array) -> void:
 	for objective in objectives:
 		current_objectives.append(objective as Objective)
 	update_objectives()
+	
+	
+func focusStartAnim():
+	var focusEffect = %FocusEffect
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(focusEffect, "modulate:a", 0.5, 0.5)
+	tween.tween_property(focusEffect, "modulate:a", 0.0, 0.75)
+	
+func focusEndAnim():
+	var focusEffect = %FocusEffect
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(focusEffect, "modulate:a", 0.25, 0.5)
+	tween.tween_property(focusEffect, "modulate:a", 0.0, 0.75)
+
+func hurtAnim():
+	print("Hurt Anim Hit")
+	var bloodEffect = %BloodEffect
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(bloodEffect, "modulate:a", 0.5, 0.25)
+	tween.tween_property(bloodEffect, "modulate:a", 0.0, 0.25)
+	

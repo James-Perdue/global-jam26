@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5i6hcppggc82"]
 
 [ext_resource type="Script" uid="uid://cyn8sgxrdbi6i" path="res://interactables/interact_component.gd" id="1_nhncx"]
+[ext_resource type="AudioStream" uid="uid://ce7j0onyxu67f" path="res://Audio/keys pickup_01.wav" id="2_tfr1g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_m7d4e"]
 radius = 0.4300279
@@ -15,6 +16,7 @@ height = 0.5
 
 [node name="InteractComponent" type="StaticBody3D" unique_id=492599483]
 script = ExtResource("1_nhncx")
+stream = ExtResource("2_tfr1g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1152483864]
 shape = SubResource("SphereShape3D_m7d4e")
