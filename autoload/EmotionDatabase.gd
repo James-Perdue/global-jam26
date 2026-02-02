@@ -7,14 +7,39 @@ var colors: Dictionary = {"HAPPY": "yellow", "SAD": "blue", "ANGRY": "red", "ANN
 var used_emotion_keys: Array[String] = []
 
 var monster_audio_lookup: Dictionary[String, AudioStream] = {
-	#"happy_1": preload("res://Audio/ReversedAudio/happy_1.wav"),
-	# "happy_2": preload("res://Audio/ReversedAudio/happy_2.wav"),
-	 "happy_3": preload("res://Audio/ReversedAudio/happy_3.wav"),
-	# "sad_1": preload("res://Audio/ReversedAudio/sad_1.wav"),
-	# "sad_2": preload("res://Audio/ReversedAudio/sad_2.wav"),
-	# "angry_1": preload("res://Audio/ReversedAudio/angry_1.wav"),
-	# "angry_2": preload("res://Audio/ReversedAudio/angry_2.wav"),
-	# "fear_1": preload("res://Audio/ReversedAudio/fear_1.wav"),
+	"happy_1": preload("res://Audio/ReversedAudio/happy_1.wav"),
+	"happy_2": preload("res://Audio/ReversedAudio/happy_2.wav"),
+	"happy_3": preload("res://Audio/ReversedAudio/happy_3.wav"),
+	"happy_4": preload("res://Audio/ReversedAudio/happy_4.wav"),
+	"sad_1": preload("res://Audio/ReversedAudio/sad_1.wav"),
+	"sad_2": preload("res://Audio/ReversedAudio/sad_2.wav"),
+	"sad_3": preload("res://Audio/ReversedAudio/sad_3.wav"),
+	"angry_1": preload("res://Audio/ReversedAudio/angry_1.wav"),
+	"angry_2": preload("res://Audio/ReversedAudio/angry_2.wav"),
+	"angry_3": preload("res://Audio/ReversedAudio/angry_3.wav"),
+	"angry_4": preload("res://Audio/ReversedAudio/angry_4.wav"),
+	"fear_1": preload("res://Audio/ReversedAudio/fear_1.wav"),
+	"fear_2": preload("res://Audio/ReversedAudio/fear_2.wav"),
+	"fear_3": preload("res://Audio/ReversedAudio/fear_3.wav"),
+	"fear_4": preload("res://Audio/ReversedAudio/fear_4.wav"),
+	"fear_5": preload("res://Audio/ReversedAudio/fear_5.wav"),
+	"fear_6": preload("res://Audio/ReversedAudio/fear_6.wav"),
+	"annoyed_1": preload("res://Audio/ReversedAudio/annoyed_1.wav"),
+	"annoyed_2": preload("res://Audio/ReversedAudio/annoyed_2.wav"),
+	"annoyed_3": preload("res://Audio/ReversedAudio/annoyed_3.wav"),
+	"annoyed_4": preload("res://Audio/ReversedAudio/annoyed_4.wav"),
+	"annoyed_5": preload("res://Audio/ReversedAudio/annoyed_5.wav"),
+	"ant_man": preload("res://Audio/ReversedAudio/ant_man.wav"),
+	"drink": preload("res://Audio/ReversedAudio/drink.wav"),
+	"gum": preload("res://Audio/ReversedAudio/gum.wav"),
+	"monologue": preload("res://Audio/ReversedAudio/monologue.wav"),
+	"pants": preload("res://Audio/ReversedAudio/pants.wav"),
+	"puke": preload("res://Audio/ReversedAudio/puke.wav"),
+	"pure_air": preload("res://Audio/ReversedAudio/pure_air.wav"),
+	"see": preload("res://Audio/ReversedAudio/see.wav"),
+	"shoe": preload("res://Audio/ReversedAudio/shoe.wav"),
+	"uber": preload("res://Audio/ReversedAudio/uber.wav"),
+	"weed_guy": preload("res://Audio/ReversedAudio/weed_guy.wav"),
 }
 
 var player_audio_lookup: Dictionary[String,AudioStream] = {
@@ -28,6 +53,7 @@ var player_audio_lookup: Dictionary[String,AudioStream] = {
 	"damn": preload("res://Audio/Responses/Damn_1.wav"),
 	"crazy": preload("res://Audio/Responses/Crazy_2.wav"),
 	"really": preload("res://Audio/Responses/Really_2.wav"),
+	"for_sure": preload("res://Audio/Responses/NoYaForSure.wav"),
 }
 
 func _ready() -> void:

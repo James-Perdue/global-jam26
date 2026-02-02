@@ -36,7 +36,7 @@ var happy_response: Array[String]= ["great", "nice"]
 var sad_response: Array[String]= ["bummer", "that_sucks"]
 var angry_response: Array[String]= ["woah", "damn"]
 var fear_response: Array[String]= ["be_okay", "fine"]
-var annoyed_response: Array[String]= ["crazy", "really"]
+var annoyed_response: Array[String]= ["crazy", "really", "for_sure"]
 
 var responses: Dictionary[String,Array] = {
 	"HAPPY": happy_response,
@@ -308,14 +308,14 @@ func _on_wrong_mask(_mask: Mask) -> void:
 	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
 	take_damage(wrong_mask_damage)
 	if(line_audio_player.stream != null):
-		if(get_tree() != null):
+		if(is_instance_valid(self)):
 			await get_tree().create_timer(.15).timeout
 			line_audio_player.play()
 
 func _on_correct_mask(_mask: Mask) -> void:
 	line_audio_player.stream = EmotionDatabase.get_canned_audio_file(choose_canned(Enums.Emotion.keys()[_mask.emotion]))
 	if(line_audio_player.stream != null):
-		if(get_tree() != null):
+		if(is_instance_valid(self)):
 			await get_tree().create_timer(.15).timeout
 			line_audio_player.play()
 
