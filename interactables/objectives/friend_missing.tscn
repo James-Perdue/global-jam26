@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://mxt5kes1olcg" path="res://interactables/objectives/objective.gd" id="1_btvub"]
 [ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_ruxtk"]
-[ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="3_btvub"]
 [ext_resource type="AudioStream" uid="uid://b5hp5c1bpb4rq" path="res://Audio/Friend/FriendJustLeft.wav" id="3_ruxtk"]
+[ext_resource type="Material" uid="uid://ctany5xoaj0xu" path="res://assets/CrowdSillhouettes/SillhouetteShader_Dude.tres" id="4_ruxtk"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ruxtk"]
 lightmap_size_hint = Vector2i(7, 12)
-material = ExtResource("3_btvub")
+material = ExtResource("4_ruxtk")
 uv2_padding = 0.0
 size = Vector2(1, 2)
 subdivide_width = 2

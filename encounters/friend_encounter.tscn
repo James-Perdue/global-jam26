@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://i867gtx2al4a" path="res://encounters/friend_encounter.gd" id="1_kswsw"]
 [ext_resource type="AudioStream" uid="uid://bw13gyi12mfra" path="res://Audio/Friend/where_did_you_go.wav" id="2_1bnoa"]
-[ext_resource type="Material" uid="uid://buccwhtq40cbf" path="res://assets/CrowdSillhouettes/SillhouetteShader.tres" id="3_1bnoa"]
 [ext_resource type="AudioStream" uid="uid://cj48h3iwn5u6l" path="res://Audio/Friend/how_much_you_drink_2.wav" id="3_a1bw5"]
 [ext_resource type="AudioStream" uid="uid://bciih4vrwvtux" path="res://Audio/Friend/lets_get_outta_here.wav" id="4_xvnhx"]
+[ext_resource type="Material" uid="uid://cg05jybdius72" path="res://assets/CrowdSillhouettes/SillhouetteShader_Friend.tres" id="5_1bnoa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7nhbq"]
 size = Vector3(2.013916, 3.0408936, 2.0566406)
 
 [sub_resource type="QuadMesh" id="QuadMesh_hv6hw"]
 lightmap_size_hint = Vector2i(7, 12)
-material = ExtResource("3_1bnoa")
+material = ExtResource("5_1bnoa")
 uv2_padding = 0.0
 size = Vector2(1, 2)
 subdivide_width = 2
