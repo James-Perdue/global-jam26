@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://mxt5kes1olcg" path="res://interactables/objectives/objective.gd" id="1_5v6u6"]
 [ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_erg88"]
 [ext_resource type="PackedScene" uid="uid://bpe0pji1edm80" path="res://assets/level_models/Phone.glb" id="3_5v6u6"]
+[ext_resource type="AudioStream" uid="uid://58702vum4wif" path="res://Audio/phone click.wav" id="3_erg88"]
 
 [node name="Phone" type="Node3D" unique_id=225475714 groups=["ObjectiveGroup"]]
 script = ExtResource("1_5v6u6")
@@ -10,6 +11,7 @@ heal_amount = 20
 objective_description = "Gotta find my phone..."
 
 [node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_erg88")]
+stream = ExtResource("3_erg88")
 
 [node name="MeshInstance3D" parent="InteractComponent" index="1" unique_id=505492712]
 visible = false
