@@ -70,7 +70,7 @@ func start_encounter() -> void:
 	
 func _on_enemy_defeated() -> void:
 	SignalBus.end_encounter.emit()
-	SignalBus.player_healed(8)
+	SignalBus.player_healed.emit(8)
 	trigger.body_entered.disconnect(_on_trigger_body_entered)
 	await enemy.tree_exited
 	queue_free()
