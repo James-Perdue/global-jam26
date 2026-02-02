@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://c3vh87qjxe5jm" path="res://interactables/shotgun_item.tscn" id="23_wh4jk"]
 [ext_resource type="PackedScene" uid="uid://cmxjbawpmdt2y" path="res://assets/level_models/Bathtub.glb" id="29_fxlwo"]
 [ext_resource type="PackedScene" uid="uid://bfmbgk8gc2ba8" path="res://interactables/objectives/friend_missing.tscn" id="30_fxlwo"]
+[ext_resource type="PackedScene" uid="uid://bpswersdjg53j" path="res://encounters/friend_encounter.tscn" id="31_b0b66"]
 
 [sub_resource type="Environment" id="Environment_84ig8"]
 
@@ -2693,6 +2694,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -86)
 
 [node name="ExitObjective" parent="Tier3" unique_id=1514642364 instance=ExtResource("19_tworg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.977083, 1.308926, -91.88557)
+objective_description = "Find your friend."
 
 [node name="CrowdBlockerCapsule49" parent="Tier3" unique_id=794278195 instance=ExtResource("14_ly28y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.39308, 0.20855016, -64.43271)
@@ -3563,5 +3565,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.238365, 1.3476412, -32.70
 tier = 1
 heal_amount = 80
 objective_description = "Find out where your friend went."
+
+[node name="FriendEncounter" parent="." unique_id=679040533 instance=ExtResource("31_b0b66")]
+transform = Transform3D(-0.016038846, 0, -0.9998714, 0, 1, 0, 0.9998714, 0, -0.016038846, 21.301306, 1.2976575, -87.36378)
 
 [editable path="Tier1/LampTable"]
