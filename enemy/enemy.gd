@@ -91,6 +91,7 @@ func _on_mask_hit(mask: Mask) -> void:
 		return
 	print("Emotion Correct: ", mask.emotion)
 	targeting_emotion_index += 1
+	mask.get_node("BreakPlayer").play()
 	if targeting_emotion_index>=emotion_count:
 		targeting_message_index += 1
 		print("Message: ", targeting_message_index, " Emotion: ", targeting_emotion_index)

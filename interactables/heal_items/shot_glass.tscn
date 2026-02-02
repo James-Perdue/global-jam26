@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c5i6hcppggc82" path="res://interactables/interact_component.tscn" id="2_d7vnn"]
 [ext_resource type="Material" uid="uid://utoyg0c75cxn" path="res://interactables/heal_items/ShotGlassLiquid.tres" id="3_a41ca"]
 [ext_resource type="Material" uid="uid://cf6j3i7h7r3s7" path="res://assets/level_models/Glass.tres" id="3_jx1be"]
+[ext_resource type="AudioStream" uid="uid://cel8nfpwf0nms" path="res://Audio/gulp.wav" id="6_v4e8e"]
 
 [node name="ShotHeal" type="Node3D" unique_id=1765869013]
 script = ExtResource("1_1f0ab")
@@ -12,11 +13,12 @@ script = ExtResource("1_1f0ab")
 [node name="Shotglass" parent="." unique_id=463952402 instance=ExtResource("2_a41ca")]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 
-[node name="ShotGlass_Glass" parent="Shotglass" index="0" unique_id=1678479341]
+[node name="ShotGlass_Glass" parent="Shotglass" index="0" unique_id=2060121289]
 surface_material_override/0 = ExtResource("3_jx1be")
 surface_material_override/1 = ExtResource("3_a41ca")
 
 [node name="InteractComponent" parent="." unique_id=492599483 instance=ExtResource("2_d7vnn")]
+stream = ExtResource("6_v4e8e")
 
 [node name="MeshInstance3D" parent="InteractComponent" index="1" unique_id=505492712]
 visible = false
