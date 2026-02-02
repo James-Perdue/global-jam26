@@ -17,7 +17,7 @@ class_name Encounter
 var emotion_targets: Array[EmotionMessage] = []
 @onready var enemy: Enemy = $Enemy
 @onready var trigger: Area3D = $Trigger
-@onready var pre_enemy_sprite: Sprite3D = $PreEnemySprite
+@onready var pre_enemy_sprite: MeshInstance3D = $SillhouetteInstance
 
 func _ready() -> void:
 	pre_enemy_sprite.show()

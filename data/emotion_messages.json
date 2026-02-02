@@ -112,8 +112,58 @@
 		},
 		{
 			"audio_key": "see",
-			"message": "AHHHHH AHHHHH, WHY CAN'T I SEE, HELP ME",
+			"message": "AHHHHH AHHHHH,| WHY CAN'T I SEE,| HELP ME",
 			"emotions": ["FEAR","FEAR","FEAR"]
+		},
+		{
+			"audio_key": "shoe",
+			"message": "Did you just step on my shoe?| I just got these!",
+			"emotions": ["ANGER","SAD"]
+		},
+		{
+			"audio_key": "puke",
+			"message": "Shotssss!| Pour one out for mom!| Hey did you just puke on my shoe?",
+			"emotions": ["HAPPY","SAD","ANNOYED"]
+		},
+		{
+			"audio_key": "pants",
+			"message": "Why is this line so long?| Im gonna piss my pants!",
+			"emotions": ["ANNOYED","FEAR"]
+		},
+		{
+			"audio_key": "uber",
+			"message": "Hey those are my keys!| Wait, oh no I can't find my keys.| I'll have to buy a damn uber.",
+			"emotions": ["ANGER","FEAR","ANGER"]
+		},
+		{
+			"audio_key": "monologue",
+			"message": "Yeah so the thirteenth king of the Cynthian kingdom died to a plague,| but his son was actually the one to bring peace to the reigon.| I think this was a stupid writing decision personally| but my mom says i should get a job. Whatever",
+			"emotions": ["SAD","HAPPY","ANGER","ANNOYED"]
+		},
+		{
+			"audio_key": "fear_5",
+			"message": "Have you ever heard of the Horus Heresy?",
+			"emotions": ["FEAR"]
+		},
+		{
+			"audio_key": "annoyed_5",
+			"message": "There was a fish, In the punch bowl!",
+			"emotions": ["ANNOYED"]
+		},
+		{
+			"audio_key": "gum",
+			"message": "Good News!| That gum I like is back in style!",
+			"emotions": ["HAPPY","HAPPY"]
+		},
+		{
+			"audio_key": "fear_6",
+			"message": "My ex is here",
+			"emotions": ["FEAR"]
+		},
+		{
+			"audio_key": "annoyed_6",
+			"message": "There's too much smoke, I need pure air...",
+			"emotions": ["ANNOYED"]
 		}
 	]
 }
