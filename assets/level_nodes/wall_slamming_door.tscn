@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dmjf5tog88rgw" path="res://assets/level_nodes/wall_slamming_door.gd" id="1_efbxr"]
 [ext_resource type="PackedScene" uid="uid://d328lefh0aogp" path="res://assets/level_models/Doorway.glb" id="1_sba2t"]
 [ext_resource type="PackedScene" uid="uid://bc6i8sitd2efm" path="res://assets/level_models/Door.glb" id="2_efbxr"]
+[ext_resource type="AudioStream" uid="uid://c13njsk4tmgal" path="res://Audio/door slam_01.wav" id="4_6lxru"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hqkpl"]
 size = Vector3(0.2, 4, 4)
@@ -29,3 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5519192, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionArea" unique_id=411884296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4147339, 1.8124695, 0)
 shape = SubResource("BoxShape3D_sba2t")
+
+[node name="SlamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=738341692]
+stream = ExtResource("4_6lxru")
+volume_db = -15.0

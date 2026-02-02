@@ -12,6 +12,9 @@ script = ExtResource("1_i5www")
 [node name="MeshInstance3D" parent="InteractComponent" index="1" unique_id=505492712]
 visible = false
 
+[node name="InteractLabel" parent="InteractComponent" index="2" unique_id=2144635504]
+text = "Shotgun (E)"
+
 [node name="BeerCan" parent="." unique_id=2124541860 instance=ExtResource("3_u73o6")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.21703938, 0)
 
