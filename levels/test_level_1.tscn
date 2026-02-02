@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://btdwbic4srs2l" path="res://assets/level_models/Toilet.glb" id="22_5f30t"]
 [ext_resource type="PackedScene" uid="uid://c3vh87qjxe5jm" path="res://interactables/shotgun_item.tscn" id="23_wh4jk"]
 [ext_resource type="PackedScene" uid="uid://cmxjbawpmdt2y" path="res://assets/level_models/Bathtub.glb" id="29_fxlwo"]
+[ext_resource type="PackedScene" uid="uid://bfmbgk8gc2ba8" path="res://interactables/objectives/friend_missing.tscn" id="30_fxlwo"]
 
 [sub_resource type="Environment" id="Environment_84ig8"]
 
@@ -3556,5 +3557,11 @@ transform = Transform3D(-0.825, 0, -1.489362e-07, 0, 0.825, 0, 1.2457153e-07, 0,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathtub" unique_id=1136067608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23638916, 0.4033203, 0)
 shape = SubResource("BoxShape3D_bhyje")
+
+[node name="FriendMissing" parent="." unique_id=225475714 instance=ExtResource("30_fxlwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.238365, 1.3476412, -32.70229)
+tier = 1
+heal_amount = 80
+objective_description = "Find out where your friend went."
 
 [editable path="Tier1/LampTable"]
