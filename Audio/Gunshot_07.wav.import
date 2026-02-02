@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d22pxg8rvfxaa"
-path="res://.godot/imported/fear_2.wav-e7baad2df39c68ce4395ab3e9ad08e84.sample"
+uid="uid://sy8tduliyqsa"
+path="res://.godot/imported/Gunshot_07.wav-71303f5439de67860e5aafea9513a356.sample"
 
 [deps]
 
-source_file="res://Audio/ReversedAudio/fear_2.wav"
-dest_files=["res://.godot/imported/fear_2.wav-e7baad2df39c68ce4395ab3e9ad08e84.sample"]
+source_file="res://Audio/Gunshot_07.wav"
+dest_files=["res://.godot/imported/Gunshot_07.wav-71303f5439de67860e5aafea9513a356.sample"]
 
 [params]
 

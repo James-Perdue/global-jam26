@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d22pxg8rvfxaa"
-path="res://.godot/imported/fear_2.wav-e7baad2df39c68ce4395ab3e9ad08e84.sample"
+uid="uid://1mfvlgdxy32b"
+path="res://.godot/imported/ant_man.wav-4af3342451efe2bd07251b56544daa7f.sample"
 
 [deps]
 
-source_file="res://Audio/ReversedAudio/fear_2.wav"
-dest_files=["res://.godot/imported/fear_2.wav-e7baad2df39c68ce4395ab3e9ad08e84.sample"]
+source_file="res://Audio/ReversedAudio/ant_man.wav"
+dest_files=["res://.godot/imported/ant_man.wav-4af3342451efe2bd07251b56544daa7f.sample"]
 
 [params]
 
