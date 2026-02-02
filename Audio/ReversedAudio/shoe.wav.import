@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d22pxg8rvfxaa"
-path="res://.godot/imported/fear_2.wav-e7baad2df39c68ce4395ab3e9ad08e84.sample"
+uid="uid://cv05wkkm4conj"
+path="res://.godot/imported/shoe.wav-6f7a6d3b9bd65af2e287e2de0e36744f.sample"
 
 [deps]
 
-source_file="res://Audio/ReversedAudio/fear_2.wav"
-dest_files=["res://.godot/imported/fear_2.wav-e7baad2df39c68ce4395ab3e9ad08e84.sample"]
+source_file="res://Audio/ReversedAudio/shoe.wav"
+dest_files=["res://.godot/imported/shoe.wav-6f7a6d3b9bd65af2e287e2de0e36744f.sample"]
 
 [params]
 
