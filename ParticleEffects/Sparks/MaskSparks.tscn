@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bpli2bmok02x"]
 
+[ext_resource type="Script" uid="uid://byiwuiottib72" path="res://ParticleEffects/Sparks/mask_sparks.gd" id="1_mpdgx"]
 [ext_resource type="Material" uid="uid://dq3hm4osrxa7a" path="res://ParticleEffects/Sparks/SparkParticleSimple.tres" id="1_u8r77"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_mc4mh"]
@@ -15,9 +16,12 @@ offsets = PackedFloat32Array(0, 0.12605043, 1)
 colors = PackedColorArray(0.23137255, 0.25490198, 0.25882354, 0.57254905, 1, 1, 1, 1, 0.49354547, 0.49354553, 0.49354535, 0.14117648)
 
 [node name="Node3D" type="Node3D" unique_id=115632460]
+script = ExtResource("1_mpdgx")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1768937945]
+emitting = false
 amount = 32
+one_shot = true
 explosiveness = 0.9
 mesh = SubResource("QuadMesh_mc4mh")
 particle_flag_align_y = true
