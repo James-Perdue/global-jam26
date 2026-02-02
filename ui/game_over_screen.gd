@@ -7,6 +7,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	replay_button.pressed.connect(_on_replay_button_pressed)
 	menu_button.pressed.connect(_on_menu_button_pressed)
+	MusicManager.play_music("game_over")
 
 func _on_replay_button_pressed() -> void:
 	GameManager.load_level("level_1")
