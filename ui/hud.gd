@@ -14,6 +14,9 @@ var end_writing_effect = "[/we]"
 var monster_effect = "[me]"
 var end_monster_effect = "[/me]"
 
+var wrong_effect = "[ww]"
+var end_wrong_effect = "[/ww]"
+
 var current_objectives : Array[Objective] = []
 
 @onready var health_bar: TextureProgressBar = %HealthBar
@@ -57,7 +60,7 @@ func _on_encounter_start(encounter:Encounter):
 	while temp < len(enemy.emotion_targets[0].emotions):
 		rich_text.text += enemy.message_parts[temp]
 		temp+=1
-	rich_text.text += end_monster_effect + writing_effect
+	rich_text.text += end_monster_effect + end_writing_effect 
 	
 	focusStartAnim()
 		
@@ -69,7 +72,6 @@ func _on_correct_mask(_mask: Mask):
 	var emotion = 0
 	rich_text.text = monster_effect
 	while emotion < len(enemy.emotion_targets[0].emotions):
-		print("in dis bitch")
 		if emotion <  enemy.targeting_emotion_index:
 			rich_text.text += start_effect
 			rich_text.text +=color_type + EmotionDatabase.colors[Enums.Emotion.keys()[enemy.emotion_targets[0].emotions[emotion]]]
@@ -77,7 +79,6 @@ func _on_correct_mask(_mask: Mask):
 		rich_text.text += enemy.message_parts[emotion] 
 		if emotion< enemy.targeting_emotion_index:
 			rich_text.text += end_effect
-		print("enemy emotion: " +str(enemy.targeting_emotion_index) + " inside emotion: " + str(emotion))
 		emotion+=1
 		
 	rich_text.text += end_monster_effect 
@@ -85,7 +86,23 @@ func _on_correct_mask(_mask: Mask):
 	focusEndAnim()
 	
 func _on_wrong_mask(_mask: Mask):
+	var emotion = 0
+	rich_text.text = monster_effect
+	while emotion < len(enemy.emotion_targets[0].emotions):
+		if emotion <  enemy.targeting_emotion_index:
+			rich_text.text += start_effect
+			rich_text.text +=color_type + EmotionDatabase.colors[Enums.Emotion.keys()[enemy.emotion_targets[0].emotions[emotion]]]
+			rich_text.text += "]"  
+		if emotion == enemy.targeting_emotion_index:
+			rich_text.text += wrong_effect
+		rich_text.text += enemy.message_parts[emotion] 
+		if emotion< enemy.targeting_emotion_index:
+			rich_text.text += end_effect
+		if emotion == enemy.targeting_emotion_index:
+			rich_text.text += end_wrong_effect
+		emotion+=1
 	hurtAnim()
+	
 
 func _on_toggled_crosshair(show: bool) -> void:
 	var target_alpha = 1.0 if show else 0.0
