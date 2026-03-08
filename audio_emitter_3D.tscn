@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bda54gqtcmqd0"]
+
+[ext_resource type="Script" uid="uid://bwaooptwhwfyw" path="res://Audio/audio_emmiter_3D.gd" id="1_66ct2"]
+
+[node name="AudioEmitter3D" type="Node3D" unique_id=135343928]
+
+[node name="AudioPlayer" type="Node3D" parent="." unique_id=1489417495]
+script = ExtResource("1_66ct2")
+metadata/_custom_type_script = "uid://bwaooptwhwfyw"
