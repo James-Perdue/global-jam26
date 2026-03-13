@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cd77rkovbeav2"]
+
+[ext_resource type="Script" uid="uid://dhuyqj54qised" path="res://Audio/Ambience 3D/audio_emitter_3d.gd" id="1_v0n2n"]
+
+[node name="AudioEmitter3D" type="Node3D" unique_id=135343928]
+script = ExtResource("1_v0n2n")
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=2106887238]
