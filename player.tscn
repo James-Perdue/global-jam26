@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dtda1h5ag44c1"]
+
+[ext_resource type="Script" uid="uid://bdfl1q6gf30ig" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://c5tn5rf6tk730" path="res://player/Revolver/Revolver.glb" id="2_rkbax"]
+[ext_resource type="AudioStream" uid="uid://c15ndsqfga76u" path="res://Audio/footstep_01.wav" id="2_wodsf"]
+[ext_resource type="AudioStream" uid="uid://cifrkag3oilko" path="res://Audio/footstep_02.wav" id="3_32hag"]
+[ext_resource type="PackedScene" uid="uid://csyer07ftxyax" path="res://player/Shotgun/Shotgun.glb" id="3_g1dw6"]
+[ext_resource type="AudioStream" uid="uid://d368nq684wp4u" path="res://Audio/footstep_03.wav" id="4_tqiix"]
+[ext_resource type="PackedScene" uid="uid://rrw0sf0ssewh" path="res://ParticleEffects/Gunshot/GunshotEffect.tscn" id="4_yw30f"]
+[ext_resource type="AudioStream" uid="uid://65xumcxrgew6" path="res://Audio/footstep_04.wav" id="5_e7oew"]
+[ext_resource type="AudioStream" uid="uid://rde075utjy52" path="res://Audio/SFX/Gunshot_01.wav" id="5_qjkh3"]
+[ext_resource type="AudioStream" uid="uid://deumnfcxduot6" path="res://Audio/Shotgun Blast_01.wav" id="6_boad6"]
+[ext_resource type="AudioStream" uid="uid://cgqdc3fknohny" path="res://Audio/footstep_05.wav" id="6_c35mf"]
+[ext_resource type="AudioStream" uid="uid://clmvgosca812g" path="res://Audio/footstep_06.wav" id="7_65viv"]
+[ext_resource type="AudioStream" uid="uid://4u1ry35jy1w4" path="res://Audio/Responses/FuckItWeBall_1.wav" id="7_rgyib"]
+[ext_resource type="AudioStream" uid="uid://ct8v0t5e1ijad" path="res://Audio/footstep_07.wav" id="8_x7c3f"]
+[ext_resource type="AudioStream" uid="uid://41qwsoiu8yix" path="res://Audio/footstep_08.wav" id="9_bjvpn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
+height = 2.3693848
+
+[node name="Player" type="CharacterBody3D" unique_id=1257764422]
+script = ExtResource("1_oul6g")
+recoil_amount = 0.12
+footstep_sfx = Array[AudioStream]([ExtResource("2_wodsf"), ExtResource("3_32hag"), ExtResource("4_tqiix"), ExtResource("5_e7oew"), ExtResource("6_c35mf"), ExtResource("7_65viv"), ExtResource("8_x7c3f"), ExtResource("9_bjvpn")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1065959487]
+shape = SubResource("CapsuleShape3D_kqu6x")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1466927386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45581487, 0)
+
+[node name="InteractZone" type="Area3D" parent="Camera3D" unique_id=773594483]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.002180308, -0.9492264)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/InteractZone" unique_id=1577140719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18469238, 2.9802322e-08)
+shape = SubResource("CapsuleShape3D_oul6g")
+
+[node name="Revolver" parent="Camera3D" unique_id=1435748090 instance=ExtResource("2_rkbax")]
+unique_name_in_owner = true
+transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0.24242622, -0.30604607, -0.15090406)
+
+[node name="GunshotEffect" parent="Camera3D/Revolver" unique_id=669904297 instance=ExtResource("4_yw30f")]
+unique_name_in_owner = true
+transform = Transform3D(-4, 0, 3.4969156e-07, 0, 4, 0, -3.4969156e-07, 0, -4, 2.319619, 0.9507357, -0.012276232)
+
+[node name="GunshotAudio" type="AudioStreamPlayer3D" parent="Camera3D/Revolver" unique_id=1526683295]
+unique_name_in_owner = true
+stream = ExtResource("5_qjkh3")
+volume_db = -40.0
+
+[node name="OptionalAudio" type="AudioStreamPlayer3D" parent="Camera3D/Revolver" unique_id=913510681]
+volume_db = -10.0
+
+[node name="Shotgun" parent="Camera3D" unique_id=1705330155 instance=ExtResource("3_g1dw6")]
+unique_name_in_owner = true
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0.22889313, -0.07684076, -0.48503482)
+
+[node name="GunshotEffect" parent="Camera3D/Shotgun" unique_id=1074266355 instance=ExtResource("4_yw30f")]
+transform = Transform3D(4, 0, 4.405365e-13, 0, 4, 0, -4.405365e-13, 0, 4, -0.6174071, 0.00824821, -0.012276351)
+
+[node name="GunshotAudio" type="AudioStreamPlayer3D" parent="Camera3D/Shotgun" unique_id=1039179888]
+stream = ExtResource("6_boad6")
+volume_db = -10.0
+
+[node name="OptionalAudio" type="AudioStreamPlayer3D" parent="Camera3D/Shotgun" unique_id=672027818]
+stream = ExtResource("7_rgyib")
+volume_db = -10.0
+
+[node name="CannedAudio" type="AudioStreamPlayer3D" parent="." unique_id=800257367]
+unique_name_in_owner = true
+volume_db = -15.0
+
+[node name="FootstepAudio" type="AudioStreamPlayer3D" parent="." unique_id=1661325379]
+bus = &"Sfx Bus"
